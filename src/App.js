@@ -1,8 +1,11 @@
+import { Routes, Route } from "react-router-dom";
+import UserLoginPage from "./pages/UserLoginPage";
+
 function App() {
   return (
-    <div>
-      <h1>24/7 Cloud Libraray</h1>
-    </div>
+    <Routes>
+      <Route path="/login" element={<UserLoginPage />} />
+    </Routes>
   );
 }
 
