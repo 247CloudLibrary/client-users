@@ -2,7 +2,7 @@ import qs from "qs";
 import client from "./client";
 
 //게시판 목록 조회
-export const listBoards = ({
+export const listInfoBoards = ({
   type,
   boardId,
   title,
@@ -24,4 +24,4 @@ export const listBoards = ({
 };
 
 //게시글 상세 조회
-export const readBoard = (boardId) => client.get(`/boards/${boardId}`);
+export const readInfoBoard = (boardId) => client.get(`/boards/${boardId}`);
