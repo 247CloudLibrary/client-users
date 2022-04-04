@@ -5,7 +5,8 @@ import qs from "qs";
 export const compositePost = ({
         id, 
         rid, 
-        libraryId, 
+        libraryId,
+        libraryName, 
         isbn, 
         title, 
         thumbnailImage, 
@@ -13,7 +14,7 @@ export const compositePost = ({
         author, 
         contents, 
         publisher, 
-        publishDateTime,
+        publishDate,
         type,
         genre,
         barcord,
@@ -25,7 +26,8 @@ export const compositePost = ({
     client.post('/composite', {
         id, 
         rid, 
-        libraryId, 
+        libraryId,
+        libraryName,
         isbn, 
         title, 
         thumbnailImage, 
@@ -33,7 +35,7 @@ export const compositePost = ({
         author, 
         contents, 
         publisher, 
-        publishDateTime,
+        publishDate,
         type,
         genre,
         barcord,
@@ -75,5 +77,5 @@ export const compositeLendingStatusPathch = ({bookId, lendingStatus}) => {
 
 //  예약된 도서 상태 업데이트
 export const compositeReservationPatch = ({bookId, uid, libraryId}) => {
-    client.patch(`/composite/bookstatus/${bookId}`, {uid, libraryId});
+    client.patch(`/composite/reservation/${bookId}`, {uid, libraryId});
 };
