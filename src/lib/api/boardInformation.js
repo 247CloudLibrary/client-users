@@ -2,8 +2,24 @@ import qs from "qs";
 import client from "./client";
 
 //게시판 목록 조회
-export const listBoards = ({ title, adminName, createAt, readCounts }) => {
-  const queryString = qs.stringify({ title, adminName, createAt, readCounts });
+export const listBoards = ({
+  type,
+  boardId,
+  title,
+  adminName,
+  createdAt,
+  updatedAt,
+  readCounts,
+}) => {
+  const queryString = qs.stringify({
+    type,
+    boardId,
+    title,
+    adminName,
+    createdAt,
+    updatedAt,
+    readCounts,
+  });
   return client.get(`/boards?${queryString}`);
 };
 
