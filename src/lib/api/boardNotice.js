@@ -3,6 +3,7 @@ import client from "./client";
 
 //게시판 목록 조회
 export const listNoticeBoards = ({
+  type,
   boardId,
   title,
   adminName,
@@ -11,6 +12,7 @@ export const listNoticeBoards = ({
   readCounts,
 }) => {
   const queryString = qs.stringify({
+    type,
     boardId,
     title,
     adminName,
