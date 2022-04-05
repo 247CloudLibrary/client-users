@@ -5,6 +5,7 @@ import client from "./client";
 export const listNoticeBoards = ({
   boardId,
   title,
+  adminName,
   createdAt,
   updatedAt,
   readCounts,
@@ -12,6 +13,7 @@ export const listNoticeBoards = ({
   const queryString = qs.stringify({
     boardId,
     title,
+    adminName,
     createdAt,
     updatedAt,
     readCounts,
