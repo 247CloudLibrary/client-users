@@ -39,11 +39,11 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         
         run: |
-          aws s3 cp --region ap-northeast-2 ./build-fe.zip s3://cloud-lib-client-users/build/build-fe.zip
+          aws s3 cp --region ap-northeast-2 ./build-fe.zip s3://cloud-lib-client-users/build-fe.zip
       
       - name: Deploy
         run : aws deploy create-deployment
           --application-name client-users
           --deployment-config-name CodeDeployDefault.AllAtOnce
-          --deployment-group-name
-          --s3-location bucket=cloud-lib-client-users, key=build/build-fe.zip,bundleType=zip
+          --deployment-group-name cloud-lib-client-users
+          --s3-location bucket=cloud-lib-client-users, key=build-fe.zip,bundleType=zip
