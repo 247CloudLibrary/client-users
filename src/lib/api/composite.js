@@ -1,53 +1,6 @@
 import client from "./client";
 import qs from "qs";
 
-// 도서 정보 composite에 전송
-export const compositePost = ({
-        bookId, 
-        rid, 
-        libraryId,
-        libraryName, 
-        isbn, 
-        title, 
-        thumbnailImage, 
-        coverImage, 
-        author,
-        translator, 
-        contents, 
-        publisher, 
-        publishDate,
-        type,
-        genre,
-        barcode,
-        bookStatus,
-        createdAt,
-        updatedAt,
-        rfid,
-        category} ) => {
-    client.post('/composite', {
-        bookId, 
-        rid, 
-        libraryId,
-        libraryName,
-        isbn, 
-        title, 
-        thumbnailImage, 
-        coverImage, 
-        author,
-        translator, 
-        contents, 
-        publisher, 
-        publishDate,
-        type,
-        genre,
-        barcode,
-        bookStatus,
-        createdAt,
-        updatedAt,
-        rfid,
-        category});
-};
-
 // composite 도서 검색 목록
 export const compositeSearchList = ({keyword, libraryArr, publisher, author, category}) => {
     const queryString = qs.stringify({
@@ -64,20 +17,4 @@ export const compositeSearchList = ({keyword, libraryArr, publisher, author, cat
 // 도서 상세 페이지
 export const compositeSearchDetail = () => {
     client.get(`/composite/${bookId}`);
-};
-
-//  분실된 도서 상태 업데이트
-export const compositeBookStatusPatch = ({bookId, bookStatus}) => {
-    client.patch(`/composite/bookstatus/${bookId}`, {bookStatus});
-};
-
-
-// 대출, 반납 연체된 도서 대출 상태 업데이트
-export const compositeLendingStatusPathch = ({bookId, lendingStatus}) => {
-    client.patch(`/composite/lending/${bookId}`, {lendingStatus})
-};
-
-//  예약된 도서 상태 업데이트
-export const compositeReservationPatch = ({bookId, uid, libraryId}) => {
-    client.patch(`/composite/reservation`, {bookId, uid, libraryId});
 };
