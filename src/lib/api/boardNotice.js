@@ -1,27 +1,7 @@
-import qs from "qs";
 import client from "./client";
 
 //게시판 목록 조회
-export const listNoticeBoards = ({
-  type,
-  boardId,
-  title,
-  adminName,
-  createdAt,
-  updatedAt,
-  readCounts,
-}) => {
-  const queryString = qs.stringify({
-    type,
-    boardId,
-    title,
-    adminName,
-    createdAt,
-    updatedAt,
-    readCounts,
-  });
-  return client.get(`/boards?${queryString}`);
-};
+export const listNoticeBoards = () => client.get("/boards");
 
 //게시글 상세 조회
-export const readNoticeBoard = (boardId) => client.get(`/boards/${boardId}`);
+export const readNoticeBoard = () => client.get(`/boards/${boardId}`);
