@@ -46,4 +46,4 @@ jobs:
           --application-name client-users
           --deployment-config-name CodeDeployDefault.AllAtOnce
           --deployment-group-name cloud-lib-client-users
-          --s3-location bucket=cloud-lib-client-users, key=build-fe.zip,bundleType=zip
+          --s3-location bucket=cloud-lib-client-users,key=/build-fe.zip,bundleType=zip
