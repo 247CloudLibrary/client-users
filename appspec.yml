@@ -8,8 +8,8 @@ files:
 
 permissions:
   - object: /home/ubuntu/deploy-fe
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
     mode: 755
 
 hooks:
