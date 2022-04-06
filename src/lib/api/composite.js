@@ -17,7 +17,7 @@ export const compositePost = ({
         publishDate,
         type,
         genre,
-        barcord,
+        barcode,
         bookStatus,
         createdAt,
         updatedAt,
@@ -38,7 +38,7 @@ export const compositePost = ({
         publishDate,
         type,
         genre,
-        barcord,
+        barcode,
         bookStatus,
         createdAt,
         updatedAt,
@@ -61,7 +61,7 @@ export const compositeSearchList = ({keyword, libraryArr, publisher, author, cat
 
 // 도서 상세 페이지
 export const compositeSearchDetail = () => {
-    client.get('/composite/bookId');
+    client.get(`/composite/${bookId}`);
 };
 
 //  분실된 도서 상태 업데이트
@@ -77,5 +77,5 @@ export const compositeLendingStatusPathch = ({bookId, lendingStatus}) => {
 
 //  예약된 도서 상태 업데이트
 export const compositeReservationPatch = ({bookId, uid, libraryId}) => {
-    client.patch(`/composite/reservation/${bookId}`, {uid, libraryId});
+    client.patch(`/composite/reservation`, {bookId, uid, libraryId});
 };
