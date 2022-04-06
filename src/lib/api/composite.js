@@ -3,7 +3,7 @@ import qs from "qs";
 
 // 도서 정보 composite에 전송
 export const compositePost = ({
-        id, 
+        bookId, 
         rid, 
         libraryId,
         libraryName, 
@@ -11,7 +11,8 @@ export const compositePost = ({
         title, 
         thumbnailImage, 
         coverImage, 
-        author, 
+        author,
+        translator, 
         contents, 
         publisher, 
         publishDate,
@@ -24,7 +25,7 @@ export const compositePost = ({
         rfid,
         category} ) => {
     client.post('/composite', {
-        id, 
+        bookId, 
         rid, 
         libraryId,
         libraryName,
@@ -32,7 +33,8 @@ export const compositePost = ({
         title, 
         thumbnailImage, 
         coverImage, 
-        author, 
+        author,
+        translator, 
         contents, 
         publisher, 
         publishDate,
