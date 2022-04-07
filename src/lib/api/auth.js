@@ -8,7 +8,7 @@ export const login = ({ userId, password }) => {
 //회원가입
 export const signUp = ({
   userId,
-  username,
+  userName,
   password,
   gender,
   birth,
@@ -18,7 +18,7 @@ export const signUp = ({
 }) => {
   client.post("/auth/signUp", {
     userId,
-    username,
+    userName,
     password,
     gender,
     birth,
@@ -36,7 +36,7 @@ export const authGet = () => {
 //회원 정보 수정
 export const authPatch = ({
   userId,
-  username,
+  userName,
   password,
   gender,
   birth,
@@ -46,7 +46,7 @@ export const authPatch = ({
 }) => {
   client.patch("/auth/update-state", {
     userId,
-    username,
+    userName,
     password,
     gender,
     birth,
