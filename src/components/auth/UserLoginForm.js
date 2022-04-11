@@ -1,17 +1,32 @@
 import { Link } from "react-router-dom";
+import { WiCloud } from "react-icons/wi";
 
 const UserLoginForm = () => {
+  const onSubmit = (event) => {
+    event.preventDefault();
+  };
   return (
-    <div>
-      <h3>User Login Form</h3>
-      <form>
-        <input placeholder="아이디" />
+    <div className="loginForm">
+      <Link to={"/"} className="logo">
+        <WiCloud />
+        <span>Cloud Library</span>
+      </Link>
+      <form onSubmit={onSubmit}>
+        <input type="text" placeholder="아이디" />
         <input type="password" placeholder="비밀번호" />
-        <button>로그인</button>
+        <button className="login-btn">로그인</button>
+        <Link to="/signUp">
+          <button>회원가입 </button>
+        </Link>
       </form>
-      <Link to="/signUp">회원가입</Link>
-      <Link to="/">아이디 찾기</Link>
-      <Link to="/">비밀번호 찾기</Link>
+      <footer>
+        <Link to="/">
+          <span>아이디찾기</span>
+        </Link>
+        <Link to="/">
+          <span>비밀번호찾기</span>
+        </Link>
+      </footer>
     </div>
   );
 };
