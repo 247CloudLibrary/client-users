@@ -2,7 +2,7 @@ import UserSignUpForm from "../components/auth/UserSignUpForm";
 
 const UserSignUpPage = () => {
   return (
-    <div>
+    <div id="signUp">
       <UserSignUpForm />
     </div>
   );
