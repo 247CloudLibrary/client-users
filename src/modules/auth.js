@@ -46,10 +46,11 @@ export function* authSaga() {
 }
 
 const initialState = {
-  signup: {
+  signUp: {
     userId: "",
     userName: "",
     password: "",
+    passwordConfirm: "",
     gender: "",
     birth: "",
     address: "",
