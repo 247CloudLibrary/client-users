@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { WiCloud } from "react-icons/wi";
 
 const UserLoginForm = ({ form, onChange, onSubmit }) => {
-  console.log(form);
   return (
     <div className="loginForm">
       <Link to={"/"} className="logo">
