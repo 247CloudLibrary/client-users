@@ -2,7 +2,7 @@ import client from "./client";
 
 //로그인
 export const login = ({ userId, password }) => {
-  client.post("/auth/signIn", { userId, password });
+  client.post("/auth/signin", { userId, password });
 };
 
 //회원가입
