@@ -70,6 +70,14 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           required
         />
         <input
+          name="address"
+          placeholder="주소"
+          onChange={onChange}
+          value={form.address}
+          type="text"
+          required
+        />
+        <input
           name="tel"
           onChange={onChange}
           value={form.email}
