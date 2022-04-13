@@ -1,9 +1,9 @@
-import UserSignUpForm from "../components/auth/UserSignUpForm";
+import SignUpForm from "../container/auth/SignUpForm";
 
 const UserSignUpPage = () => {
   return (
-    <div>
-      <UserSignUpForm />
+    <div id="signUp">
+      <SignUpForm />
     </div>
   );
 };
