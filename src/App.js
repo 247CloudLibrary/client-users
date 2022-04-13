@@ -3,6 +3,7 @@ import HomePage from "./pages/HomePage";
 import UserLoginPage from "./pages/UserLoginPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import UserSignUpPage from "./pages/UserSignUpPage";
+import LibrariesListPage from "./pages/LibrariesListPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/profile" element={<UserProfilePage />} />
       <Route path="/signUp" element={<UserSignUpPage />} />
+      <Route path="/libraries/list" element={<LibrariesListPage />} />
     </Routes>
   );
 }
