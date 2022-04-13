@@ -2,13 +2,17 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeField, initializeForm, signUp } from "../../modules/auth";
 import UserSignUpForm from "../../components/auth/UserSignUpForm";
+import { check } from "../../modules/user";
+import { createBrowserHistory } from "history";
 
 const SignUpForm = () => {
+  const history = createBrowserHistory();
   const dispatch = useDispatch();
-  const { form, auth, authError } = useSelector(({ auth }) => ({
+  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.signUp,
     auth: auth.auth,
     authError: auth.authError,
+    user: user.user,
   }));
 
   const onChange = (event) => {
@@ -58,8 +62,18 @@ const SignUpForm = () => {
     if (auth) {
       console.log("회원가입 성공");
       console.log(auth);
+      dispatch(check());
     }
-  }, [auth, authError]);
+  }, [auth, authError, dispatch]);
+
+  // user 값이 설정되었는지 확인
+  useEffect(() => {
+    if (user) {
+      history.push("/");
+      console.log("check API 성공");
+      console.log(user);
+    }
+  }, [history, user]);
 
   return <UserSignUpForm form={form} onChange={onChange} onSubmit={onSubmit} />;
 };

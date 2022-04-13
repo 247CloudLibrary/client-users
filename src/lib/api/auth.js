@@ -70,3 +70,6 @@ export const authFindId = ({ email }) => {
 export const authFindPassword = ({ userId, email }) => {
   client.post("/auth/findPw", { userId, email });
 };
+
+// 로그인 상태 확인
+export const check = () => client.get("/auth/check");
