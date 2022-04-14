@@ -9,6 +9,12 @@ const HomePage = () => {
       <Link to={"/signUp"}>
         <button>회원가입</button>
       </Link>
+      <Link to={"/libraries/list"}>
+        <button>도서관 찾기</button>
+      </Link>
+      <Link to={"/profile"}>
+        <button>마이 페이지</button>
+      </Link>
     </div>
   );
 };
