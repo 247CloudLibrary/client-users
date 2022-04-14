@@ -3,13 +3,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const LibrariesList = () => {
-  const [listData, setData] = useState([]);
+  const [listData, setListData] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/libraries")
-      .then((response) => setData(response.data));
-  }, [setData]);
+      .then((response) => setListData(response.data));
+  }, [setListData]);
 
   return (
     <div id="libraries-list">
