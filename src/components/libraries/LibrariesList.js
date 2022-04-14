@@ -3,31 +3,31 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const LibrariesList = () => {
-  const [data, setData] = useState([]);
+  const [listData, setData] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/libraries")
       .then((response) => setData(response.data));
-  });
+  }, [setData]);
 
   return (
     <div id="libraries-list">
       <div className="page-title">도서관 찾기</div>
-      {data.map(({ id, name, address, email, tel, operatingTime, holiday }) => (
-        <div className="list-box">
-          <LibrariesListItem
-            id={id}
-            name={name}
-            address={address}
-            email={email}
-            tel={tel}
-            operatingTime={operatingTime}
-            holiday={holiday}
-            key={id}
-          />
-        </div>
-      ))}
+      {listData.data &&
+        listData.data.map((data) => (
+          <div className="list-box" key={data.id}>
+            <LibrariesListItem
+              id={data.id}
+              name={data.name}
+              address={data.address}
+              email={data.email}
+              tel={data.tel}
+              operatingTime={data.operatingTime}
+              holiday={data.holiday}
+            />
+          </div>
+        ))}
     </div>
   );
 };
