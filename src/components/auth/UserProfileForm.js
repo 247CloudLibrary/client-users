@@ -17,32 +17,32 @@ const UserProfileForm = ({ userInfo }) => {
           <div>
             <BsPersonFill />
             <input type="text" value={userInfo.userName} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
           <div>
             <BsGenderAmbiguous />
             <input type="text" value={userInfo.gender} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
           <div>
             <IoIosHome />
             <input type="text" value={userInfo.address} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
           <div>
             <IoIosMail />
             <input type="text" value={userInfo.email} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
           <div>
             <IoMdCall />
             <input type="text" value={userInfo.tel} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
           <div>
             <RiCake2Fill />
             <input type="text" value={userInfo.birth} disabled />
-            <FiEdit />
+            <FiEdit className="edit-btn" />
           </div>
         </div>
       </form>

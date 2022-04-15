@@ -12,10 +12,10 @@
   .profile {
     width: 360px;
     min-width: 360px;
-    background-color: #ffffffda;
-    border-radius: 2px;
+    background-color: #f6fbffd0;
+    border-radius: 3px;
     padding: 2rem;
-    box-shadow: 1px 1px 8px #998b80;
+    box-shadow: 1px 1px 8px #9fa3a7d0;
     .logo {
       display: flex;
       padding-left: 0.5rem;
@@ -35,7 +35,6 @@
     }
   }
   .profile-form {
-    background-color: bisque;
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
@@ -44,9 +43,14 @@
     div {
       display: flex;
       align-items: center;
-      background-color: aquamarine;
       margin-top: 10px;
       padding: 10px;
+      color: #492300;
+      opacity: 0.9;
+      .edit-btn {
+        font-size: 1.3rem;
+        opacity: 0.8;
+      }
     }
     span {
       background-color: #dfdfdf;
@@ -54,10 +58,14 @@
       margin-top: 5px;
     }
     input {
-      margin-left: 0.8rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
       border: none;
       font-size: 1.3rem;
       font-family: Jua;
+      border-bottom: 0.125rem solid #422800c5;
+      color: #36200ccb;
+      background-color: none;
     }
   }
 }
