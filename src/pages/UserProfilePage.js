@@ -2,7 +2,7 @@ import ProfileForm from "../containers/auth/ProfileForm";
 
 const UserProfilePage = () => {
   return (
-    <div>
+    <div id="user-profile">
       <ProfileForm />
     </div>
   );

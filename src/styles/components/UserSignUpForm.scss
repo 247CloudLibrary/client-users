@@ -8,9 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 900px;
+  overflow: auto;
   .signUpForm {
-    position: relative;
     width: 360px;
+    min-width: 360px;
     background-color: #afcddf;
     border-radius: 2px;
     padding: 2rem;
