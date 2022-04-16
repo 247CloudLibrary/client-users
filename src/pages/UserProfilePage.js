@@ -1,9 +1,9 @@
-import UserProfileForm from "../components/auth/UserProfileForm";
+import ProfileForm from "../containers/auth/ProfileForm";
 
 const UserProfilePage = () => {
   return (
-    <div>
-      <UserProfileForm />
+    <div id="user-profile">
+      <ProfileForm />
     </div>
   );
 };

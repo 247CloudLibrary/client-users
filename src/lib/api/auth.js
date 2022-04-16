@@ -34,20 +34,9 @@ export const authGet = () => {
 };
 
 //회원 정보 수정
-export const authPatch = ({
-  userId,
-  userName,
-  password,
-  gender,
-  birth,
-  address,
-  email,
-  tel,
-}) => {
+export const authPatch = ({ userName, gender, birth, address, email, tel }) => {
   client.patch("/auth/update-state", {
-    userId,
     userName,
-    password,
     gender,
     birth,
     address,

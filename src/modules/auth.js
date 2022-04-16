@@ -27,10 +27,30 @@ export const changeField = createAction(
 
 export const initializeForm = createAction(INITIALIZE_FORM, (form) => form);
 
-export const signUp = createAction(SIGNUP, ({ userId, password }) => ({
-  userId,
-  password,
-}));
+export const signUp = createAction(
+  SIGNUP,
+  ({
+    userId,
+    userName,
+    password,
+    passwordConfirm,
+    gender,
+    birth,
+    address,
+    email,
+    tel,
+  }) => ({
+    userId,
+    userName,
+    password,
+    passwordConfirm,
+    gender,
+    birth,
+    address,
+    email,
+    tel,
+  })
+);
 
 export const login = createAction(LOGIN, ({ userId, password }) => ({
   userId,

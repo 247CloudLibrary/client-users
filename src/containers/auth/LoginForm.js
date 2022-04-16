@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeField, initializeForm, login } from "../../modules/auth";
 import UserLoginForm from "../../components/auth/UserLoginForm";
 import { check } from "../../modules/user";
-import { createBrowserHistory } from "history";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
-  const history = createBrowserHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.login,
@@ -50,9 +50,9 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (user) {
-      history.push("/");
+      navigate("/");
     }
-  }, [history, user]);
+  }, [navigate, user]);
 
   return <UserLoginForm form={form} onChange={onChange} onSubmit={onSubmit} />;
 };
