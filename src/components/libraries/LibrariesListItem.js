@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-// const libraryId = "1";
+// const id = "1";
 // const name = "OOO도서관";
 // const address = "서울시 금천구 머시기..";
 // const email = "email@gmail.com";
@@ -29,13 +29,19 @@ const LibrariesListItem = ({
     // { value: createdAt, name: "도서관ID" , className:"created-at"},
     // { value: updatedAt, name: "도서관ID" , className:"updated-at"},
   ];
+  const navigate = useNavigate();
 
+  const handleLink = (e) => {
+    navigate(`/`, {
+      state: { id: id },
+    });
+  };
   return (
     <div id="libraries-item">
       <div className="library-name">
-        <Link to="/libraries/detail" style={{ textDecoration: "none" }}>
-          <div className="name">{name}</div>
-        </Link>
+        <div className="name" onClick={handleLink}>
+          {name}
+        </div>
       </div>
       <div className="library-listItem">
         {LibrariesListItemArray.map((llia) => (

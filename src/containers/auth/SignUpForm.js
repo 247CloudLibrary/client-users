@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeField, initializeForm, signUp } from "../../modules/auth";
 import UserSignUpForm from "../../components/auth/UserSignUpForm";
 import { check } from "../../modules/user";
-import { createBrowserHistory } from "history";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm = () => {
-  const history = createBrowserHistory();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.signUp,
@@ -69,11 +69,11 @@ const SignUpForm = () => {
   // user 값이 설정되었는지 확인
   useEffect(() => {
     if (user) {
-      history.push("/");
+      navigate("/");
       console.log("check API 성공");
       console.log(user);
     }
-  }, [history, user]);
+  }, [navigate, user]);
 
   return <UserSignUpForm form={form} onChange={onChange} onSubmit={onSubmit} />;
 };
