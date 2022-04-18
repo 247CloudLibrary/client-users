@@ -16,6 +16,8 @@ const [SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAILURE] =
 const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] =
   createRequestActionTypes("auth/LOGIN");
 
+const PROFILE = "auth/PROFILE";
+
 export const changeField = createAction(
   CHANGE_FIELD,
   ({ form, key, value }) => ({
@@ -57,12 +59,26 @@ export const login = createAction(LOGIN, ({ userId, password }) => ({
   password,
 }));
 
+export const profile = createAction(
+  PROFILE,
+  ({ userName, gender, birth, address, email, tel }) => ({
+    userName,
+    gender,
+    birth,
+    address,
+    email,
+    tel,
+  })
+);
+
 // Saga 생성
 const signUpSaga = createRequestSaga(SIGNUP, authAPI.signUp);
 const loginSage = createRequestSaga(LOGIN, authAPI.login);
+const profileSaga = createRequestSaga(PROFILE, authAPI.authGet);
 export function* authSaga() {
   yield takeLatest(SIGNUP, signUpSaga);
   yield takeLatest(LOGIN, loginSage);
+  yield takeLatest(PROFILE, profileSaga);
 }
 
 const initialState = {
@@ -81,6 +97,14 @@ const initialState = {
     userId: "",
     password: "",
   },
+  profile: {
+    userName: "",
+    gender: "",
+    birth: "",
+    address: "",
+    email: "",
+    tel: "",
+  },
   auth: null,
   authError: null,
 };
@@ -95,6 +119,7 @@ const auth = handleActions(
       ...state,
       [form]: initialState[form],
     }),
+
     // 회원가입 성공
     [SIGNUP_SUCCESS]: (state, { payload: auth }) => ({
       ...state,
