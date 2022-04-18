@@ -10,6 +10,11 @@
 @import "./components/libraries/LibrariesList.scss";
 @import "./components/libraries/LibrariesListItem.scss";
 
+// board
+@import "./components/board/NoticesList.scss";
+@import "./components/board/NoticesListItem.scss";
+@import "./components/board/GuideForm.scss";
+
 // Font
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
