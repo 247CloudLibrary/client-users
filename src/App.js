@@ -16,6 +16,8 @@ import BoardListPage from "./pages/board/BoardListPage";
 import BoardDetailPage from "./pages/board/BoardDetailPage";
 
 import LibrariesListPage from "./pages/LibrariesListPage";
+import ReservationListPage from "./pages/lending/ReservationListPage";
+import LendingRecordPage from "./pages/lending/LendingRecordPage";
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
       <Route path="/profile" element={<UserProfilePage />} />
 
       <Route path="/libraries/list" element={<LibrariesListPage />} />
+      <Route path="/reservation" element={<ReservationListPage />} />
+      <Route path="/record" element={<LendingRecordPage />} />
     </Routes>
   );
 }
