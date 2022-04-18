@@ -1,4 +1,4 @@
-import GuideForm from "../components/board/GuideForm";
+import GuideForm from "../../components/board/GuideForm";
 
 const GuidePage = () => {
   return (
