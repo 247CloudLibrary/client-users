@@ -10,8 +10,10 @@ import UserLoginPage from "./pages/auth/UserLoginPage";
 import UserProfilePage from "./pages/auth/UserProfilePage";
 import UserMainPage from "./pages/UserMainPage";
 
-import NoticesPage from "./pages/NoticesPage";
-import GuidePage from "./pages/GuidePage";
+import NoticesPage from "./pages/board/NoticesPage";
+import GuidePage from "./pages/board//GuidePage";
+import BoardListPage from "./pages/board/BoardListPage";
+import BoardDetailPage from "./pages/board/BoardDetailPage";
 
 import LibrariesListPage from "./pages/LibrariesListPage";
 
@@ -29,6 +31,8 @@ function App() {
 
       <Route path="/notices" element={<NoticesPage />} />
       <Route path="/guide" element={<GuidePage />} />
+      <Route path="/boards/list" element={<BoardListPage />} />
+      <Route path="/boards/detail" element={<BoardDetailPage />} />
 
       <Route path="/profile" element={<UserProfilePage />} />
 
