@@ -89,11 +89,6 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
         <span id="validation">ex) 010-0000-0000</span>
         <button className="signUp-btn">회원가입</button>
       </form>
-      <footer>
-        <Link to="/login">
-          <span>로그인</span>
-        </Link>
-      </footer>
     </div>
   );
 };

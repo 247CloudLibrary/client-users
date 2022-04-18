@@ -1,4 +1,4 @@
-import ProfileForm from "../containers/auth/ProfileForm";
+import ProfileForm from "../../containers/auth/ProfileForm";
 
 const UserProfilePage = () => {
   return (

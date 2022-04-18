@@ -1,0 +1,60 @@
+#home {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 40rem;
+  header {
+    width: 40rem;
+    background-color: aliceblue;
+    padding: 10px;
+  }
+  main {
+    width: 40rem;
+    background-color: beige;
+    padding: 10px;
+    .title {
+      background-color: tomato;
+      height: 16rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .feature {
+      background-color: darkgray;
+      height: 20rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .board {
+      background-color: burlywood;
+      height: 12rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .featureDetail {
+      background-color: darksalmon;
+      height: 16rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  footer {
+    width: 40rem;
+    height: 5rem;
+    background-color: cadetblue;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

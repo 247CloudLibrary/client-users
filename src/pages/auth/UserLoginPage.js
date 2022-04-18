@@ -1,4 +1,4 @@
-import LoginForm from "../containers/auth/LoginForm";
+import LoginForm from "../../containers/auth/LoginForm";
 
 const UserLoginPage = () => {
   return (
