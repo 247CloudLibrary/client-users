@@ -28,8 +28,12 @@ const LoginForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    navigate("/main");
+    /*
+    로그인 코드 
     const { userId, password } = form;
     dispatch(login({ userId, password }));
+    */
   };
 
   useEffect(() => {
