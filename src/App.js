@@ -15,6 +15,9 @@ import GuidePage from "./pages/GuidePage";
 
 import LibrariesListPage from "./pages/LibrariesListPage";
 
+import CompositeListPage from "./pages/composite/CompositeListPage";
+import CompositeDetailPage from "./pages/composite/CompositeDeatailPage";
+
 function App() {
   return (
     <Routes>
@@ -26,6 +29,8 @@ function App() {
       <Route path="/find-id" element={<FindIdPage />} />
       <Route path="/find-pw" element={<FindPasswordPage />} />
       <Route path="/admin-register" element={<AdminRegisterPage />} />
+      <Route path="/composite-list" element={<CompositeListPage />} />
+      <Route path="/composite-detail" element={<CompositeDetailPage />} />
 
       <Route path="/notices" element={<NoticesPage />} />
       <Route path="/guide" element={<GuidePage />} />

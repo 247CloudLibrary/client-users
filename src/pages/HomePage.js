@@ -1,12 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-  const nagvigate = useNavigate();
-  const onSubmit = (event) => {
+  const navigate = useNavigate();
+  // const onSubmit = (event) => {
+  //   event.preventDefault();
+  //   nagvigate("/libraries/list");
+  // };
+
+  const onSearch = (event) => {
     event.preventDefault();
-    nagvigate("/libraries/list");
+    navigate("/composite-list");
   };
+
   return (
     <div id="home">
       <header>
@@ -24,7 +30,7 @@ const HomePage = () => {
       <main>
         <div className="title">
           <span>Title</span>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSearch}>
             <input id="search-home" type="text" placeholder="책 검색" />
             <button>🔍</button>
           </form>
