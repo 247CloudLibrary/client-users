@@ -4,6 +4,7 @@ import UserLoginPage from "./pages/UserLoginPage";
 import UserProfilePage from "./pages/UserProfilePage";
 import UserSignUpPage from "./pages/UserSignUpPage";
 import LibrariesListPage from "./pages/LibrariesListPage";
+import LoginSelectorPage from "./pages/LoginSelectorPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route path="/profile" element={<UserProfilePage />} />
       <Route path="/signUp" element={<UserSignUpPage />} />
       <Route path="/libraries/list" element={<LibrariesListPage />} />
+      <Route path="/login-selector" element={<LoginSelectorPage />} />
     </Routes>
   );
 }

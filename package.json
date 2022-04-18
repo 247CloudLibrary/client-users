@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1"
+  "proxy": "https://www.cloudlibrary.shop/"
 }

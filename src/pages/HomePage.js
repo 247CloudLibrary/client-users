@@ -3,7 +3,7 @@ const HomePage = () => {
   return (
     <div>
       <h1>Home</h1>
-      <Link to={"/login"}>
+      <Link to={"/login-selector"}>
         <button>로그인</button>
       </Link>
       <Link to={"/signUp"}>
