@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import LoginSelectorPage from "./pages/LoginSelectorPage";
-import AdminRegisterPage from "./pages/AdminRegisterPage";
-import UserSignUpPage from "./pages/UserSignUpPage";
-import FindIdPage from "./pages/FindIdPage";
-import FindPasswordPage from "./pages/FindPasswordPage";
+import LoginSelectorPage from "./pages/auth/LoginSelectorPage";
+import AdminRegisterPage from "./pages/auth/AdminRegisterPage";
+import UserSignUpPage from "./pages/auth/UserSignUpPage";
+import FindIdPage from "./pages/auth/FindIdPage";
+import FindPasswordPage from "./pages/auth/FindPasswordPage";
 
-import UserLoginPage from "./pages/UserLoginPage";
-import UserProfilePage from "./pages/UserProfilePage";
+import UserLoginPage from "./pages/auth/UserLoginPage";
+import UserProfilePage from "./pages/auth/UserProfilePage";
 
 import LibrariesListPage from "./pages/LibrariesListPage";
 
