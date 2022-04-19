@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 import NoticesListItem from "./NoticesListItem";
 
 const NoticesList = () => {
-  const [noticesData, setNoticesData] = useState([]);
-  useEffect(() => {
-    axios
-      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
-      .then((response) => {
-        setNoticesData(response.data);
-      });
-  }, []);
+  // const [noticesData, setNoticesData] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
+  //     .then((response) => {
+  //       setNoticesData(response.data);
+  //     });
+  // }, []);
 
   const BoardListArray = [
     { listName: "번호", className: "id" },
@@ -25,7 +25,7 @@ const NoticesList = () => {
     <div id="board-superadmin">
       <h1 className="content">통합 공지사항</h1>
       <div className="write">
-        <Link to="/boards/write" style={{ textDecoration: "none", width: "0" }}>
+        <Link to="/boards/write" style={{ display: "none" }}>
           <button className="write-btn">게시글 등록</button>
         </Link>
       </div>
@@ -41,18 +41,21 @@ const NoticesList = () => {
         </thead>
       </table>
       <div className="item-box">
-        {noticesData.data &&
-          noticesData.data.map((data) => (
-            <div className="listitem-box" key={data.id}>
-              <NoticesListItem
-                id={data.id}
-                title={data.title}
-                adminName={data.adminName}
-                createdAt={data.createdAt}
-                readCounts={data.readCounts}
-              />
-            </div>
-          ))}
+        {/* {noticesData.data &&
+          noticesData.data.map((data) => ( */}
+        <div
+          className="listitem-box"
+          // key={data.id}
+        >
+          <NoticesListItem
+          // id={data.id}
+          // title={data.title}
+          // adminName={data.adminName}
+          // createdAt={data.createdAt}
+          // readCounts={data.readCounts}
+          />
+        </div>
+        {/* ))} */}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import LibrariesList from "../components/libraries/LibrariesList";
+import LibrariesList from "../../components/libraries/LibrariesList";
 
 const LibrariesListPage = () => {
   return (
