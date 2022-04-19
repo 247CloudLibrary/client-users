@@ -1,24 +1,26 @@
 import { useNavigate } from "react-router-dom";
 
-// const id = "1";
-// const name = "OOO도서관";
-// const address = "서울시 금천구 머시기..";
-// const email = "email@gmail.com";
-// const tel = "02-123-4567";
-// const operatingTime = "09:00-18:00";
-// const holiday = "화";
+const id = "1";
+const name = "OOO도서관";
+const address = "서울시 금천구 머시기..";
+const email = "email@gmail.com";
+const tel = "02-123-4567";
+const operatingTime = "09:00-18:00";
+const holiday = "화";
 // const createdAt = "2022-04-08";
 // const updatedAt = "2022-04-09";
 
-const LibrariesListItem = ({
-  id,
-  name,
-  address,
-  email,
-  tel,
-  operatingTime,
-  holiday,
-}) => {
+const LibrariesListItem = (
+  {
+    // id,
+    // name,
+    // address,
+    // email,
+    // tel,
+    // operatingTime,
+    // holiday,
+  }
+) => {
   const LibrariesListItemArray = [
     { value: id, name: "도서관ID", className: "library-id" },
     { value: address, name: "주소", className: "address" },
@@ -32,8 +34,8 @@ const LibrariesListItem = ({
   const navigate = useNavigate();
 
   const handleLink = (e) => {
-    navigate(`/`, {
-      state: { id: id },
+    navigate(`/library`, {
+      // state: { id: id },
     });
   };
   return (

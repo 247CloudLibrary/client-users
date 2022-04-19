@@ -11,11 +11,13 @@ import UserProfilePage from "./pages/auth/UserProfilePage";
 import UserMainPage from "./pages/UserMainPage";
 
 import NoticesPage from "./pages/board/NoticesPage";
+import NoticesDetail from "./components/board/NoticesDetail";
 import GuidePage from "./pages/board//GuidePage";
 import BoardListPage from "./pages/board/BoardListPage";
 import BoardDetailPage from "./pages/board/BoardDetailPage";
 
-import LibrariesListPage from "./pages/LibrariesListPage";
+import LibrariesListPage from "./pages/libraries/LibrariesListPage";
+import LibraryMainPage from "./pages/LibraryMainPage";
 import ReservationListPage from "./pages/lending/ReservationListPage";
 import LendingRecordPage from "./pages/lending/LendingRecordPage";
 
@@ -37,6 +39,7 @@ function App() {
       <Route path="/composite-detail" element={<CompositeDetailPage />} />
 
       <Route path="/notices" element={<NoticesPage />} />
+      <Route path="/notices/detail" element={<NoticesDetail />} />
       <Route path="/guide" element={<GuidePage />} />
       <Route path="/boards/list" element={<BoardListPage />} />
       <Route path="/boards/detail" element={<BoardDetailPage />} />
@@ -44,6 +47,7 @@ function App() {
       <Route path="/profile" element={<UserProfilePage />} />
 
       <Route path="/libraries/list" element={<LibrariesListPage />} />
+      <Route path="/library" element={<LibraryMainPage />} />
       <Route path="/reservation" element={<ReservationListPage />} />
       <Route path="/record" element={<LendingRecordPage />} />
     </Routes>

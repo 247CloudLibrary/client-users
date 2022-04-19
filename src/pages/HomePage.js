@@ -37,8 +37,12 @@ const HomePage = () => {
         </div>
         <div className="feature">Feature</div>
         <div className="board">
-          <button>이용안내</button>
-          <button>공지사항</button>
+          <Link to={"/guide"}>
+            <button>이용안내</button>
+          </Link>
+          <Link to={"/notices"}>
+            <button>공지사항</button>
+          </Link>
           <Link to={"/admin-register"}>
             <button>관리자신청</button>
           </Link>
