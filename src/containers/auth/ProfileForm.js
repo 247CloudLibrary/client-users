@@ -34,27 +34,17 @@ const ProfileForm = () => {
     setValue(json.data);
     setLoading(false);
   };
-
+  /*
   useEffect(() => {
     getProfile();
   }, []);
-
+*/
   useEffect(() => {
     dispatch(initializeForm("profile"));
   }, [dispatch]);
-
   return (
     <div>
-      {loading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <UserProfileForm
-          userInfo={value}
-          form={form}
-          onChange={onChange}
-          onSubmit={onSubmit}
-        />
-      )}
+      <UserProfileForm form={form} onChange={onChange} />
     </div>
   );
 };
