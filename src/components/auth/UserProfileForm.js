@@ -52,7 +52,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="gender"
               type="text"
-              value={userInfo.gender}
+              value={form.gender}
               disabled={toggle}
               onChange={onChange}
             />
@@ -62,7 +62,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="address"
               type="text"
-              value={userInfo.address}
+              value={form.address}
               disabled={toggle}
             />
           </div>
@@ -71,25 +71,20 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="email"
               type="text"
-              value={userInfo.email}
+              value={form.email}
               disabled={toggle}
             />
           </div>
           <div>
             <IoMdCall />
-            <input
-              name="tel"
-              type="text"
-              value={userInfo.tel}
-              disabled={toggle}
-            />
+            <input name="tel" type="text" value={form.tel} disabled={toggle} />
           </div>
           <div>
             <RiCake2Fill />
             <input
               name="birth"
               type="text"
-              value={userInfo.birth}
+              value={form.birth}
               disabled={toggle}
             />
           </div>
