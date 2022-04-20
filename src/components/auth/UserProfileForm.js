@@ -31,7 +31,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
   console.log(form.userName);
   return (
     <div className="profile">
-      <Link to={"/"} className="logo">
+      <Link to={"/main"} className="logo">
         <WiCloud />
         <span className="title">Cloud Library</span>
       </Link>
