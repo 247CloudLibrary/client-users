@@ -2,7 +2,7 @@ import UserMain from "../containers/UserMain";
 
 const UserMainPage = () => {
   return (
-    <div>
+    <div id="main">
       <UserMain />
     </div>
   );

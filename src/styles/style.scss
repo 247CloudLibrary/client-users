@@ -2,6 +2,7 @@
 @import "./config/_reset.scss";
 
 /*Users*/
+@import "./UserMainForm.scss";
 @import "./components/auth/UserLoginForm.scss";
 @import "./components/auth/UserSignUpForm.scss";
 @import "./components/auth/UserPropfileForm.scss";
