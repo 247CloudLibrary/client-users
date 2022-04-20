@@ -1,16 +1,17 @@
-// Config
+/*Configuration*/
 @import "./config/_reset.scss";
 
-// Componenets
-@import "./components/UserLoginForm.scss";
-@import "./components/UserSignUpForm.scss";
-@import "./components/UserPropfileForm.scss";
+/*Users*/
+@import "./UserMainForm.scss";
+@import "./components/auth/UserLoginForm.scss";
+@import "./components/auth/UserSignUpForm.scss";
+@import "./components/auth/UserPropfileForm.scss";
 
-// libraries
+/*Libraries*/
 @import "./components/libraries/LibrariesList.scss";
 @import "./components/libraries/LibrariesListItem.scss";
 
-// board
+/*Boards*/
 @import "./components/board/NoticesList.scss";
 @import "./components/board/NoticesListItem.scss";
 @import "./components//board/NoticeDetail.scss";
@@ -22,11 +23,12 @@
 @import "./components/board/BoardDetail.scss";
 @import "./components/board/BoardDetailForm.scss";
 
-// Font
+/*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap");
 
-// Default
+/*Default*/
 @import "./homepage.scss";
 
 a {
