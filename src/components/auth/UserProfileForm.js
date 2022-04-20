@@ -31,9 +31,9 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
   console.log(form.userName);
   return (
     <div className="profile">
-      <Link to={"/main"} className="logo">
+      <Link to={"/"} className="logo">
         <WiCloud />
-        <span className="title">Cloud Library</span>
+        <span>Cloud Library</span>
       </Link>
       <form>
         <div className="profile-form">
@@ -88,16 +88,16 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
               disabled={toggle}
             />
           </div>
-          <div className="editBtn">
+          <div>
             {toggle ? (
-              <button onClick={handleClick}>
+              <button className="edit-btn" onClick={handleClick}>
                 <FiEdit />
-                <span>Edit</span>
+                수정하기
               </button>
             ) : (
-              <button onClick={handleClick}>
+              <button className="edit-btn" onClick={handleClick}>
                 <FiEdit />
-                <span>Done</span>
+                등록하기
               </button>
             )}
           </div>
