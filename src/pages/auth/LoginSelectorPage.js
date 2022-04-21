@@ -1,14 +1,7 @@
-import { Link } from "react-router-dom";
+import LoginSelector from "../../containers/auth/LoginSelector";
 
 const LoginSelectorPage = () => {
-  return (
-    <div>
-      <button>관리자</button>
-      <Link to={"/login"}>
-        <button>일반회원</button>
-      </Link>
-    </div>
-  );
+  return <LoginSelector />;
 };
 
 export default LoginSelectorPage;
