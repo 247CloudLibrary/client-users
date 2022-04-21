@@ -1,4 +1,6 @@
 import HTMLReactParser from "html-react-parser";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const contents =
   "<p>조회한 게시글의 내용</p><strong>조회한 게시글의 내용</strong>";
@@ -9,6 +11,8 @@ const createdAt = "2022.22.22";
 const readCounts = "222";
 
 const BoardDetailForm = () => {
+  const [boardDate, setBoardDate] = useState([]);
+
   return (
     <div id="BoardDetailForm">
       <div className="detail-form">
@@ -23,6 +27,12 @@ const BoardDetailForm = () => {
         </div>
         <div className="contents-area">
           <div className="board-contents">{HTMLReactParser(contents)}</div>
+        </div>
+
+        <div className="return">
+          <Link to="/boards/list">
+            <button className="return-btn">목록으로</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@
   bottom: 0;
   width: 60rem;
   .library-name {
+    display: flex;
+    margin-left: 2.5rem;
     position: relative;
 
     width: 23rem;
@@ -28,16 +30,11 @@
     color: #1f2a30c5;
     border-top: 1px solid #d8d8d8;
     font-weight: 500;
-    .library-id {
-      position: relative;
-      margin-top: 1rem;
-      margin-left: 3.5rem;
-      text-align: start;
-      width: 15rem;
-    }
+
     .address {
       position: relative;
       margin-top: 1rem;
+      margin-left: 3.5rem;
       text-align: start;
       width: 20rem;
     }
@@ -45,7 +42,7 @@
       position: relative;
       margin-top: 1rem;
       text-align: start;
-      width: 20rem;
+      width: 15rem;
     }
     .tel {
       position: relative;
@@ -57,8 +54,9 @@
     .operating-time {
       position: relative;
       margin-top: 1rem;
+      margin-left: 3.5rem;
       text-align: start;
-      width: 20rem;
+      width: 19.9rem;
     }
     .holiday {
       position: relative;

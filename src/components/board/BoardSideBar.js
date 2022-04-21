@@ -38,7 +38,6 @@ const BoardSidebar = ({ getMode }) => {
             type="radio"
             name="sidebar-btn"
             onClick={() => {
-              navigate("/boards/list");
               setMode(`${bsl.value}`);
             }}
             defaultChecked={index === 0}
