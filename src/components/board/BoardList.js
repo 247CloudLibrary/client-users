@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BoardSidebar from "./BoardSideBar";
 import BoardNoticeListItem from "./BoardNoticeListItem";
 import BoardInfo from "./BoardInfo";
@@ -7,11 +7,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BoardList = () => {
+  const location = useLocation();
   const [content, setContent] = useState("");
   const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
   // const [boardData, setBoardData] = useState([]);
   const [mode, setMode] = useState("공지사항");
+
+  const libraryName = location.state.libraryName;
+  const libraryId = location.state.id;
 
   const getMode = (mode) => {
     setMode(mode);

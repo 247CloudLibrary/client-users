@@ -12,9 +12,6 @@ const BoardDetail = () => {
   return (
     <div id="BoardDetail">
       <div className="form-box">
-        <div className="sidebar-area">
-          <BoardSidebar getMode={getMode} />
-        </div>
         <div className="contents-box">
           <BoardDetailForm />
         </div>
