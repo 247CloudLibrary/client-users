@@ -5,25 +5,37 @@
   justify-content: center;
   align-items: center;
   min-width: 40rem;
+  animation: bg-pan-bottom 10s infinite both;
+  position: relative;
   header {
+    position: relative;
     width: 40rem;
     background-color: aliceblue;
     padding: 10px;
   }
   main {
-    width: 40rem;
+    position: relative;
+    width: 60rem;
     background-color: beige;
     padding: 10px;
+    opacity: 0.8;
+
     .title {
-      background-color: tomato;
-      height: 16rem;
+      height: 18rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      opacity: 1;
+    }
+    .content-name {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
     }
     .feature {
-      background-color: darkgray;
       height: 20rem;
       display: flex;
       flex-direction: column;
@@ -56,5 +68,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@keyframes bg-pan-bottom {
+  0% {
+    background-image: url("../../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
+    background-size: 100vw 150vh;
+    background-repeat: none;
+  }
+  50% {
+    background-image: url("../../../public/img/link-hoang-UoqAR2pOxMo-unsplash.jpg");
+    background-size: 100vw 150vh;
+    background-position: 100% 0%;
+    background-repeat: none;
+  }
+  100% {
+    background-image: url("../../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
+    background-size: 100vw 150vh;
+    background-repeat: none;
   }
 }

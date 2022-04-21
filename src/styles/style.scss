@@ -26,13 +26,14 @@
 @import "./components/board/BoardDetail.scss";
 @import "./components/board/BoardDetailForm.scss";
 
+/*Home Page*/
+@import "./home/homepage.scss";
+@import "./home/searchBar.scss";
+
 /*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap");
-
-/*Default*/
-@import "./homepage.scss";
 
 a {
   color: inherit;

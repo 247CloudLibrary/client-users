@@ -1,5 +1,7 @@
-import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { BiSearch } from "react-icons/bi";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -20,9 +22,6 @@ const HomePage = () => {
         <Link to={"/login-selector"}>
           <button>로그인</button>
         </Link>
-        <Link to={"/signUp"}>
-          <button>회원가입</button>
-        </Link>
         <Link to={"/admin-register"}>
           <button>관리자신청</button>
         </Link>
@@ -30,12 +29,15 @@ const HomePage = () => {
       <main>
         <div className="title">
           <span>Title</span>
-          <form onSubmit={onSearch}>
-            <input id="search-home" type="text" placeholder="책 검색" />
-            <button>🔍</button>
+          <form className="home__search-bar">
+            <input name="search-home" type="text" autoComplete="off" required />
+            <label htmlFor="search-home" className="label-name">
+              <span className="content-name">Book Title</span>
+            </label>
+            <BiSearch className="icon" />
           </form>
         </div>
-        <div className="feature">Feature</div>
+        <div className="feature"></div>
         <div className="board">
           <Link to={"/guide"}>
             <button>이용안내</button>

@@ -1,0 +1,67 @@
+.home__search-bar {
+  display: flex;
+  align-items: flex-end;
+  width: 20rem;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  background-color: azure;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  input {
+    font-size: 1.5rem;
+    color: #fff;
+    border: none;
+    background-color: #f38181;
+    &:focus {
+      outline: none;
+    }
+    &:focus + label span,
+    &:valid + label span {
+      transform: translateY(-100%);
+      font-size: 1.2rem;
+      color: #273083;
+    }
+    &:focus + .label-name::after,
+    &:valid + .label-name::after {
+      transform: translateX(0%);
+    }
+  }
+  label {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    position: absolute;
+    bottom: 0px;
+    left: 1rem;
+    width: 18.5rem;
+    height: 4rem;
+    pointer-events: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 0.5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 18.5rem;
+      height: 100%;
+      border-bottom: 3px solid #fce38a;
+      transform: translateX(-110%);
+      transition: all 0.3s ease;
+    }
+  }
+  .content-name {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+  }
+  .icon {
+    background-color: aquamarine;
+    font-size: 1.5rem;
+    padding-bottom: 0.3rem;
+  }
+}
