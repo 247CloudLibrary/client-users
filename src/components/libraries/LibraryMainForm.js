@@ -15,9 +15,6 @@ const LibraryMainForm = () => {
       state: { id: id, libraryName: libraryName },
     });
   };
-  // const toDetail = () => {
-  //   navigate(`librar`)
-  // }
 
   return (
     <div id="LibraryMainForm">
