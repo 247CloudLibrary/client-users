@@ -4,7 +4,7 @@ import LoginSelectorPage from "./pages/auth/LoginSelectorPage";
 import AdminRegisterPage from "./pages/auth/AdminRegisterPage";
 import UserSignUpPage from "./pages/auth/UserSignUpPage";
 import FindIdPage from "./pages/auth/FindIdPage";
-import FindPasswordPage from "./pages/auth/FindPasswordPage";
+import FindPwPage from "./pages/auth/FindPwPage";
 
 import UserLoginPage from "./pages/auth/UserLoginPage";
 import UserProfilePage from "./pages/auth/UserProfilePage";
@@ -33,7 +33,7 @@ function App() {
       <Route path="/login" element={<UserLoginPage />} />
       <Route path="/signUp" element={<UserSignUpPage />} />
       <Route path="/find-id" element={<FindIdPage />} />
-      <Route path="/find-pw" element={<FindPasswordPage />} />
+      <Route path="/find-pw" element={<FindPwPage />} />
       <Route path="/admin-register" element={<AdminRegisterPage />} />
       <Route path="/composite-list" element={<CompositeListPage />} />
       <Route path="/composite-detail" element={<CompositeDetailPage />} />
