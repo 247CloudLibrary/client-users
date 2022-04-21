@@ -74,18 +74,18 @@
 @keyframes bg-pan-bottom {
   0% {
     background-image: url("../../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
-    background-size: 100vw 150vh;
+    background-size: 100vw 100%;
     background-repeat: none;
   }
   50% {
     background-image: url("../../../public/img/link-hoang-UoqAR2pOxMo-unsplash.jpg");
-    background-size: 100vw 150vh;
+    background-size: 100vw 100%;
     background-position: 100% 0%;
     background-repeat: none;
   }
   100% {
     background-image: url("../../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
-    background-size: 100vw 150vh;
+    background-size: 100vw 100%;
     background-repeat: none;
   }
 }
