@@ -14,9 +14,7 @@ const UserMainForm = ({ props }) => {
       </Link>
       <form onSubmit={props.onSubmit}>
         <input placeholder="도서 검색" />
-        <button>
-          <BiSearch className="icon" />
-        </button>
+        <BiSearch className="icon" />
       </form>
       <div className="feature-box">
         <div className="feature">
