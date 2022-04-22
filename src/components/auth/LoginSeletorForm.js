@@ -1,10 +1,10 @@
 import { ImLibrary } from "react-icons/im";
 import { FaUser } from "react-icons/fa";
 
-const LoginSelectorForm = ({ user }) => {
+const LoginSelectorForm = ({ user, admin }) => {
   return (
     <div id="selector">
-      <div className="admin">
+      <div className="admin" onClick={admin}>
         <div className="select-box">
           <ImLibrary className="icon" />
           <span className="text">관리자</span>

@@ -6,6 +6,9 @@ const LoginSelector = () => {
   const handleUser = () => {
     navigate("/login");
   };
-  return <LoginSelectorForm user={handleUser} />;
+  const handleAdmin = () => {
+    navigate("/clientAdmin-service");
+  };
+  return <LoginSelectorForm user={handleUser} admin={handleAdmin} />;
 };
 export default LoginSelector;

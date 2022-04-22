@@ -1,12 +1,14 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import SearchBar from "./home/SearchBar";
 import Navigations from "./home/Navigations";
 import Feature from "./home/Feature";
+import { useScroll } from "./useScroll";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  console.log(useScroll());
   // const onSubmit = (event) => {
   //   event.preventDefault();
   //   nagvigate("/libraries/list");
