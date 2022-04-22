@@ -18,17 +18,19 @@ const HomePage = () => {
   return (
     <div id="home">
       <header>
-        <span>Cloud Library</span>
-        <Link to={"/login-selector"}>
-          <button>로그인</button>
-        </Link>
-        <Link to={"/admin-register"}>
-          <button>관리자신청</button>
-        </Link>
+        <span className="title">Cloud Library</span>
+        <div>
+          <Link to={"/admin-register"} className="title-btn">
+            관리자신청
+          </Link>
+          <Link to={"/login-selector"} className="title-btn">
+            로그인
+          </Link>
+        </div>
       </header>
+
       <main>
-        <div className="title">
-          <span>Title</span>
+        <div className="main">
           <form className="home__search-bar">
             <input name="search-home" type="text" autoComplete="off" required />
             <label htmlFor="search-home" className="label-name">
