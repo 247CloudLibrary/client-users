@@ -1,5 +1,4 @@
 #home {
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +16,7 @@
     justify-content: center;
     align-items: flex-end;
     .title {
+      letter-spacing: 1rem;
       font-size: 6rem;
       font-family: "Antonio", sans-serif;
       color: aliceblue;
@@ -41,43 +41,16 @@
       }
     }
   }
+
   main {
     position: relative;
-    width: 60rem;
+    width: 70vw;
+    min-width: 60rem;
     padding: 10px;
 
-    .main {
-      height: 18rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .content-name {
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
-      padding-bottom: 5px;
-      transition: all 0.3s ease;
-    }
-    .feature {
-      height: 20rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: aliceblue;
-    }
-    .board {
-      background-color: burlywood;
-      height: 12rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
     .featureDetail {
       background-color: darksalmon;
-      height: 16rem;
+      height: 300vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -95,7 +68,7 @@
     align-items: center;
   }
 }
-
+/*
 @keyframes bg-pan-bottom {
   0% {
     background-image: url("../../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
@@ -114,3 +87,4 @@
     background-repeat: no-repeat;
   }
 }
+*/
