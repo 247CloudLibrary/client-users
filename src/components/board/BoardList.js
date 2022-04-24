@@ -14,8 +14,8 @@ const BoardList = () => {
   const [boardData, setBoardData] = useState([]);
   const [mode, setMode] = useState("공지사항");
 
-  const libraryName = location.state.libraryName;
-  const libraryId = location.state.id;
+  // const libraryName = location.state.libraryName;
+  // const libraryId = location.state.id;
 
   const getMode = (mode) => {
     setMode(mode);
@@ -97,9 +97,9 @@ const BoardList = () => {
         {mode === "이용안내" && (
           <div className="info-box">
             <BoardInfo
-              type={data.type}
-              title={data.title}
-              contents={data.contents}
+              type={boardData.data.type}
+              title={boardData.data.title}
+              contents={boardData.data.contents}
             />
           </div>
         )}
