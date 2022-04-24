@@ -34,13 +34,13 @@ const BoardList = () => {
     }
   };
 
-  // useEffect(() => {
-  //   axios
-  //     .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
-  //     .then((response) => {
-  //       setBoardData(response.data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
+      .then((response) => {
+        setBoardData(response.data);
+      });
+  }, []);
 
   const ListArray = [
     { listName: "번호", className: "id" },
@@ -79,21 +79,18 @@ const BoardList = () => {
 
         {mode === "공지사항" && (
           <div className="item-box">
-            {/* {boardData.data &&
-              boardData.data.map((data) => ( */}
-            <div
-              className="listitem-box"
-              // key={data.id}
-            >
-              <BoardNoticeListItem
-              // id={data.id}
-              // title={data.title}
-              // adminName={data.adminName}
-              // createdAt={data.createdAt}
-              // readCounts={data.readCounts}
-              />
-            </div>
-            {/* ))} */}
+            {boardData.data &&
+              boardData.data.map((data) => (
+                <div className="listitem-box" key={data.id}>
+                  <BoardNoticeListItem
+                    id={data.id}
+                    title={data.title}
+                    adminName={data.adminName}
+                    createdAt={data.createdAt}
+                    readCounts={data.readCounts}
+                  />
+                </div>
+              ))}
           </div>
         )}
         {mode === "이용안내" && (

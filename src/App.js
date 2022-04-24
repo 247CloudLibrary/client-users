@@ -17,6 +17,7 @@ import BoardListPage from "./pages/board/BoardListPage";
 import BoardDetailPage from "./pages/board/BoardDetailPage";
 
 import LibrariesListPage from "./pages/libraries/LibrariesListPage";
+import LibrariesDetailPage from "./pages/libraries/LibrariesDetailPage";
 import LibraryMainPage from "./pages/libraries/LibraryMainPage";
 import ReservationListPage from "./pages/lending/ReservationListPage";
 import LendingRecordPage from "./pages/lending/LendingRecordPage";
@@ -48,6 +49,7 @@ function App() {
 
       <Route path="/libraries/list" element={<LibrariesListPage />} />
       <Route path="/library/:id" element={<LibraryMainPage />} />
+      <Route path="/library/detail/:id" element={<LibrariesDetailPage />} />
       <Route path="/reservation" element={<ReservationListPage />} />
       <Route path="/record" element={<LendingRecordPage />} />
     </Routes>
