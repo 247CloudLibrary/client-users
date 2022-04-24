@@ -11,7 +11,7 @@ const BoardList = () => {
   const [content, setContent] = useState("");
   const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
-  // const [boardData, setBoardData] = useState([]);
+  const [boardData, setBoardData] = useState([]);
   const [mode, setMode] = useState("공지사항");
 
   const libraryName = location.state.libraryName;
@@ -39,6 +39,7 @@ const BoardList = () => {
       .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
       .then((response) => {
         setBoardData(response.data);
+        console.log(boardData);
       });
   }, []);
 
@@ -95,7 +96,11 @@ const BoardList = () => {
         )}
         {mode === "이용안내" && (
           <div className="info-box">
-            <BoardInfo />
+            <BoardInfo
+              type={data.type}
+              title={data.title}
+              contents={data.contents}
+            />
           </div>
         )}
         {mode === "오시는 길" && (
