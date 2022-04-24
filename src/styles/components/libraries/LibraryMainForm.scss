@@ -25,13 +25,14 @@
     input {
       border: none;
       background-color: inherit;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      font-weight: 550;
       padding-left: 0.8rem;
       margin-left: 1rem;
-      border-bottom: 0.125rem solid #eef7fc;
-      color: #eef7fc;
+      border-bottom: 0.125rem solid #30303077;
+      color: #30303077;
       &::placeholder {
-        color: #eef7fc;
+        color: #30303077;
       }
       &:focus {
         outline: none;
