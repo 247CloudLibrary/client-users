@@ -1,9 +1,6 @@
 import HTMLReactParser from "html-react-parser";
 
-const title = "제목";
-const contents = "<h1>이용안내 입력한 내용들...</h1>";
-
-const BoardInfo = () => {
+const BoardInfo = (type, title, contents) => {
   return (
     <div id="board-info">
       <div className="info-form">
