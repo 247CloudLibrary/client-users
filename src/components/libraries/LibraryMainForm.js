@@ -16,7 +16,6 @@ const LibraryMainForm = () => {
 
   return (
     <div id="LibraryMainForm">
-      <WiCloud />
       <div className="library-name">{libraryName}</div>
       <form>
         <input placeholder="도서 검색" />
@@ -44,16 +43,17 @@ const LibraryMainForm = () => {
             <ImLibrary className="icon" />
             <span className="tag">도서관찾기</span>
           </div>
-          <div className="item">
-            <div
-              onClick={() => {
-                navigate(`/library/detail/${id}`);
-              }}
-            >
-              <GiBookmarklet className="icon" />
-
-              <span className="tag"> 도서관 상세 페이지</span>
-            </div>
+        </div>
+        <div className="item">
+          <div
+            onClick={() => {
+              navigate(`/library/detail/${id}`, {
+                state: { id: id },
+              });
+            }}
+          >
+            <GiBookmarklet className="icon" />
+            <span className="tag">도서관 정보</span>
           </div>
         </div>
       </div>
