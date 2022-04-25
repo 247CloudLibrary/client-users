@@ -1,7 +1,9 @@
+import CompositeDetail from "../../components/composite/CompositeDetail";
+
 const CompositeDetailPage = () => {
   return (
     <div>
-      <span>도서 상세 페이지</span>
+      <CompositeDetail />
     </div>
   );
 };
