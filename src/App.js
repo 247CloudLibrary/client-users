@@ -40,10 +40,10 @@ function App() {
       <Route path="/composite-detail" element={<CompositeDetailPage />} />
 
       <Route path="/notices" element={<NoticesPage />} />
-      <Route path="/notices/detail" element={<NoticesDetail />} />
+      <Route path="/notices/detail/:id" element={<NoticesDetail />} />
       <Route path="/guide" element={<GuidePage />} />
       <Route path="/boards/list/:id" element={<BoardListPage />} />
-      <Route path="/boards/detail" element={<BoardDetailPage />} />
+      <Route path="/boards/detail/:id" element={<BoardDetailPage />} />
 
       <Route path="/profile" element={<UserProfilePage />} />
 
