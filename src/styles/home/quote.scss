@@ -1,0 +1,24 @@
+#home {
+  p {
+    text-align: center;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    line-height: 120%;
+  }
+  .quote-en {
+    margin-top: 4rem;
+    font-family: "Square Peg", cursive;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: aliceblue;
+    text-shadow: 1px 1px 3px black;
+  }
+  .quote-ko {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: bold;
+    color: aliceblue;
+    text-shadow: 1px 1px 3px black;
+    line-height: 150%;
+  }
+}

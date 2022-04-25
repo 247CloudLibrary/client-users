@@ -1,48 +1,27 @@
-import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useScroll } from "./useScroll";
+
+import Header from "./home/Header";
+import Quote from "./home/Quote";
 import SearchBar from "./home/SearchBar";
 import Navigations from "./home/Navigations";
 import Feature from "./home/Feature";
-import { useScroll } from "./useScroll";
+import FeatureDescriptions from "./home/FeatureDescriptions";
+import Footer from "./home/Footer";
 
 const HomePage = () => {
-  const navigate = useNavigate();
-  console.log(useScroll());
-  // const onSubmit = (event) => {
-  //   event.preventDefault();
-  //   nagvigate("/libraries/list");
-  // };
-
-  const onSearch = (event) => {
-    event.preventDefault();
-    navigate("/composite-list");
-  };
+  const scroll = useScroll();
 
   return (
     <div id="home">
-      <header>
-        <span className="title">Cloud Library</span>
-        <div>
-          <Link to={"/admin-register"} className="title-btn">
-            관리자신청
-          </Link>
-          <Link to={"/login-selector"} className="title-btn">
-            로그인
-          </Link>
-        </div>
-      </header>
-
+      <Header />
       <main>
+        <Quote />
         <SearchBar />
-        <Navigations />
         <Feature />
-        <div className="featureDetail">FeatureDetail</div>
+        <Navigations />
+        <FeatureDescriptions scroll={scroll} />
       </main>
-
-      <footer>
-        <div>Footer</div>
-      </footer>
+      <Footer />
     </div>
   );
 };
