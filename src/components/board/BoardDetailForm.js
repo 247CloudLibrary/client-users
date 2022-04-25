@@ -1,7 +1,7 @@
 import axios from "axios";
 import HTMLReactParser from "html-react-parser";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 // const contents =
 //   "<p>조회한 게시글의 내용</p><strong>조회한 게시글의 내용</strong>";
@@ -15,7 +15,7 @@ const BoardDetailForm = () => {
   const [noData, setNoData] = useState([]);
   const location = useLocation();
 
-  const id = location.state;
+  const id = location.state.id;
 
   useEffect(() => {
     axios
@@ -25,7 +25,8 @@ const BoardDetailForm = () => {
       .then(function (notice) {
         setNoData(notice.data.data);
       });
-  });
+  }, []);
+  console.log(noData);
 
   return (
     <div id="BoardDetailForm">
@@ -41,7 +42,7 @@ const BoardDetailForm = () => {
         </div>
         <div className="contents-area">
           <div className="board-contents">
-            {HTMLReactParser(noData.contents)}
+            {HTMLReactParser(`${noData.contents}`)}
           </div>
         </div>
 

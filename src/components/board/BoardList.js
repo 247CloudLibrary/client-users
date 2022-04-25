@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import BoardSidebar from "./BoardSideBar";
 import BoardNoticeListItem from "./BoardNoticeListItem";
 import BoardInfo from "./BoardInfo";
@@ -7,26 +7,23 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BoardList = () => {
-  const location = useLocation();
   const [content, setContent] = useState("");
   const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
-  const [boardData, setBoardData] = useState([]);
+  const [noticeData, setNoticeData] = useState([]);
+  const [infoData, setInfoData] = useState([{}]);
   const [mode, setMode] = useState("공지사항");
-
-  const libraryName = location.state.libraryName;
-  const libraryId = location.state.id;
 
   const getMode = (mode) => {
     setMode(mode);
     if (mode === "공지사항") {
       setContent("공지사항");
       setHead(false);
-      setBtn(true);
+      setBtn(false);
     } else if (mode === "이용안내") {
       setContent("이용안내");
       setHead(true);
-      setBtn(true);
+      setBtn(false);
     } else {
       setContent("오시는 길");
       setBtn(true);
@@ -38,8 +35,21 @@ const BoardList = () => {
     axios
       .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
       .then((response) => {
-        setBoardData(response.data);
-        console.log(boardData);
+        const noticeArr = response.data.data;
+        const infoArr = response.data.data;
+
+        console.log(noticeArr);
+        const filtedByNoticeData =
+          noticeArr.type !== "공지사항"
+            ? noticeArr.filter((i) => i.type === "공지사항")
+            : noticeArr;
+        setNoticeData(filtedByNoticeData);
+
+        const filtedByInfoData =
+          infoArr.type !== "안내사항"
+            ? infoArr.filter((i) => i.type === "안내사항")
+            : infoArr;
+        setInfoData(filtedByInfoData);
       });
   }, []);
 
@@ -55,13 +65,6 @@ const BoardList = () => {
   return (
     <main id="board-list">
       <h1 className="content">{content}</h1>
-      <div className="write">
-        <Link to="/boards/write" style={{ textDecoration: "none", width: "0" }}>
-          <button className="write-btn" style={btn ? { opacity: 0 } : null}>
-            게시글 등록
-          </button>
-        </Link>
-      </div>
       <table className="list">
         <thead>
           <tr className="list-title" style={head ? { opacity: 0 } : null}>
@@ -80,8 +83,8 @@ const BoardList = () => {
 
         {mode === "공지사항" && (
           <div className="item-box">
-            {boardData.data &&
-              boardData.data.map((data) => (
+            {noticeData &&
+              noticeData.map((data) => (
                 <div className="listitem-box" key={data.id}>
                   <BoardNoticeListItem
                     id={data.id}
@@ -97,9 +100,9 @@ const BoardList = () => {
         {mode === "이용안내" && (
           <div className="info-box">
             <BoardInfo
-              type={data.type}
-              title={data.title}
-              contents={data.contents}
+              id={infoData[0].id}
+              title={infoData[0].title}
+              contents={infoData[0].contents}
             />
           </div>
         )}
