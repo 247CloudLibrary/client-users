@@ -1,13 +1,11 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const CompositeDetail = () => {
-  const [code, setCode] = useState("(0)");
   const [compositeData, setCompositeData] = useState([]);
   const location = useLocation();
   const id = location.state.bookId;
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -51,30 +49,6 @@ const CompositeDetail = () => {
       tag: "예약 상태",
     },
   ];
-
-  useEffect(() => {
-    if (compositeData.category === "철학") {
-      setCode("(100)");
-    } else if (compositeData.category === "종교") {
-      setCode("(200)");
-    } else if (compositeData.category === "사회과학") {
-      setCode("(300)");
-    } else if (compositeData.category === "순수과학") {
-      setCode("(400)");
-    } else if (compositeData.category === "기술과학") {
-      setCode("(500)");
-    } else if (compositeData.category === "예술") {
-      setCode("(600)");
-    } else if (compositeData.category === "언어") {
-      setCode("(700)");
-    } else if (compositeData.category === "문학") {
-      setCode("(800)");
-    } else if (compositeData.category === "역사") {
-      setCode("(900)");
-    } else {
-      setCode(code);
-    }
-  }, []);
 
   return (
     <div id="book-detail">

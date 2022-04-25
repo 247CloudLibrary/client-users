@@ -1,18 +1,6 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import CompositeListItem from "./CompositeListItem";
 
-const CompositeListForm = () => {
-  const [listItem, setListItem] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/books")
-      .then((result) => {
-        setListItem(result.data.data);
-      });
-  }, [setListItem]);
-
+const CompositeListForm = ({ listItem }) => {
   return (
     <div className="composite-list">
       {listItem &&
