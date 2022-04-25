@@ -1,5 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 
+// const id = "11";
+// const title = "임시제목";
+// const adminName = "관리자";
+// const createdAt = "2022-22-22";
+// const readCounts = "222";
+
 const NoticesListItem = ({ id, title, adminName, createdAt, readCounts }) => {
   const navigate = useNavigate();
 
@@ -12,7 +18,7 @@ const NoticesListItem = ({ id, title, adminName, createdAt, readCounts }) => {
     { value: readCounts, className: "readCounts" },
   ];
 
-  const toNoticesDetail = () => {
+  const toNoticeDetail = () => {
     navigate(`/notices/detail/${id}`, {
       state: { id: id },
     });
@@ -20,7 +26,7 @@ const NoticesListItem = ({ id, title, adminName, createdAt, readCounts }) => {
 
   return (
     <div id="noticesListItem">
-      <table className="list" onClick={toNoticesDetail}>
+      <table className="list" onClick={toNoticeDetail}>
         <tbody>
           <tr className="list-value">
             {BoardNoticesItemArray.map((bnia) => (

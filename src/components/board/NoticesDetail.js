@@ -48,11 +48,11 @@ const NoticesDetail = () => {
             {HTMLReactParser(`${noticeDetail.contents}`)}
           </div>
         </div>
-        <Link to="/notices">
-          <div className="return">
+        <div className="return">
+          <Link to="/notices">
             <button className="return-btn">목록으로</button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );

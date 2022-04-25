@@ -25,7 +25,7 @@ const BoardNoticeListItem = ({
   ];
 
   const toBoardDetail = () => {
-    navigate(`/boards/detail/${id}`, {
+    navigate(`boards/detail/${id}`, {
       state: { id: id },
     });
   };
