@@ -4,8 +4,7 @@ import { useNavigate } from "react-router-dom";
 const UserMain = () => {
   const navigate = useNavigate();
 
-  const onSubmit = (event) => {
-    event.preventDefault();
+  const onSubmit = () => {
     navigate("/composite-list");
   };
   const handleProfile = () => {
