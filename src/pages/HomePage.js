@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { useScroll } from "./useScroll";
 
 import Header from "./home/Header";
@@ -10,14 +9,7 @@ import FeatureDescriptions from "./home/FeatureDescriptions";
 import Footer from "./home/Footer";
 
 const HomePage = () => {
-  const navigate = useNavigate();
   const scroll = useScroll();
-  console.log(scroll);
-
-  const onSearch = (event) => {
-    event.preventDefault();
-    navigate("/composite-list");
-  };
 
   return (
     <div id="home">
