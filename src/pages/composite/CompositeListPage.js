@@ -55,6 +55,7 @@ const CompositeListPage = () => {
       <CompositeListForm
         libraryValue={libraryValue}
         categoryValue={categoryValue}
+        text={text}
       />
     </div>
   );

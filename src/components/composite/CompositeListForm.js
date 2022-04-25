@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CompositeListItem from "./CompositeListItem";
 
-const CompositeListForm = ({ categoryValue, libraryValue }) => {
+const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
   const [listItem, setListItem] = useState([]);
   useEffect(() => {
     axios
@@ -19,9 +19,13 @@ const CompositeListForm = ({ categoryValue, libraryValue }) => {
         const filtedByLibrary = libraryValue
           ? filtedByCategory.filter((i) => i.libraryId === libraryValue)
           : filtedByCategory;
-        setListItem(filtedByLibrary);
+        const filtedByText = text
+          ? filtedByLibrary.filter((i) => i.title.indexOf(text) === 0)
+          : filtedByLibrary;
+
+        setListItem(filtedByText);
       });
-  }, [categoryValue, libraryValue]);
+  }, [categoryValue, libraryValue, text]);
 
   return (
     <div className="composite-list">
