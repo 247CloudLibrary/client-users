@@ -30,6 +30,8 @@
 
 /*Home Page*/
 @import "./home/homepage.scss";
+@import "./home/header.scss";
+@import "./home/quote.scss";
 @import "./home/searchBar.scss";
 @import "./home/navigations.scss";
 @import "./home/feature/feature.scss";
@@ -37,6 +39,7 @@
 @import "./home/feature/reservation.scss";
 @import "./home/feature/register.scss";
 @import "./home/feature/counts.scss";
+@import "./home/footer.scss";
 
 /*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");

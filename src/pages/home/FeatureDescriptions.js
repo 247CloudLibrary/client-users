@@ -70,7 +70,7 @@ const FeatureDescriptions = ({ scroll }) => {
         </div>
       )}
 
-      {scroll.y <= 2200 ? (
+      {scroll.y <= 2100 ? (
         ""
       ) : (
         <div className="benefit-count">
