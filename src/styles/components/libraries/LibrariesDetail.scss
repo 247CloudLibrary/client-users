@@ -1,4 +1,5 @@
 #libraries-detail {
+  background-color: aliceblue;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -11,13 +12,14 @@
     position: relative;
     margin-top: 10rem;
     .library-name {
+      font-family: "Nanum Gothic Coding";
       font-size: 2rem;
       text-align: center;
     }
     .detail-area {
       margin-top: 3rem;
-      background-color: azure;
       .detail-text {
+        font-family: "Lexend Deca", sans-serif;
         .tag {
           width: auto;
           font-size: 1.3rem;

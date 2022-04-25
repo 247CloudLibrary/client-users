@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 
 const SearchBar = () => {
+  const navigate = useNavigate();
+  const onSearch = (event) => {
+    event.preventDefault();
+    navigate("/composite-list");
+  };
+
   return (
     <div className="main">
       <form className="home__search-bar">

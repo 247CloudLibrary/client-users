@@ -1,5 +1,5 @@
 #LibraryMainForm {
-  background-color: rgb(231, 216, 197);
+  background-color: aliceblue;
   position: absolute;
   left: 0;
   right: 0;
@@ -13,7 +13,6 @@
   span {
     padding-top: 0.5rem;
     letter-spacing: 1px;
-    font-family: "Lexend Deca", sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     text-shadow: 1px 1px 3px #5f5f5f;
@@ -40,7 +39,7 @@
     }
   }
   .library-name {
-    font-family: Jua;
+    font-family: "Nanum Gothic Coding";
     font-size: 3rem;
   }
   .item-box {
