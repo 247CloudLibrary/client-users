@@ -1,4 +1,7 @@
 #libraries-list {
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
   position: relative;
   left: 0;
   right: 0;
@@ -11,13 +14,15 @@
     position: relative;
     font-size: 3rem;
     margin-bottom: 5rem;
+    font-family: "Nanum Gothic Coding";
   }
   .list-box {
     position: relative;
-    background-color: aliceblue;
     width: 60rem;
     height: 10rem;
     margin: auto;
     border-top: 1px solid #b6b6b6;
+    box-shadow: 1px 1px 3px #1a375e;
+    font-family: "Lexend Deca", sans-serif;
   }
 }

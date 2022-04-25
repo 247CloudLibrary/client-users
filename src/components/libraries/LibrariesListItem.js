@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { ImLibrary } from "react-icons/im";
 
 const LibrariesListItem = ({
   id,
@@ -26,6 +27,7 @@ const LibrariesListItem = ({
   return (
     <div id="libraries-item">
       <div className="library-name">
+        <ImLibrary className="icons" />
         <div className="name" onClick={handleLink}>
           {name}
         </div>
