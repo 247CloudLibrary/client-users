@@ -6,6 +6,7 @@
         height: 30rem;
         display: flex;
         align-items: center;
+        justify-content: center;
         overflow: hidden;
         border-top: 0.1rem solid black;
         .img {
@@ -23,6 +24,7 @@
         }
         .content {
           width: 40rem;
+          min-width: 40rem;
           height: 24rem;
           margin-left: 6rem;
           animation: img-opacity 2s 1s both;
