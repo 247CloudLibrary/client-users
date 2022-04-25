@@ -37,7 +37,10 @@ function App() {
       <Route path="/find-pw" element={<FindPwPage />} />
       <Route path="/admin-register" element={<AdminRegisterPage />} />
       <Route path="/composite-list" element={<CompositeListPage />} />
-      <Route path="/composite-detail/:id" element={<CompositeDetailPage />} />
+      <Route
+        path="/composite-detail/:bookId"
+        element={<CompositeDetailPage />}
+      />
 
       <Route path="/notices" element={<NoticesPage />} />
       <Route path="/notices/detail" element={<NoticesDetail />} />

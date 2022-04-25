@@ -14,10 +14,10 @@ const HomePage = () => {
   //   nagvigate("/libraries/list");
   // };
 
-  const onSearch = (event) => {
-    event.preventDefault();
-    navigate("/composite-list");
-  };
+  // const onSearch = (event) => {
+  //   event.preventDefault();
+  //   navigate("/composite-list");
+  // };
 
   return (
     <div id="home">

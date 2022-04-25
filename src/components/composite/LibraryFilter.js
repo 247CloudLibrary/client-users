@@ -1,10 +1,11 @@
-const LibraryFilter = ({ listItem, onChange }) => {
+const LibraryFilter = ({ libraryData, onChange }) => {
   return (
     <div>
       <select onChange={onChange}>
-        {listItem.map((data) => {
-          return <option key={data.libraryId}>{data.libraryName}</option>;
-        })}
+        {libraryData &&
+          libraryData.map((data) => {
+            return <option key={data.id}>{data.name}</option>;
+          })}
       </select>
     </div>
   );

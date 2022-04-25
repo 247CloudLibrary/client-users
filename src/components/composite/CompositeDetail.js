@@ -5,12 +5,12 @@ import { useLocation } from "react-router-dom";
 const CompositeDetail = () => {
   const [compositeData, setCompositeData] = useState([]);
   const location = useLocation();
-  const id = location.state.bookId;
+  const bookId = location.state.bookId;
 
   useEffect(() => {
     axios
       .get(
-        `http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/books/${id}`
+        `http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/composite/${bookId}`
       )
       .then(function (response) {
         setCompositeData(response.data.data);
@@ -23,7 +23,7 @@ const CompositeDetail = () => {
     { value: compositeData.translator, key: "translator", tag: "역자" },
     { value: compositeData.genre, key: "genre", tag: "장르" },
     {
-      value: `${compositeData.category}${code}`,
+      value: compositeData.category,
       key: "category",
       tag: "카테고리",
     },
@@ -45,7 +45,7 @@ const CompositeDetail = () => {
     {
       value:
         compositeData.reservationDateTime !== "" ? " 예약중" : " 예약 가능",
-      key: compositeData.reservationDateTime,
+      key: "reservationDateTime",
       tag: "예약 상태",
     },
   ];
@@ -66,7 +66,7 @@ const CompositeDetail = () => {
               <img
                 className="coverImage"
                 src={compositeData.coverImage}
-                alt="compositeData.title"
+                alt=""
               />
             </div>
             <table className="text-box">
@@ -74,7 +74,7 @@ const CompositeDetail = () => {
                 <thead className="label" key={data.key}>
                   <tr>
                     <td className="label-tag">{data.tag}</td>
-                    <td className={data.key}>{data.value}</td>
+                    <td className="label-value">{data.value}</td>
                   </tr>
                 </thead>
               ))}

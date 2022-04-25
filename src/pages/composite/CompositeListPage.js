@@ -2,40 +2,57 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import CompositeListForm from "../../components/composite/CompositeListForm";
 import LibraryFilter from "../../components/composite/LibraryFilter";
+import SearchFilter from "../../components/composite/SearchFilter";
+import CategoryFilter from "../../components/composite/CategoryFilter";
+
+const CATEGORY_DATA = [
+  { id: "", value: "" },
+  { id: "0", value: "총류" },
+  { id: "100", value: "철학" },
+  { id: "200", value: "종교" },
+  { id: "300", value: "사회과학" },
+  { id: "400", value: "순수과학" },
+  { id: "500", value: "기술과학" },
+  { id: "600", value: "예술" },
+  { id: "700", value: "언어" },
+  { id: "800", value: "문학" },
+  { id: "900", value: "역사" },
+];
 
 const CompositeListPage = () => {
-  const [listItem, setListItem] = useState([]);
   const [libraryValue, setLibraryValue] = useState("");
+  const [libraryData, setLibraryData] = useState("");
   const [categoryValue, setCategoryValue] = useState("");
+  const [text, setText] = useState("");
 
   useEffect(() => {
     axios
-      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/books")
+      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/libraries")
       .then((result) => {
-        setListItem(result.data.data);
+        setLibraryData(result.data.data);
       });
-  }, [setListItem]);
+  }, []);
 
   const handleChange = (e) => {
     const { value } = e.target;
-    setLibraryValue(
-      listItem.filter((d) => d.bookId === value.bookId)[0].libraryName
-    );
+    setLibraryValue(libraryData.filter((d) => d.name === value)[0].id);
   };
 
   const onSelect = (e) => {
     const { value } = e.target;
-    setCategoryValue(
-      listItem.filter((d) => d.category === value.category)[0].category
-    );
+    setCategoryValue(CATEGORY_DATA.filter((d) => d.value === value)[0].value);
+  };
+
+  const onChange = (e) => {
+    setText(e.target.value);
   };
 
   return (
     <div>
-      <LibraryFilter onChange={handleChange} listItem={listItem} />
-      <CategoryFilter onChange={onSelect} listItem={listItem} />
+      <LibraryFilter onChange={handleChange} libraryData={libraryData} />
+      <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
+      <SearchFilter text={text} onChange={onChange} />
       <CompositeListForm
-        listItem={listItem}
         libraryValue={libraryValue}
         categoryValue={categoryValue}
       />

@@ -1,9 +1,9 @@
-const CategoryFilter = ({ listItem, onChange }) => {
+const CategoryFilter = ({ CATEGORY_DATA, onChange }) => {
   return (
     <div>
       <select onChange={onChange}>
-        {listItem.map((data) => {
-          return <option key={data.category}>{data.category}</option>;
+        {CATEGORY_DATA.map((data) => {
+          return <option key={data.id}>{data.value}</option>;
         })}
       </select>
     </div>

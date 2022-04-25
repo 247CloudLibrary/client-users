@@ -1,4 +1,12 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+const LENDINGSTATUS_DATA = [
+  { value: "OVERDUE", tag: "연체중" },
+  { value: "OUT", tag: "대출중" },
+  { value: "LOSS", tag: "분실" },
+  { value: "RETURN", tag: "대출 가능" },
+];
 
 const CompositeListItem = ({
   bookId,
@@ -20,21 +28,33 @@ const CompositeListItem = ({
 }) => {
   const navigate = useNavigate();
 
-  const lendingStatusValue = () => {
-    return lendingStatus === RETURN
-      ? (value = "대출 가능")
-      : (value = `"대출 불가" + ${lendingDateTime}`);
-  };
+  const [lendingStatusValue, setLendingStatusValue] = useState();
 
-  const lendingReservationValue = () => {
-    return reservationDateTime !== "" ? "예약 상태: 예약 중" : "예약 상태: ";
-  };
+  const [lendingReservationValue, setLendingReservationValue] = useState();
+
+  useEffect(() => {
+    const lendingFilted = lendingStatus
+      ? LENDINGSTATUS_DATA.filter((i) => i.value === lendingStatus)[0].tag
+      : lendingStatus;
+
+    setLendingStatusValue(lendingFilted);
+    console.log(lendingFilted);
+  }, []);
+
+  useEffect(() => {
+    const lendingReservationFilted =
+      reservationDateTime !== "" ? "예약중" : reservationDateTime;
+
+    setLendingReservationValue(lendingReservationFilted);
+    console.log(lendingReservationFilted);
+  }, []);
 
   const onClick = () => {
     navigate(`/composite-detail/${bookId}`, {
-      state: { bookId: id },
+      state: { bookId: bookId },
     });
   };
+
   return (
     <div className="composite-items" key={bookId} onClick={onClick}>
       <div className="img-area">
@@ -43,9 +63,9 @@ const CompositeListItem = ({
       <div className="bookWrap">
         <div className="bookTitle">책 제목: {title}</div>
         <div className="bookCategory">
-          <span>{type}</span>
-          <span>:{genre}</span>
-          <span>:{category}</span>
+          <span>타입:{type}</span>
+          <span>장르: {genre}</span>
+          <span>분류 :{category}</span>
         </div>
         <div className="bookWrite">
           <span>저자: {author}</span>
