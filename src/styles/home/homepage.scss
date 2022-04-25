@@ -6,6 +6,27 @@
   min-width: 60rem;
   animation: bg-pan-bottom 10s infinite both;
   position: relative;
+  .header-img {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+    object-fit: cover;
+    z-index: -1;
+  }
+  .header-img-cover {
+    position: absolute;
+    width: 100vw;
+    height: 80rem;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 88%
+    );
+    top: 0;
+    z-index: 0;
+  }
   header {
     position: relative;
     width: 55rem;
@@ -46,28 +67,98 @@
     position: relative;
     width: 70vw;
     min-width: 60rem;
-    padding: 10px;
-
-    .featureDetail {
-      background-color: darksalmon;
-      height: 300vh;
+    .main {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      margin-bottom: 4rem;
+    }
+    .content-name {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    p {
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      line-height: 120%;
+    }
+    .quote-en {
+      margin-top: 4rem;
+    }
+    .quote-ko {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .featureDetail {
+      height: 272vh;
+      display: flex;
+      flex-direction: column;
+
+      .benefit-count {
+        width: 100%;
+        height: 30rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 0.1rem solid black;
+        .count-box {
+          width: 16rem;
+          height: 18rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          animation: slide-bottom-up 2s both;
+          .icon {
+            font-size: 7rem;
+            padding-bottom: 2rem;
+          }
+          .content {
+            font-size: 1.5rem;
+            padding-bottom: 1rem;
+          }
+          .counts {
+            font-size: 2rem;
+            letter-spacing: 0.1rem;
+          }
+        }
+      }
     }
   }
   footer {
-    width: 40rem;
-    height: 5rem;
-    background-color: cadetblue;
-    padding: 10px;
+    position: relative;
+    width: 100vw;
+    height: 11rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #eeeeee3b;
+    .fotter-home {
+      width: 100vw;
+      height: 100%;
+      text-align: center;
+      span {
+        padding-top: 1.5rem;
+        display: block;
+      }
+      .email {
+        padding-bottom: 1.5rem;
+      }
+      .copyright {
+        padding-top: 1rem;
+        color: gray;
+        text-shadow: 1px 1px 1px black;
+      }
+    }
   }
 }
+
 /*
 @keyframes bg-pan-bottom {
   0% {
