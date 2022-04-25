@@ -47,7 +47,7 @@
     }
     div {
       position: absolute;
-      right: 1rem;
+      right: -2rem;
       top: 3rem;
       display: flex;
       flex-direction: column;
@@ -89,10 +89,19 @@
     }
     .quote-en {
       margin-top: 4rem;
+      font-family: "Square Peg", cursive;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: aliceblue;
+      text-shadow: 1px 1px 3px black;
     }
     .quote-ko {
       font-size: 1.2rem;
       margin-top: 2rem;
+      font-weight: bold;
+      color: aliceblue;
+      text-shadow: 1px 1px 3px black;
+      line-height: 150%;
     }
 
     .featureDetail {
@@ -116,13 +125,13 @@
           justify-content: center;
 
           &:nth-child(1) {
-            animation: slide-bottom-up 2s 0.5s both;
+            animation: slide-bottom-up 2s 0.8s both;
           }
           &:nth-child(2) {
             animation: slide-bottom-up 2s 1s both;
           }
           &:nth-child(3) {
-            animation: slide-bottom-up 2s 1.2s both;
+            animation: slide-bottom-up 2s 1.1s both;
           }
           .icon {
             font-size: 7rem;

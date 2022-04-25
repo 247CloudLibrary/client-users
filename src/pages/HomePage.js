@@ -100,7 +100,7 @@ const HomePage = () => {
                 </p>
               </div>
               <div className="img">
-                <img src="/img/clay-banks-w_qTfiPbjbg-unsplash.jpg" />
+                <img src="/img/negipho-u59gG_FIGIo-unsplash.jpg" />
               </div>
             </div>
           )}
@@ -110,7 +110,7 @@ const HomePage = () => {
           ) : (
             <div className="benefit-register">
               <div className="img">
-                <img src="/img/clay-banks-w_qTfiPbjbg-unsplash.jpg" />
+                <img src="/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg" />
               </div>
               <div className="content">
                 <span className="title">도서관을 등록하세요.</span>
