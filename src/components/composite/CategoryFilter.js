@@ -1,14 +1,13 @@
-// const CategoryFilter = ({ CompositeDetailArray, handleChange }) => {
-//     return (
-//       <div>
-//         <select onChange={handleChange}>
-//           {CompositeDetailArray &&
-//             CompositeDetailArray.map((data) => {
-//               return <option key={data.}>{data.category}</option>;
-//             })}
-//         </select>
-//       </div>
-//     );
-//   };
+const CategoryFilter = ({ listItem, onChange }) => {
+  return (
+    <div>
+      <select onChange={onChange}>
+        {listItem.map((data) => {
+          return <option key={data.category}>{data.category}</option>;
+        })}
+      </select>
+    </div>
+  );
+};
 
-//   export default CategoryFilter;
+export default CategoryFilter;

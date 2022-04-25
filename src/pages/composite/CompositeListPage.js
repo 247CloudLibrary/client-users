@@ -6,6 +6,7 @@ import LibraryFilter from "../../components/composite/LibraryFilter";
 const CompositeListPage = () => {
   const [listItem, setListItem] = useState([]);
   const [libraryValue, setLibraryValue] = useState("");
+  const [categoryValue, setCategoryValue] = useState("");
 
   useEffect(() => {
     axios
@@ -22,10 +23,22 @@ const CompositeListPage = () => {
     );
   };
 
+  const onSelect = (e) => {
+    const { value } = e.target;
+    setCategoryValue(
+      listItem.filter((d) => d.category === value.category)[0].category
+    );
+  };
+
   return (
     <div>
       <LibraryFilter onChange={handleChange} listItem={listItem} />
-      <CompositeListForm listItem={listItem} libraryValue={libraryValue} />
+      <CategoryFilter onChange={onSelect} listItem={listItem} />
+      <CompositeListForm
+        listItem={listItem}
+        libraryValue={libraryValue}
+        categoryValue={categoryValue}
+      />
     </div>
   );
 };
