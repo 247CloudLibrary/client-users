@@ -1,7 +1,7 @@
 import axios from "axios";
 import HTMLReactParser from "html-react-parser";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 // const contents =
 //   "<p>조회한 게시글의 내용</p><strong>조회한 게시글의 내용</strong>";
@@ -12,10 +12,10 @@ import { Link, useLocation } from "react-router-dom";
 // const readCounts = "222";
 
 const NoticesDetail = () => {
-  const [noticeDetail, setNoticeDetail] = useState();
+  const [noticeDetail, setNoticeDetail] = useState([]);
   const location = useLocation();
 
-  const id = location.state;
+  const id = location.state.id;
   console.log(id);
 
   useEffect(() => {
@@ -25,9 +25,9 @@ const NoticesDetail = () => {
       )
       .then(function (detail) {
         setNoticeDetail(detail.data.data);
-        console.log(noticeDetail);
       });
   }, []);
+  console.log(noticeDetail);
 
   return (
     <div id="notices-detail">
@@ -45,7 +45,7 @@ const NoticesDetail = () => {
         </div>
         <div className="contents-area">
           <div className="board-contents">
-            {HTMLReactParser(noticeDetail.contents)}
+            {HTMLReactParser(`${noticeDetail.contents}`)}
           </div>
         </div>
         <Link to="/notices">
