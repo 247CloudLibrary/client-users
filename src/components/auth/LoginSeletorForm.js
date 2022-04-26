@@ -4,8 +4,8 @@ import { FaUser } from "react-icons/fa";
 const LoginSelectorForm = ({ user, admin }) => {
   return (
     <div id="selector">
-      <div className="admin" onClick={admin}>
-        <div className="select-box">
+      <div className="admin">
+        <div className="select-box" onClick={admin}>
           <ImLibrary className="icon" />
           <span className="text">관리자</span>
         </div>

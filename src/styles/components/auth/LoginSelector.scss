@@ -1,5 +1,4 @@
 #selector {
-  background-color: #dfdfdf;
   position: absolute;
   left: 0;
   right: 0;
@@ -43,9 +42,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-attachment: fixed;
     background-image: url("../../../../public/img/link-hoang-UoqAR2pOxMo-unsplash.jpg");
     background-size: cover;
-    background-position: 30%;
+    background-position: 50%;
     width: 50%;
     height: 100vh;
     transition: 1.5s ease-in-out;
@@ -57,9 +57,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    background-attachment: fixed;
     background-image: url("../../../../public/img/dollar-gill-0V7_N62zZcU-unsplash.jpg");
     background-size: cover;
-    background-position: 30%;
+    background-position: 50%;
     width: 50%;
     height: 100vh;
     transition: 1.5s ease-in-out;
