@@ -1,14 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { IoLibraryOutline, IoCalendarNumberSharp } from "react-icons/io5";
-import { FaSortNumericUpAlt } from "react-icons/fa";
+import {
+  IoLibraryOutline,
+  IoCalendarNumberOutline,
+  IoTimeOutline,
+} from "react-icons/io5";
+import { FaSortNumericUpAlt, FaRegCalendarTimes } from "react-icons/fa";
 import { AiOutlineWarning } from "react-icons/ai";
+import { GrMapLocation } from "react-icons/gr";
+import { BsTelephone } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
+import { GiNightSleep } from "react-icons/gi";
 
 const LibrariesDetail = () => {
   const [libraryData, setLibraryData] = useState([]);
   const location = useLocation();
-  const navigte = useNavigate();
+  const navigate = useNavigate();
   const id = location.state.id;
 
   useEffect(() => {
@@ -23,33 +31,56 @@ const LibrariesDetail = () => {
   }, []);
 
   const LibraryDetailArray = [
-    { value: libraryData.address, key: "address", tag: "주소" },
-    { value: libraryData.tel, key: "tel", tag: "TEL" },
-    { value: libraryData.email, key: "email", tag: "이메일" },
-    { value: libraryData.holiday, key: "holiday", tag: "휴관일" },
-    { value: libraryData.operatingTime, key: "operatingTime", tag: "운영시간" },
+    {
+      value: libraryData.address,
+      key: "address",
+      tag: "주소",
+      icon: <GrMapLocation />,
+    },
+    { value: libraryData.tel, key: "tel", tag: "TEL", icon: <BsTelephone /> },
+    {
+      value: libraryData.email,
+      key: "email",
+      tag: "이메일",
+      icon: <HiOutlineMail />,
+    },
+    {
+      value: libraryData.holiday,
+      key: "holiday",
+      tag: "휴관일",
+      icon: <GiNightSleep />,
+    },
+    {
+      value: libraryData.operatingTime,
+      key: "operatingTime",
+      tag: "운영시간",
+      icon: <IoTimeOutline />,
+    },
   ];
   const toLibMain = () => {
-    navigte(-1);
+    navigate(-1);
   };
 
   return (
     <div id="libraries-detail">
       <div className="header"></div>
+      <div className="library-name">{libraryData.name}</div>
       <div className="info-area">
-        <div className="library-name">{libraryData.name}</div>
+        <div className="detail-info">도서관 정보</div>
         <table className="detail-area">
           {LibraryDetailArray.map((lda) => (
-            <thead key={lda.key}>
+            <thead className="detail-box" key={lda.key}>
               <tr className="detail-text">
+                <td className="td-icon"> {lda.icon}</td>
                 <td className="tag">{lda.tag}</td>
-                <td className="value">{lda.value}</td>
+                <td className={lda.key}>{lda.value}</td>
               </tr>
             </thead>
           ))}
         </table>
       </div>
       <div className="rule-area">
+        <div className="detail-info">이용규정</div>
         <div className="up-rule">
           <div className="library-rule">
             <div className="icon-num">
@@ -60,7 +91,7 @@ const LibrariesDetail = () => {
           </div>
           <div className="library-rule">
             <div className="icon-num">
-              <IoCalendarNumberSharp className="icon" />
+              <IoCalendarNumberOutline className="icon" />
               <span className="text">{libraryData.lendingAvailableDays}</span>
             </div>
             <span className="label">대출 가능 일수</span>
@@ -76,7 +107,7 @@ const LibrariesDetail = () => {
           </div>
           <div className="library-rule">
             <div className="icon-num">
-              <IoCalendarNumberSharp className="icon" />
+              <FaRegCalendarTimes className="icon" />
               <span className="text">{libraryData.longtermOverdueDays}</span>
             </div>
             <span className="label">장기 연체 구분 일수</span>
