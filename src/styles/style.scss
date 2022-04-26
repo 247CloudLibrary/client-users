@@ -52,6 +52,12 @@ a {
   text-decoration: none;
 }
 
+body {
+  content: url("../../public/img/link-hoang-UoqAR2pOxMo-unsplash.jpg")
+    url("../../public/img/dollar-gill-0V7_N62zZcU-unsplash.jpg")
+    url("../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+}
+
 @keyframes img-opacity {
   0% {
     opacity: 0;
