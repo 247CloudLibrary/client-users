@@ -13,9 +13,11 @@ const LibraryMainForm = () => {
   const id = location.state.id;
   console.log(id);
   const libraryName = location.state.libraryName;
+  const address = location.state.address;
 
   return (
     <div id="LibraryMainForm">
+      <div className="header"></div>
       <div className="library-name">{libraryName}</div>
       <form>
         <input placeholder="도서 검색" />
@@ -26,7 +28,7 @@ const LibraryMainForm = () => {
           <div
             onClick={() => {
               navigate(`/boards/list/${id}`, {
-                state: { id: id, libraryName: libraryName },
+                state: { id: id, libraryName: libraryName, address: address },
               });
             }}
           >

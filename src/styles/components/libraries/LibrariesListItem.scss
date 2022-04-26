@@ -8,20 +8,19 @@
   .library-name {
     display: flex;
     flex-direction: row;
-    background-color: #dbedf3;
+    background-color: #e8f8ff;
     position: relative;
     font-size: 1.7rem;
     padding: 1rem;
     font-family: "Nanum Gothic Coding";
     .icons {
-      color: #2a4249;
+      color: grey;
     }
     .name {
       padding-left: 2rem;
       color: #1e272bc5;
       &:hover {
         cursor: pointer;
-        text-decoration: 1px solid underline;
       }
     }
   }

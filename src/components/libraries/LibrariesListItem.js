@@ -18,14 +18,17 @@ const LibrariesListItem = ({
     { value: holiday, name: "휴관일", className: "holiday" },
   ];
 
+  console.log(address);
+
   const navigate = useNavigate();
   const handleLink = (e) => {
     navigate(`/library/${id}`, {
-      state: { id: id, libraryName: name },
+      state: { id: id, libraryName: name, address: address },
     });
   };
   return (
     <div id="libraries-item">
+      <div className="header"></div>
       <div className="library-name">
         <ImLibrary className="icons" />
         <div className="name" onClick={handleLink}>
