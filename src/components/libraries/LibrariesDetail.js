@@ -93,7 +93,7 @@ const LibrariesDetail = () => {
 
       <div className="btn-area">
         <button className="list-btn" onClick={toLibMain}>
-          목록으로
+          돌아가기
         </button>
       </div>
     </div>

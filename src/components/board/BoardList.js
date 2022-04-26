@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import BoardSidebar from "./BoardSideBar";
 import BoardNoticeListItem from "./BoardNoticeListItem";
 import BoardInfo from "./BoardInfo";
@@ -7,12 +7,16 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BoardList = () => {
+  const location = useLocation();
   const [content, setContent] = useState("");
   const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
   const [noticeData, setNoticeData] = useState([]);
   const [infoData, setInfoData] = useState([{}]);
   const [mode, setMode] = useState("공지사항");
+
+  const libraryName = location.state.libraryName;
+  const address = location.state.address;
 
   const getMode = (mode) => {
     setMode(mode);
@@ -35,20 +39,24 @@ const BoardList = () => {
     axios
       .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
       .then((response) => {
-        const noticeArr = response.data.data;
-        const infoArr = response.data.data;
+        const boardArr = response.data.data;
 
-        console.log(noticeArr);
+        console.log(boardArr);
+        const filtedByLibraryName =
+          boardArr.libraryName !== libraryName
+            ? boardArr.filter((i) => i.libraryName === libraryName)
+            : boardArr;
+
         const filtedByNoticeData =
-          noticeArr.type !== "공지사항"
-            ? noticeArr.filter((i) => i.type === "공지사항")
-            : noticeArr;
+          filtedByLibraryName.type !== "공지사항"
+            ? filtedByLibraryName.filter((i) => i.type === "공지사항")
+            : filtedByLibraryName;
         setNoticeData(filtedByNoticeData);
 
         const filtedByInfoData =
-          infoArr.type !== "안내사항"
-            ? infoArr.filter((i) => i.type === "안내사항")
-            : infoArr;
+          filtedByLibraryName.type !== "안내사항"
+            ? filtedByLibraryName.filter((i) => i.type === "안내사항")
+            : filtedByLibraryName;
         setInfoData(filtedByInfoData);
       });
   }, []);
@@ -108,7 +116,7 @@ const BoardList = () => {
         )}
         {mode === "오시는 길" && (
           <div>
-            <BoardMap />
+            <BoardMap libraryAddress={address} />
           </div>
         )}
       </div>
