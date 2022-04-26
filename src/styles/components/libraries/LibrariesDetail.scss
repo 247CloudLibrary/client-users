@@ -2,15 +2,20 @@
   background-color: aliceblue;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  height: auto;
+  position: relative;
   align-items: center;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  .header {
+    width: 100%;
+    height: 15rem;
+    background-color: black;
+  }
   .info-area {
     position: relative;
-    margin-top: 10rem;
     .library-name {
       font-family: "Nanum Gothic Coding";
       font-size: 2rem;
@@ -30,8 +35,93 @@
         .value {
           width: auto;
           font-size: 1.3rem;
-          margin-left: 2rem;
-          padding-left: 4rem;
+          padding-left: 6rem;
+        }
+      }
+    }
+  }
+  .rule-area {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5rem;
+    text-align: center;
+    justify-content: space-between;
+    .up-rule {
+      display: flex;
+      justify-content: center;
+      .library-rule {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 15rem;
+        height: 15rem;
+        .icon-num {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .label {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: rgb(66, 64, 64);
+          font-size: 1.5rem;
+        }
+        .content {
+          display: inline-block;
+          color: white;
+
+          width: 5rem;
+          height: 1rem;
+        }
+        .icon {
+          font-size: 2.5rem;
+          color: lightblue;
+        }
+        .text {
+          padding-bottom: 0.5rem;
+          margin-left: 1.5rem;
+          font-size: 4rem;
+          font-weight: 700;
+          color: lightskyblue;
+        }
+      }
+    }
+    .down-rule {
+      display: flex;
+      margin-top: 2rem;
+      .library-rule {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        align-items: center;
+        width: 15rem;
+        height: 15rem;
+
+        .icon-num {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .label {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: rgb(66, 64, 64);
+          font-size: 1.2rem;
+        }
+
+        .icon {
+          font-size: 2.5rem;
+          color: lightblue;
+        }
+        .text {
+          padding-bottom: 0.5rem;
+          margin-left: 1.5rem;
+          font-size: 4rem;
+          font-weight: 700;
+          color: lightskyblue;
         }
       }
     }
@@ -42,8 +132,7 @@
       font-size: 1.125rem;
       font-weight: bold;
       padding: 1rem 1rem;
-      margin-top: 0.7rem;
-      margin-right: 1rem;
+      margin-top: 3rem;
       width: auto;
       border-radius: 4px;
       background-color: #435769;

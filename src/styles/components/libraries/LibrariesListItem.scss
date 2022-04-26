@@ -8,7 +8,7 @@
   .library-name {
     display: flex;
     flex-direction: row;
-    background-color: #dbedf3;
+    background-color: aliceblue;
     position: relative;
     font-size: 1.7rem;
     padding: 1rem;
@@ -21,7 +21,6 @@
       color: #1e272bc5;
       &:hover {
         cursor: pointer;
-        text-decoration: 1px solid underline;
       }
     }
   }

@@ -1,10 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { IoLibraryOutline, IoCalendarNumberSharp } from "react-icons/io5";
+import { FaSortNumericUpAlt } from "react-icons/fa";
+import { AiOutlineWarning } from "react-icons/ai";
 
 const LibrariesDetail = () => {
   const [libraryData, setLibraryData] = useState([]);
   const location = useLocation();
+  const navigte = useNavigate();
   const id = location.state.id;
 
   useEffect(() => {
@@ -24,36 +28,14 @@ const LibrariesDetail = () => {
     { value: libraryData.email, key: "email", tag: "이메일" },
     { value: libraryData.holiday, key: "holiday", tag: "휴관일" },
     { value: libraryData.operatingTime, key: "operatingTime", tag: "운영시간" },
-    {
-      value: libraryData.lendingAvailableCount,
-      key: "lendingAvailableCount",
-      tag: "대출 가능 권수",
-    },
-    {
-      value: libraryData.lendingAvailableDays,
-      key: "lendingAvailableDays",
-      tag: "대출 가능 일수",
-    },
-    {
-      value: libraryData.overdueCount,
-      key: "overdueCount",
-      tag: "대출 제한 연체 횟수",
-    },
-    {
-      value: libraryData.longtermOverdueDays,
-      key: "longtermOverdueDays",
-      tag: "장기 연체 구분 일수",
-    },
-    {
-      value: libraryData.lendingLimitDays,
-      key: "lendingLimitDays",
-      tag: "대출 제한 일수",
-    },
   ];
+  const toLibMain = () => {
+    navigte(-1);
+  };
 
   return (
     <div id="libraries-detail">
-      <div>도서관 상세 (슈퍼어드민)</div>
+      <div className="header"></div>
       <div className="info-area">
         <div className="library-name">{libraryData.name}</div>
         <table className="detail-area">
@@ -67,10 +49,52 @@ const LibrariesDetail = () => {
           ))}
         </table>
       </div>
+      <div className="rule-area">
+        <div className="up-rule">
+          <div className="library-rule">
+            <div className="icon-num">
+              <IoLibraryOutline className="icon" />
+              <span className="text">{libraryData.lendingAvailableCount}</span>
+            </div>
+            <span className="label">대출 가능 권수</span>
+          </div>
+          <div className="library-rule">
+            <div className="icon-num">
+              <IoCalendarNumberSharp className="icon" />
+              <span className="text">{libraryData.lendingAvailableDays}</span>
+            </div>
+            <span className="label">대출 가능 일수</span>
+          </div>
+        </div>
+        <div className="down-rule">
+          <div className="library-rule">
+            <div className="icon-num">
+              <FaSortNumericUpAlt className="icon" />
+              <span className="text">{libraryData.overdueCount}</span>
+            </div>
+            <span className="label">대출 제한 연체 횟수</span>
+          </div>
+          <div className="library-rule">
+            <div className="icon-num">
+              <IoCalendarNumberSharp className="icon" />
+              <span className="text">{libraryData.longtermOverdueDays}</span>
+            </div>
+            <span className="label">장기 연체 구분 일수</span>
+          </div>
+          <div className="library-rule">
+            <div className="icon-num">
+              <AiOutlineWarning className="icon" />
+              <span className="text">{libraryData.lendingLimitDays}</span>
+            </div>
+            <span className="label">대출 제한 일수</span>
+          </div>
+        </div>
+      </div>
+
       <div className="btn-area">
-        <Link to="/libraries/list">
-          <button className="list-btn">목록으로</button>
-        </Link>
+        <button className="list-btn" onClick={toLibMain}>
+          목록으로
+        </button>
       </div>
     </div>
   );
