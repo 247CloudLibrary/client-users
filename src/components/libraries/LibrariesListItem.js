@@ -26,6 +26,7 @@ const LibrariesListItem = ({
   };
   return (
     <div id="libraries-item">
+      <div className="header"></div>
       <div className="library-name">
         <ImLibrary className="icons" />
         <div className="name" onClick={handleLink}>

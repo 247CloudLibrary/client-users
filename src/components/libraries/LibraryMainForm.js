@@ -16,6 +16,7 @@ const LibraryMainForm = () => {
 
   return (
     <div id="LibraryMainForm">
+      <div className="header"></div>
       <div className="library-name">{libraryName}</div>
       <form>
         <input placeholder="도서 검색" />
