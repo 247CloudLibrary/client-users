@@ -2,9 +2,10 @@ import { FaBookReader, FaBook } from "react-icons/fa";
 import { ImLibrary } from "react-icons/im";
 
 const FeatureDescriptions = ({ scroll }) => {
+  console.log(scroll.y);
   return (
     <div className="feature-descriptions">
-      {scroll.y <= 700 ? (
+      {scroll.y <= 350 ? (
         ""
       ) : (
         <div className="benefit-reading">
@@ -30,12 +31,12 @@ const FeatureDescriptions = ({ scroll }) => {
           </div>
         </div>
       )}
-      {scroll.y <= 1200 ? (
+      {scroll.y <= 850 ? (
         ""
       ) : (
         <div className="benefit-reservation">
           <div className="content">
-            <span className="title">간편하게 예약하세요.</span>
+            <span className="title">간편하게 예약하세요. </span>
             <p>
               도서 예약으로 시간을 절약하시고 독서 습관을 만들어 보세요.
               <br />
@@ -50,7 +51,7 @@ const FeatureDescriptions = ({ scroll }) => {
         </div>
       )}
 
-      {scroll.y <= 1700 ? (
+      {scroll.y <= 1300 ? (
         ""
       ) : (
         <div className="benefit-register">
@@ -70,7 +71,7 @@ const FeatureDescriptions = ({ scroll }) => {
         </div>
       )}
 
-      {scroll.y <= 2100 ? (
+      {scroll.y <= 1800 ? (
         ""
       ) : (
         <div className="benefit-count">

@@ -15,7 +15,7 @@ const HomePage = () => {
     <div id="home">
       <Header />
       <main>
-        <Quote />
+        <Quote scroll={scroll} />
         <SearchBar />
         <Feature />
         <Navigations />
