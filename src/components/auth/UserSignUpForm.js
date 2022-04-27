@@ -23,7 +23,6 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           onChange={onChange}
           value={form.password}
           placeholder="비밀번호"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           type="password"
           required
         />
@@ -34,7 +33,6 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.passwordConfirm}
           type="password"
           placeholder="비밀번호 확인"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           required
         />
         <input
@@ -69,7 +67,6 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           onChange={onChange}
           value={form.email}
           type="email"
-          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           autoComplete="off"
           required
         />
@@ -86,7 +83,6 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           name="tel"
           onChange={onChange}
           value={form.tel}
-          pattern="[0-9]{2,}-[0-9]{3,}-[0-9]{3,}"
           placeholder="연락처"
           autoComplete="off"
           type="tel"
