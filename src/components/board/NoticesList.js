@@ -7,18 +7,16 @@ const NoticesList = () => {
   const [noticesData, setNoticesData] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
-      .then((response) => {
-        const noticesArr = response.data.data;
+    axios.get("https://www.cloudlibrary.shop/v1/boards").then((response) => {
+      const noticesArr = response.data.data;
 
-        console.log(noticesArr);
-        const filtedByNoticesData =
-          noticesArr.type !== "공지사항"
-            ? noticesArr.filter((i) => i.type === "공지사항")
-            : noticesArr;
-        setNoticesData(filtedByNoticesData);
-      });
+      console.log(noticesArr);
+      const filtedByNoticesData =
+        noticesArr.type !== "공지사항"
+          ? noticesArr.filter((i) => i.type === "공지사항")
+          : noticesArr;
+      setNoticesData(filtedByNoticesData);
+    });
   }, []);
 
   console.log(noticesData);

@@ -6,18 +6,16 @@ const GuideForm = () => {
   const [guideData, setGuideData] = useState([{}]);
 
   useEffect(() => {
-    axios
-      .get("http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/boards")
-      .then((guide) => {
-        const guideArr = guide.data.data;
+    axios.get("https://www.cloudlibrary.shop/v1/boards").then((guide) => {
+      const guideArr = guide.data.data;
 
-        console.log(guideArr);
-        const filtedByGuideData =
-          guideArr.type !== "안내사항"
-            ? guideArr.filter((i) => i.type === "안내사항")
-            : guideArr;
-        setGuideData(filtedByGuideData);
-      });
+      console.log(guideArr);
+      const filtedByGuideData =
+        guideArr.type !== "안내사항"
+          ? guideArr.filter((i) => i.type === "안내사항")
+          : guideArr;
+      setGuideData(filtedByGuideData);
+    });
   }, []);
 
   console.log(guideData);

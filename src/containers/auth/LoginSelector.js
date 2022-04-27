@@ -7,7 +7,7 @@ const LoginSelector = () => {
     navigate("/login");
   };
   const handleAdmin = () => {
-    window.location.href = "https://www.cloudlibrary.shop/clientAdmin-service";
+    window.location.href = "https://www.cloudlibrary.shop/:444";
     return;
   };
   return <LoginSelectorForm user={handleUser} admin={handleAdmin} />;

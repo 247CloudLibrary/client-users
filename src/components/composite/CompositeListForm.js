@@ -6,9 +6,7 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
   const [listItem, setListItem] = useState([]);
   useEffect(() => {
     axios
-      .get(
-        "http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/composite/search"
-      )
+      .get("https://www.cloudlibrary.shop/v1/composite/search")
       .then((result) => {
         const resultArray = result.data.data;
         console.log(resultArray);
