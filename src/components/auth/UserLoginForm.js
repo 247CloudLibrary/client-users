@@ -9,20 +9,33 @@ const UserLoginForm = ({ form, onChange, onSubmit }) => {
         <span>Cloud Library</span>
       </Link>
       <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          placeholder="아이디"
-          name="userId"
-          onChange={onChange}
-          value={form.userId}
-        />
-        <input
-          onChange={onChange}
-          value={form.password}
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-        />
+        <div className="input-form">
+          <input
+            type="text"
+            id="login-id-input"
+            name="userId"
+            onChange={onChange}
+            value={form.userId}
+            autoComplete="off"
+            required
+          />
+          <label htmlFor="login-id-input" className="input-label">
+            <span className="content-text">아이디</span>
+          </label>
+        </div>
+        <div className="input-form">
+          <input
+            id="login-password-input"
+            onChange={onChange}
+            value={form.password}
+            name="password"
+            type="password"
+            required
+          />
+          <label htmlFor="login-password-input" className="input-label">
+            <span className="content-text">비밀번호</span>
+          </label>
+        </div>
         <button className="login-btn">로그인</button>
         <Link to="/signUp">
           <button>회원가입 </button>
