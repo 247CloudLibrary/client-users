@@ -9,9 +9,7 @@ const CompositeDetail = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/composite/${bookId}`
-      )
+      .get(`https://www.cloudlibrary.shop/v1/composite/${bookId}`)
       .then(function (response) {
         setCompositeData(response.data.data);
         console.log(response);

@@ -21,9 +21,7 @@ const LibrariesDetail = () => {
 
   useEffect(() => {
     axios
-      .get(
-        `http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1/libraries/${id}`
-      )
+      .get(`https://www.cloudlibrary.shop/v1/libraries/${id}`)
       .then(function (response) {
         setLibraryData(response.data.data);
         console.log(response.data.data);
