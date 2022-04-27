@@ -14,7 +14,6 @@ const CompositeDetail = () => {
       )
       .then(function (response) {
         setCompositeData(response.data.data);
-        console.log(response);
       });
   }, []);
 
@@ -51,7 +50,7 @@ const CompositeDetail = () => {
   ];
 
   return (
-    <div id="book-detail">
+    <div id="composite-detail">
       <div className="head">도서 상세페이지</div>
       <div className="detail-box">
         <div className="title-area">

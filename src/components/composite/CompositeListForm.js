@@ -11,7 +11,6 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
       )
       .then((result) => {
         const resultArray = result.data.data;
-        console.log(resultArray);
 
         const filtedByCategory = categoryValue
           ? resultArray.filter((i) => i.category === categoryValue)
