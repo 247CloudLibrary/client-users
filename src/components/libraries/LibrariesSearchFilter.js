@@ -6,7 +6,12 @@ const LibrariesSearchFilter = ({ text, onSubmit }) => {
         placeholder="도서관 검색"
         defaultValue={text}
         onChange={onSubmit}
-        style={{ width: "20rem", height: "2.5rem", fontSize: "1.5rem" }}
+        style={{
+          width: "20rem",
+          height: "2.5rem",
+          fontSize: "1.5rem",
+          marginBottom: "5rem",
+        }}
       />
     </div>
   );
