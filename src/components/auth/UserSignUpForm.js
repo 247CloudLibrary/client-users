@@ -15,6 +15,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.userId}
           type="text"
           placeholder="아이디"
+          autoComplete="off"
           required
         />
         <input
@@ -42,6 +43,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.userName}
           type="text"
           placeholder="이름"
+          autoComplete="off"
           required
         />
         <input
@@ -50,6 +52,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.gender}
           type="text"
           placeholder="성별"
+          autoComplete="off"
           required
         />
         <input
@@ -67,11 +70,13 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.email}
           type="email"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          autoComplete="off"
           required
         />
         <input
           name="address"
           placeholder="주소"
+          autoComplete="off"
           onChange={onChange}
           value={form.address}
           type="text"
@@ -83,6 +88,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.tel}
           pattern="[0-9]{2,}-[0-9]{3,}-[0-9]{3,}"
           placeholder="연락처"
+          autoComplete="off"
           type="tel"
           required
         />
