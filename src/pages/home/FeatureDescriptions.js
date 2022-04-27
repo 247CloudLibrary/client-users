@@ -2,7 +2,6 @@ import { FaBookReader, FaBook } from "react-icons/fa";
 import { ImLibrary } from "react-icons/im";
 
 const FeatureDescriptions = ({ scroll }) => {
-  console.log(scroll.y);
   return (
     <div className="feature-descriptions">
       {scroll.y <= 350 ? (
