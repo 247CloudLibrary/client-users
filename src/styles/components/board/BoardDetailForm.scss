@@ -1,6 +1,6 @@
 #BoardDetailForm {
   display: flex;
-  position: absolute;
+  background-color: aliceblue;
   left: 0;
   right: 0;
   top: 0;
@@ -11,7 +11,7 @@
     .title-area {
       width: 60rem;
       .board-title {
-        font-size: 3rem;
+        font-size: 2.3rem;
       }
     }
     .info-area {

@@ -28,7 +28,10 @@ const LibraryMainForm = () => {
           <div
             onClick={() => {
               navigate(`/boards/list/${id}`, {
-                state: { id: id, libraryName: libraryName, address: address },
+                state: {
+                  libraryName: libraryName,
+                  address: address,
+                },
               });
             }}
           >
