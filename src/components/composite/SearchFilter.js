@@ -1,6 +1,6 @@
 const SearchFilter = ({ text, onChange }) => {
   return (
-    <div>
+    <div className="searchFilter">
       <input
         type="search"
         placeholder="도서 검색"

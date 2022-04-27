@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GrBook } from "react-icons/gr";
 
 const LENDINGSTATUS_DATA = [
   { value: "OVERDUE", tag: "연체중" },
@@ -38,7 +39,6 @@ const CompositeListItem = ({
       : lendingStatus;
 
     setLendingStatusValue(lendingFilted);
-    console.log(lendingFilted);
   }, []);
 
   useEffect(() => {
@@ -46,7 +46,6 @@ const CompositeListItem = ({
       reservationDateTime !== "" ? "예약중" : reservationDateTime;
 
     setLendingReservationValue(lendingReservationFilted);
-    console.log(lendingReservationFilted);
   }, []);
 
   const onClick = () => {
@@ -57,30 +56,34 @@ const CompositeListItem = ({
 
   return (
     <div className="composite-items" key={bookId} onClick={onClick}>
-      <div className="img-area">
-        <img src={thumbnailImage} alt={title} className="thumbnailmage" />
+      <div className="image-area">
+        <img src={thumbnailImage} alt={title} className="thumbnailImage" />
       </div>
-      <div className="bookWrap">
-        <div className="bookTitle">책 제목: {title}</div>
-        <div className="bookCategory">
-          <span>타입:{type}</span>
-          <span>장르: {genre}</span>
-          <span>분류 :{category}</span>
+      <div className="compositeWrap">
+        <div className="compositeCategory">
+          <span className="type">{type}</span>
+          <span className="genre">{genre}</span>
+          <span className="category">{category}</span>
         </div>
-        <div className="bookWrite">
-          <span>저자: {author}</span>
-          <span>옮긴이: {translator}</span>
-          <span>발행자: {publisher}</span>
-          <span>발행년도: {publishDate}</span>
+        <div className="compositeTitle">책 제목: {title}</div>
+        <div className="compositeWrite">
+          <span className="author">저자: {author}</span>
+          <span className="translator">옮긴이: {translator}</span>
+          <span className="publisher">발행자: {publisher}</span>
+          <span className="publishDate">발행일: {publishDate}</span>
         </div>
-        <div className="bookData">
-          <span>청구기호: {barcode}</span>
-          <span id={libraryId}>도서관: {libraryName}</span>
+        <div className="compositeData">
+          <span className="barcode">청구기호: {barcode}</span>
+          <span id={libraryId} className="libraryName">
+            도서관: {libraryName}
+          </span>
         </div>
-      </div>
-      <div className="bookStatusBar">
-        <span>대출 상태: {lendingStatusValue}</span>
-        <span>예약 상태: {lendingReservationValue}</span>
+        <div className="compositeStatusBar">
+          <span className="lendingStatus">대출 상태: {lendingStatusValue}</span>
+          <span className="lendingReservation">
+            <GrBook /> {lendingReservationValue}
+          </span>
+        </div>
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ const CompositeDetail = () => {
       .get(`https://www.cloudlibrary.shop/v1/composite/${bookId}`)
       .then(function (response) {
         setCompositeData(response.data.data);
-        console.log(response);
       });
   }, []);
 
@@ -49,8 +48,7 @@ const CompositeDetail = () => {
   ];
 
   return (
-    <div id="book-detail">
-      <div className="head">도서 상세페이지</div>
+    <div id="composite-detail">
       <div className="detail-box">
         <div className="title-area">
           <div className="title-box">

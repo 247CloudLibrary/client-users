@@ -1,6 +1,6 @@
 const LibraryFilter = ({ libraryData, onChange }) => {
   return (
-    <div>
+    <div className="libraryFilter">
       <select onChange={onChange}>
         {libraryData &&
           libraryData.map((data) => {
