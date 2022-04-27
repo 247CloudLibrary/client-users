@@ -3,7 +3,7 @@ import { IoMdMail } from "react-icons/io";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id="footer">
       <div className="fotter-home">
         <span className="email">
           <IoMdMail className="icon" />
