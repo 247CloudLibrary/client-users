@@ -6,7 +6,6 @@ import SearchFilter from "../../components/composite/SearchFilter";
 import CategoryFilter from "../../components/composite/CategoryFilter";
 
 const CATEGORY_DATA = [
-  { id: "", value: "" },
   { id: "0", value: "총류" },
   { id: "100", value: "철학" },
   { id: "200", value: "종교" },
@@ -48,15 +47,19 @@ const CompositeListPage = () => {
   };
 
   return (
-    <div>
-      <LibraryFilter onChange={handleChange} libraryData={libraryData} />
-      <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
+    <div className="compositeList">
       <SearchFilter text={text} onChange={onChange} />
-      <CompositeListForm
-        libraryValue={libraryValue}
-        categoryValue={categoryValue}
-        text={text}
-      />
+      <div className="compositeData">
+        <div className="compositeFilterWrap">
+          <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
+          <LibraryFilter onChange={handleChange} libraryData={libraryData} />
+        </div>
+        <CompositeListForm
+          libraryValue={libraryValue}
+          categoryValue={categoryValue}
+          text={text}
+        />
+      </div>
     </div>
   );
 };

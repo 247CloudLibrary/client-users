@@ -51,7 +51,6 @@ const CompositeDetail = () => {
 
   return (
     <div id="composite-detail">
-      <div className="head">도서 상세페이지</div>
       <div className="detail-box">
         <div className="title-area">
           <div className="title-box">

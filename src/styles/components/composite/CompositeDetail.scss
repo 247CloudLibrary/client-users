@@ -1,19 +1,21 @@
 #composite-detail {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: aliceblue;
-    .head {
-      font-size: 3rem;
-      text-align: center;
-      margin-bottom: 5rem;
-    }
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(158, 236, 250);
     .detail-box {
       display: flex;
-      flex-direction: column;
+      background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+      background-size: cover;
+      background-position: 50%;
+      opacity: 0.9;
+      margin: 0 auto;
+      width: 100vw;
+      height: 100vh;
       text-align: center;
+      align-items: center;
+      flex-direction: column;
       .title-area {
         display: flex;
         justify-content: center;
@@ -21,22 +23,26 @@
           display: flex;
           width: 50rem;
           position: relative;
-          height: 3rem;
+          margin-top: 3rem;
+          height: 5rem;
           align-items: center;
-          background-color: rgb(205, 248, 245);
+          background-color: rgb(246, 248, 248);
+          opacity: 0.8;
+          border-radius: 20px;
           border-bottom: none;
           .type {
-            font-size: 1.3rem;
+            font-size: 2rem;
             padding: 0.3rem;
-            margin-left: 1rem;
+            margin-left: 2rem;
             position: relative;
             background-color: rgb(235, 235, 235);
             border: 1px solid rgb(71, 71, 71);
+            
           }
           .title {
             position: relative;
             top: 0;
-            font-size: 1.7rem;
+            font-size: 3rem; 
             margin-left: 1rem;
           }
         }
@@ -149,7 +155,7 @@
             background-color: #2b3c4e;
           }
         }
-      }
+
     }
   }
-  
+}
