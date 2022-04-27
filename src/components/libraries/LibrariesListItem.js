@@ -18,8 +18,6 @@ const LibrariesListItem = ({
     { value: holiday, name: "휴관일", className: "holiday" },
   ];
 
-  console.log(address);
-
   const navigate = useNavigate();
   const handleLink = (e) => {
     navigate(`/library/${id}`, {

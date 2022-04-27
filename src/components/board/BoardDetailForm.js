@@ -13,6 +13,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const BoardDetailForm = () => {
   const [noData, setNoData] = useState([]);
+  const navigate = useNavigate();
   const location = useLocation();
 
   const id = location.state.id;
@@ -25,6 +26,10 @@ const BoardDetailForm = () => {
       });
   }, []);
   console.log(noData);
+
+  const toList = () => {
+    navigate(-1);
+  };
 
   return (
     <div id="BoardDetailForm">
@@ -45,9 +50,9 @@ const BoardDetailForm = () => {
         </div>
 
         <div className="return">
-          <Link to="/boards/list">
-            <button className="return-btn">목록으로</button>
-          </Link>
+          <button className="return-btn" onClick={toList}>
+            목록으로
+          </button>
         </div>
       </div>
     </div>

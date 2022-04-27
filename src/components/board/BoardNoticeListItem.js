@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 // const readCounts = "222";
 
 const BoardNoticeListItem = ({
+  libraryId,
   id,
   title,
   adminName,
@@ -25,8 +26,8 @@ const BoardNoticeListItem = ({
   ];
 
   const toBoardDetail = () => {
-    navigate(`boards/detail/${id}`, {
-      state: { id: id },
+    navigate(`/boards/detail/${id}`, {
+      state: { id: id, libraryId: libraryId },
     });
   };
 
