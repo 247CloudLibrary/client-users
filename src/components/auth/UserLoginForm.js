@@ -41,7 +41,7 @@ const UserLoginForm = ({ form, onChange, onSubmit }) => {
           <button>회원가입 </button>
         </Link>
       </form>
-      <footer>
+      <footer className="login-footer">
         <Link to="/find-id">
           <span>아이디찾기</span>
         </Link>

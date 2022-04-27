@@ -1,47 +1,59 @@
 #main {
-  background-color: rgb(231, 216, 197);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 710px;
+  width: 100vw;
+  min-width: 50rem;
+  background-image: url("../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 30% 50%;
   .main {
-    background-image: url("../../public/img/alabaster-co-DC98wz4vNws-unsplash.jpg");
-    background-size: cover;
-    background-position: 50%;
+    background-color: #7da5c9b2;
     opacity: 0.9;
-    width: 50rem;
-    height: 100vh;
+    width: 100%;
+    min-width: 50rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 4px;
-    justify-content: center;
+    .header {
+      height: 25rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header-cover {
+      background-color: rgba(255, 255, 255, 0.575);
+      top: 20rem;
+      width: 100%;
+      position: absolute;
+    }
     .logo {
       display: flex;
-      padding-left: 0.5rem;
       &:first-child {
-        font-size: 4.5rem;
+        font-size: 8rem;
         padding-bottom: 3rem;
-        color: #f2f8ff;
+        color: #fff9e5;
+        svg {
+          filter: drop-shadow(1px 1px 1px #2e2e2e);
+        }
       }
       span {
         padding-top: 0.5rem;
+        padding-right: 1rem;
         letter-spacing: 1px;
         font-family: "Lexend Deca", sans-serif;
-        font-size: 3rem;
+        font-size: 6rem;
         font-weight: bold;
-        text-shadow: 1px 1px 3px #5f5f5f;
+        text-shadow: 1px 1px 3px #2e2e2e;
       }
     }
-    form {
+    .main-search {
       display: flex;
       padding: 0.5rem 1.5rem;
-      input {
+      align-items: center;
+      width: 20rem;
+      background-color: rgba(255, 239, 213, 0.815);
+      #main-search-input {
         border: none;
         background-color: inherit;
         font-size: 1.3rem;
@@ -57,6 +69,12 @@
           outline: none;
         }
       }
+      .main-search-label {
+        width: 20rem;
+        height: 100%;
+        background-color: aquamarine;
+      }
+
       button {
         display: flex;
         align-items: center;
@@ -78,15 +96,18 @@
   }
   .feature-box {
     margin-top: 2rem;
-    height: 25rem;
+    width: 100%;
+    height: 40rem;
     display: flex;
+    align-items: center;
     justify-content: center;
+    padding-bottom: 10rem;
     .feature {
       cursor: pointer;
       div {
-        height: 10rem;
-        width: 10rem;
-        margin: 1rem;
+        height: 12rem;
+        width: 12rem;
+        margin: 8rem 4rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -101,14 +122,16 @@
       }
       .icon {
         padding: 1rem;
-        font-size: 2rem;
+        font-size: 3.5rem;
         color: #e8f8ff;
-        border: 0.15rem solid #e8f8ffc5;
+        border: 0.2rem solid #e8f8ffc5;
         border-radius: 4px;
       }
       .text {
-        font-family: Jua;
+        font-size: 1.1rem;
+        font-family: "Nanum Gothic Coding";
         margin-top: 1rem;
+        letter-spacing: 0.1rem;
         color: #e8f8ff;
       }
     }
