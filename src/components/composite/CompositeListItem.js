@@ -23,15 +23,16 @@ const CompositeListItem = ({
   lendingStatus,
   lendingDateTime,
   reservationDateTime,
+  returnDateTime,
   genre,
-  type,
+  bookType,
   category,
 }) => {
   const navigate = useNavigate();
 
   const [lendingStatusValue, setLendingStatusValue] = useState();
 
-  const [lendingReservationValue, setLendingReservationValue] = useState();
+  const [returnDateValue, setReturnDateValue] = useState();
 
   useEffect(() => {
     const lendingFilted = lendingStatus
@@ -42,10 +43,10 @@ const CompositeListItem = ({
   }, []);
 
   useEffect(() => {
-    const lendingReservationFilted =
-      reservationDateTime !== "" ? "예약중" : reservationDateTime;
+    const returnDateFilted =
+      returnDateTime !== "" ? `반납예정일+ ${returnDateTime}` : "";
 
-    setLendingReservationValue(lendingReservationFilted);
+    setReturnDateValue(returnDateFilted);
   }, []);
 
   const onClick = () => {
@@ -61,7 +62,7 @@ const CompositeListItem = ({
       </div>
       <div className="compositeWrap">
         <div className="compositeCategory">
-          <span className="type">{type}</span>
+          <span className="type">{bookType}</span>
           <span className="genre">{genre}</span>
           <span className="category">{category}</span>
         </div>
@@ -81,7 +82,7 @@ const CompositeListItem = ({
         <div className="compositeStatusBar">
           <span className="lendingStatus">대출 상태: {lendingStatusValue}</span>
           <span className="lendingReservation">
-            <GrBook /> {lendingReservationValue}
+            <GrBook /> {returnDateValue}
           </span>
         </div>
       </div>

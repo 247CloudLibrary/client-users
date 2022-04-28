@@ -46,6 +46,7 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
             genre={data.genre}
             type={data.type}
             category={data.category}
+            returnDateTime={data.returnDateTime}
           />
         ))}
       ;

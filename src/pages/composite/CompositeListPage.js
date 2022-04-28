@@ -25,11 +25,9 @@ const CompositeListPage = () => {
   const [text, setText] = useState("");
 
   useEffect(() => {
-    axios
-      .get("https://www.cloudlibrary.shop/v1/libraries")
-      .then((result) => {
-        setLibraryData(result.data.data);
-      });
+    axios.get("https://www.cloudlibrary.shop/v1/libraries").then((result) => {
+      setLibraryData(result.data.data);
+    });
   }, []);
 
   const handleChange = (e) => {
@@ -44,6 +42,7 @@ const CompositeListPage = () => {
 
   const onChange = (e) => {
     setText(e.target.value);
+    console.log(e);
   };
 
   return (
