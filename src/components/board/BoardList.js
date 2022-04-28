@@ -58,7 +58,6 @@ const BoardList = () => {
       setInfoData(filtedByInfoData);
     });
   }, []);
-
   const ListArray = [
     { listName: "번호", className: "id" },
     { listName: "제목", className: "title" },
@@ -67,7 +66,6 @@ const BoardList = () => {
     // { listName: "수정일", className: "editdate" },
     { listName: "조회수", className: "readcount" },
   ];
-
   return (
     <main id="board-list">
       <h1 className="content">{content}</h1>
