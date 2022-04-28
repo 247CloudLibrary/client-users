@@ -106,12 +106,7 @@ const BoardList = () => {
             {infoData &&
               infoData.map((info) => (
                 <div className="info-box" key={info.id}>
-                  <BoardInfo
-                    id={info.id}
-                    title={info.title}
-                    contents={info.contents}
-                    type={info.type}
-                  />
+                  <BoardInfo infoData={infoData} />
                 </div>
               ))}
           </div>
