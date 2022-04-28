@@ -14,7 +14,6 @@ const NoticesList = () => {
         boardArr.libraryName !== ""
           ? boardArr.filter((i) => i.libraryName === "")
           : boardArr;
-
       const filtedByNoticesData =
         filtedByLibraryName.type !== "공지사항"
           ? filtedByLibraryName.filter((i) => i.type === "공지사항")

@@ -5,6 +5,17 @@
   background-size: cover;
   background-attachment: fixed;
   background-position: 30% 50%;
+  background-color: aliceblue;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 710px;
+  flex-direction: column;
   .header {
     height: 25rem;
     width: 100%;

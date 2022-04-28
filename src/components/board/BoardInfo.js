@@ -2,7 +2,8 @@ import HTMLReactParser from "html-react-parser";
 
 const BoardInfo = (infoDatas) => {
   // infoData = { infoData: { title: "test", contents: "content" } };
-  const infoData = infoDatas ? infoDatas.infoData[0] : undefined;
+
+  const infoData = infoDatas.infoData ? infoDatas.infoData : undefined;
 
   if (infoData !== undefined) {
     return (

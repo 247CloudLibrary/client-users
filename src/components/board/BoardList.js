@@ -15,7 +15,7 @@ const BoardList = () => {
   const [infoData, setInfoData] = useState([]);
   const [mode, setMode] = useState("공지사항");
 
-  const libraryId = location.state.libraryId;
+  const libraryName = location.state.libraryName;
   const address = location.state.address;
 
   const getMode = (mode) => {
@@ -113,7 +113,7 @@ const BoardList = () => {
         )}
         {mode === "오시는 길" && (
           <div>
-            <BoardMap libraryAddress={address} />
+            <BoardMap libraryAddress={address} libraryName={libraryName} />
           </div>
         )}
       </div>
