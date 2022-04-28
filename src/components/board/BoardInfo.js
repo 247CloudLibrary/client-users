@@ -1,19 +1,22 @@
 import HTMLReactParser from "html-react-parser";
 
-const BoardInfo = ({ infoData }) => {
-  console.log(infoData);
+const BoardInfo = ({ id, title, contents, type }) => {
+  const infoArray = [{ key: id, title: title, contents: contents }];
+
   return (
     <div id="board-info">
-      <div className="info-form">
-        <div className="text-form">
-          <div className="title-form">{infoData.title}</div>
-          <div className="contents-form">
-            {HTMLReactParser(`${infoData.contents}`)}
+      {infoArray &&
+        infoArray.map((ia) => (
+          <div className="info-form" key={ia.key}>
+            <div className="text-form">
+              <div className="title-form">{ia.title}</div>
+              <div className="contents-form">
+                {HTMLReactParser(`${ia.contents}`)}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        ))}
     </div>
   );
 };
-
 export default BoardInfo;
