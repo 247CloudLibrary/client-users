@@ -15,7 +15,7 @@ const BoardList = () => {
   const [infoData, setInfoData] = useState([]);
   const [mode, setMode] = useState("공지사항");
 
-  const libraryId = location.state.libraryId;
+  const libraryName = location.state.libraryName;
   const address = location.state.address;
 
   const getMode = (mode) => {
@@ -106,19 +106,14 @@ const BoardList = () => {
             {infoData &&
               infoData.map((info) => (
                 <div className="info-box" key={info.id}>
-                  <BoardInfo
-                    id={info.id}
-                    title={info.title}
-                    contents={info.contents}
-                    type={info.type}
-                  />
+                  <BoardInfo infoData={infoData} />
                 </div>
               ))}
           </div>
         )}
         {mode === "오시는 길" && (
           <div>
-            <BoardMap libraryAddress={address} />
+            <BoardMap libraryAddress={address} libraryName={libraryName} />
           </div>
         )}
       </div>

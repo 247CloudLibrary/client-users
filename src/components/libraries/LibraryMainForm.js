@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { BsMegaphone } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { ImLibrary } from "react-icons/im";
 import { GiBookmarklet } from "react-icons/gi";
 import { WiCloud } from "react-icons/wi";
+import Footer from "../../pages/home/Footer";
 
 const LibraryMainForm = () => {
   const location = useLocation();
@@ -17,7 +19,12 @@ const LibraryMainForm = () => {
 
   return (
     <div id="LibraryMainForm">
-      <div className="header"></div>
+      <div className="header">
+        <Link to="/main" className="logo">
+          <WiCloud />
+          <span>Cloud Library</span>
+        </Link>
+      </div>
       <div className="library-name">{libraryName}</div>
       <form>
         <input placeholder="도서 검색" />
@@ -62,6 +69,7 @@ const LibraryMainForm = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

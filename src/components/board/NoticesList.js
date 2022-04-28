@@ -8,13 +8,16 @@ const NoticesList = () => {
 
   useEffect(() => {
     axios.get("https://www.cloudlibrary.shop/v1/boards").then((response) => {
-      const noticesArr = response.data.data;
+      const boardArr = response.data.data;
 
-      console.log(noticesArr);
+      const filtedByLibraryName =
+        boardArr.libraryName !== ""
+          ? boardArr.filter((i) => i.libraryName === "")
+          : boardArr;
       const filtedByNoticesData =
-        noticesArr.type !== "공지사항"
-          ? noticesArr.filter((i) => i.type === "공지사항")
-          : noticesArr;
+        filtedByLibraryName.type !== "공지사항"
+          ? filtedByLibraryName.filter((i) => i.type === "공지사항")
+          : filtedByLibraryName;
       setNoticesData(filtedByNoticesData);
     });
   }, []);
