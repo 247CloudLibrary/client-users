@@ -1,32 +1,32 @@
 .compositeList {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  .searchFilter {
+    margin-top: 2vh;
     display: flex;
-    flex-direction: column;
     text-align: center;
     align-items: center;
-    .searchFilter {
-        margin-top: 2vh;
-        display: flex;
-        text-align: center;
-        align-items: center;
-        width: 30vw;
-        height: 10vh;
-        margin-bottom: 3vh;
-        input {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            width: 30vw;
-            height: 10vh;
-            font-size: 2vw;
-        }
+    width: 30vw;
+    height: 10vh;
+    margin-bottom: 3vh;
+    input {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      width: 30vw;
+      height: 10vh;
+      font-size: 2vw;
     }
-    .compositeData{
-        display: flex;
-    .compositeFilterWrap{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    .categoryFilter {
+  }
+  .compositeData {
+    display: flex;
+    .compositeFilterWrap {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      .categoryFilter {
         margin-top: 2vh;
         display: flex;
         text-align: center;
@@ -34,16 +34,16 @@
         width: 15vw;
         height: 10vh;
         select {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            width: 30vw;
-            height: 8vh;
-            font-size: 1vw;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          width: 30vw;
+          height: 8vh;
+          font-size: 1vw;
         }
-    }
+      }
 
-    .libraryFilter {
+      .libraryFilter {
         margin-top: 2vh;
         display: flex;
         text-align: center;
@@ -51,14 +51,14 @@
         width: 15vw;
         height: 10vh;
         select {
-            display: flex;
-            text-align: center;
-            align-items: center;
-            width: 30vw;
-            height: 8vh;
-            font-size: 1vw;
+          display: flex;
+          text-align: center;
+          align-items: center;
+          width: 30vw;
+          height: 8vh;
+          font-size: 1vw;
         }
+      }
     }
-}
-}
+  }
 }
