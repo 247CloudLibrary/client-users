@@ -1,8 +1,10 @@
 import client from "./client";
 
 //로그인
-export const login = ({ userId, password }) => {
-  client.post("/auth/signin", { userId, password });
+export const login = async (userId, password) => {
+  await client
+    .post("/auth/signin", { userId, password })
+    .then((response) => console.log(response));
 };
 
 //회원가입

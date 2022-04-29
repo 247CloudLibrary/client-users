@@ -1,10 +1,8 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 import { takeLatest } from "redux-saga/effects";
-import {
-  createRequestSaga,
-  createRequestActionTypes,
-} from "../lib/createRequestSaga";
+import { createRequestActionTypes } from "../lib/createRequestSaga";
+import createRequestSaga from "../lib/createRequestSaga";
 import * as authAPI from "../lib/api/auth";
 
 const CHANGE_FIELD = "auth/CHANGE_FIELD";
@@ -73,11 +71,11 @@ export const profile = createAction(
 
 // Saga 생성
 const signUpSaga = createRequestSaga(SIGNUP, authAPI.signUp);
-const loginSage = createRequestSaga(LOGIN, authAPI.login);
+const loginSaga = createRequestSaga(LOGIN, authAPI.login);
 const profileSaga = createRequestSaga(PROFILE, authAPI.authGet);
 export function* authSaga() {
   yield takeLatest(SIGNUP, signUpSaga);
-  yield takeLatest(LOGIN, loginSage);
+  yield takeLatest(LOGIN, loginSaga);
   yield takeLatest(PROFILE, profileSaga);
 }
 

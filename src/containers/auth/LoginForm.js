@@ -1,18 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeField, initializeForm, login } from "../../modules/auth";
+import { changeField, initializeForm } from "../../modules/auth";
 import UserLoginForm from "../../components/auth/UserLoginForm";
 import { check } from "../../modules/user";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
+  const [user, setUser] = useState();
+  const login = async (id, password) =>
+    await axios.post("/v1/auth/signin", {
+      userId: id,
+      password: password,
+    });
+  const { form, auth, authError } = useSelector(({ auth, user }) => ({
     form: auth.login,
     auth: auth.auth,
     authError: auth.authError,
-    user: user.user,
+    user: user,
   }));
 
   const onChange = (event) => {
@@ -28,12 +35,11 @@ const LoginForm = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    navigate("/main");
-    /*
-    로그인 코드 
     const { userId, password } = form;
-    dispatch(login({ userId, password }));
-    */
+    login(userId, password).then((response) => {
+      setUser(response);
+      console.log(response);
+    });
   };
 
   useEffect(() => {
@@ -54,7 +60,12 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (user) {
-      navigate("/");
+      navigate("/main");
+      try {
+        localStorage.setItem("user", JSON.stringify(user));
+      } catch (e) {
+        console.log("localStorage is not working");
+      }
     }
   }, [navigate, user]);
 

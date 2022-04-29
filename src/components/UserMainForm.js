@@ -2,6 +2,7 @@ import { FaUser } from "react-icons/fa";
 import { ImLibrary } from "react-icons/im";
 import { BsJournalText } from "react-icons/bs";
 import { GiArchiveResearch } from "react-icons/gi";
+import { RiLogoutBoxRLine } from "react-icons/ri";
 import { WiCloud } from "react-icons/wi";
 import { Link } from "react-router-dom";
 import Footer from "../pages/home/Footer";
@@ -15,6 +16,9 @@ const UserMainForm = ({ props }) => {
             <WiCloud />
             <span>Cloud Library</span>
           </Link>
+          <button onClick={props.onLogout} className="logout">
+            <RiLogoutBoxRLine />
+          </button>
         </div>
         <div className="feature-box">
           <div className="feature">
