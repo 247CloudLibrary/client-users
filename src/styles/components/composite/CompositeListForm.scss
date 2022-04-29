@@ -1,6 +1,6 @@
 
 .compositeList {
-  width: 95vw;
+  width: 100%;
   min-width: 70rem;
   display: flex;
   flex-direction: column;
@@ -94,8 +94,8 @@
   .compositeData {
     display: flex;
     justify-content: left;
-    width: 80vw;
-    min-width: 70rem;
+    width: 80%;
+    min-width: 30rem;
     margin-top: 5vh;
     margin-bottom: 5vh;
     .compositeListForm {
