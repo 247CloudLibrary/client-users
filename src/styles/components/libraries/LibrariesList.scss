@@ -7,8 +7,9 @@
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100%;
   text-align: center;
-  align-items: center;
+  padding-bottom: 5rem;
   .page-title {
     position: relative;
     font-size: 3rem;
@@ -19,7 +20,8 @@
     position: relative;
     width: 60rem;
     height: 10rem;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border-top: 1px solid #b6b6b6;
     box-shadow: 1px 1px 3px #1a375e;
     font-family: "Lexend Deca", sans-serif;

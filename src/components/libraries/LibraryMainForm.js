@@ -6,14 +6,12 @@ import { BiSearch } from "react-icons/bi";
 import { ImLibrary } from "react-icons/im";
 import { GiBookmarklet } from "react-icons/gi";
 import { WiCloud } from "react-icons/wi";
-import Footer from "../../pages/home/Footer";
 
 const LibraryMainForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const id = location.state.id;
-  console.log(id);
   const libraryName = location.state.libraryName;
   const address = location.state.address;
 
@@ -26,7 +24,12 @@ const LibraryMainForm = () => {
         </Link>
       </div>
       <div className="library-name">{libraryName}</div>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault;
+          navigate("/composite-list");
+        }}
+      >
         <input placeholder="도서 검색" />
         <BiSearch className="icon" />
       </form>
@@ -69,7 +72,6 @@ const LibraryMainForm = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
