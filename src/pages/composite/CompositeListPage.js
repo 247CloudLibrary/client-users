@@ -47,23 +47,25 @@ const CompositeListPage = () => {
   };
 
   return (
-    <div className="compositeList">
-      <SearchFilter text={text} onChange={onChange} />
-      <div className="compositeData">
-        <div className="compositeFilterWrap">
-          <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
-          <LibraryFilter onChange={handleChange} libraryData={libraryData} />
-        </div>
-        <div className="compositeListForm">
-          <CompositeListForm
-            libraryValue={libraryValue}
-            categoryValue={categoryValue}
-            text={text}
-          />
+    <>
+      <div className="compositeList">
+        <SearchFilter text={text} onChange={onChange} />
+        <div className="compositeData">
+          <div className="compositeFilterWrap">
+            <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
+            <LibraryFilter onChange={handleChange} libraryData={libraryData} />
+          </div>
+          <div className="compositeListForm">
+            <CompositeListForm
+              libraryValue={libraryValue}
+              categoryValue={categoryValue}
+              text={text}
+            />
+          </div>
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -72,7 +72,7 @@ const CompositeListItem = ({
           <span className="genre">{genre}</span>
           <span className="category">{category}</span>
         </div>
-        <div className="compositeTitle">책 제목: {title}</div>
+        <div className="compositeTitle">{title}</div>
         <div className="compositeWrite">
           <span className="author">저자: {author}</span>
           <span className="translator">옮긴이: {translator}</span>

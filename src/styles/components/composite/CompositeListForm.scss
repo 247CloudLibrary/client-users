@@ -1,45 +1,109 @@
 
 .compositeList {
-  width: 100vw;
-  min-width: 180rem;
+  width: 95vw;
+  min-width: 160rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
   background-clip: border-box;
   background-attachment: fixed;
   transition: 2s;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
   background-position: 30%;
   animation: background-action 50s infinite ease-in-out;
-  .searchFilter {
-    margin-top: 2vh;
+  .home__search-bar {
     display: flex;
-    text-align: center;
-    align-items: center;
-    width: 30vw;
-    height: 10vh;
-    margin-bottom: 3vh;
+    align-items: flex-end;
+    width: 26rem;
+    height: 4.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    border: 0.2rem solid aliceblue;
+    box-shadow: 1px 1px 10px aliceblue;
+    background-color: #3636365d;
+    margin-top: 2rem;
     input {
-      display: flex;
-      text-align: center;
-      align-items: center;
-      width: 30vw;
-      height: 10vh;
-      font-size: 2vw;
+      width: 26rem;
+      font-size: 1.2rem;
+      color: aliceblue;
+      text-shadow: 1px 1px 3px black;
+      border: none;
+      background: none;
+      margin-bottom: 0.6rem;
+      &:focus {
+        outline: none;
+      }
+      &:focus + label span,
+      &:valid + label span {
+        transform: translateY(-120%);
+        font-size: 1.2rem;
+        color: aliceblue;
+      }
+      &:focus + .label-name::after,
+      &:valid + .label-name::after {
+        transform: translateX(0%);
+      }
+    }
+    label {
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.05rem;
+      position: absolute;
+      bottom: 0px;
+      left: 1rem;
+      width: 24.5rem;
+      height: 4rem;
+      pointer-events: none;
+      border-bottom: 0.1rem solid white;
+      color: aliceblue;
+      text-shadow: 1px 1px 3px black;
+      margin-bottom: 1rem;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 24.5rem;
+        height: 100%;
+        border-bottom: 3px solid aliceblue;
+        transform: translateX(-110%);
+        transition: all 0.5s ease;
+      }
+    }
+    .content-name {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      padding-bottom: 5px;
+      transition: all 0.3s ease;
+    }
+    .icon {
+      padding-left: 0.1rem;
+      padding-bottom: 0.6rem;
+      font-size: 1.5rem;
+      color: aliceblue;
+      cursor: pointer;
     }
   }
   .compositeData {
     display: flex;
     justify-content: left;
-    width: 85vw;
+    width: 80vw;
     margin-top: 5vh;
     margin-bottom: 5vh;
     .compositeListForm {
       background-color: white;
       opacity: 0.9;
+      min-width: 80rem;
       border-radius: 40PX;
       margin-left: 5vw;
       padding: 2rem;
+      
   }
     .compositeFilterWrap {
       display: flex;
