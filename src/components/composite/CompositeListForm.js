@@ -17,7 +17,7 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
           ? filtedByCategory.filter((i) => i.libraryId === libraryValue)
           : filtedByCategory;
         const filtedByText = text
-          ? filtedByLibrary.filter((i) => i.title.indexOf(text) === 0)
+          ? filtedByLibrary.filter((i) => i.title.includes(text))
           : filtedByLibrary;
 
         setListItem(filtedByText);
