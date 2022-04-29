@@ -7,7 +7,10 @@ import { FiEdit } from "react-icons/fi";
 import { useState } from "react";
 
 const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
+  const json = JSON.parse(localStorage.getItem("user"));
+  const storage = json.data;
   const [toggle, setToggle] = useState(true);
+  console.log(storage);
   /**
   // TODO : 회원 정보 조회
 
@@ -43,7 +46,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
               onChange={onChange}
               name="userName"
               type="text"
-              value={form.userName}
+              value={storage.userName}
               disabled={toggle}
             />
           </div>
@@ -52,7 +55,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="gender"
               type="text"
-              value={form.gender}
+              value={storage.gender}
               disabled={toggle}
               onChange={onChange}
             />
@@ -62,7 +65,7 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="address"
               type="text"
-              value={form.address}
+              value={storage.address}
               disabled={toggle}
             />
           </div>
@@ -71,20 +74,25 @@ const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
             <input
               name="email"
               type="text"
-              value={form.email}
+              value={storage.email}
               disabled={toggle}
             />
           </div>
           <div>
             <IoMdCall />
-            <input name="tel" type="text" value={form.tel} disabled={toggle} />
+            <input
+              name="tel"
+              type="text"
+              value={storage.tel}
+              disabled={toggle}
+            />
           </div>
           <div>
             <RiCake2Fill />
             <input
               name="birth"
               type="text"
-              value={form.birth}
+              value={storage.birth}
               disabled={toggle}
             />
           </div>
