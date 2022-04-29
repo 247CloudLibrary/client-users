@@ -19,7 +19,11 @@ const BoardInfo = (infoDatas) => {
       </div>
     );
   } else {
-    return <div id="board-info">등록된 내용이 없습니다.</div>;
+    return (
+      <div style={{ fontSize: "1.5rem", marginTop: "3rem" }}>
+        등록된 내용이 없습니다.
+      </div>
+    );
   }
 };
 export default BoardInfo;

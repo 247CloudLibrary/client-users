@@ -6,14 +6,12 @@ import { BiSearch } from "react-icons/bi";
 import { ImLibrary } from "react-icons/im";
 import { GiBookmarklet } from "react-icons/gi";
 import { WiCloud } from "react-icons/wi";
-import Footer from "../../pages/home/Footer";
 
 const LibraryMainForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const id = location.state.id;
-  console.log(id);
   const libraryName = location.state.libraryName;
   const address = location.state.address;
 
@@ -74,7 +72,6 @@ const LibraryMainForm = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };
