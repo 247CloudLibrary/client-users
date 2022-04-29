@@ -1,8 +1,13 @@
 .compositeList {
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
+  background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+  background-clip: border-box;
+  background-attachment: fixed;
+  transition: 2s;
+  background-position: 30%;
+  animation: background-action 50s infinite ease-in-out;
   .searchFilter {
     margin-top: 2vh;
     display: flex;
@@ -22,10 +27,22 @@
   }
   .compositeData {
     display: flex;
+    justify-content: left;
+    width: 85vw;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    .compositeListForm {
+      background-color: white;
+      opacity: 0.9;
+      border-radius: 40PX;
+      margin-left: 5vw;
+      padding: 2rem;
+  }
     .compositeFilterWrap {
       display: flex;
       flex-direction: column;
       text-align: center;
+      ;
       .categoryFilter {
         margin-top: 2vh;
         display: flex;
@@ -39,10 +56,13 @@
           align-items: center;
           width: 30vw;
           height: 8vh;
-          font-size: 1vw;
+          font-size: 2rem;
+          background-color: #3636365d;
+          color: white;
+          border: 0.2rem solid aliceblue;
+          border-radius: 20px;
         }
       }
-
       .libraryFilter {
         margin-top: 2vh;
         display: flex;
@@ -56,7 +76,11 @@
           align-items: center;
           width: 30vw;
           height: 8vh;
-          font-size: 1vw;
+          font-size: 2rem;
+          background-color: #3636365d;
+          color: white;
+          border: 0.2rem solid aliceblue;
+          border-radius: 20px;
         }
       }
     }

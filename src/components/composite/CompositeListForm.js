@@ -49,7 +49,6 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
             returnDateTime={data.returnDateTime}
           />
         ))}
-      ;
     </div>
   );
 };

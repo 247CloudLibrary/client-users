@@ -3,9 +3,12 @@
     margin: 0 auto;
     text-align: center;
     align-items: center;
-    background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
-    background-size: cover;
-    background-position: 50%;
+    background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+    background-clip: border-box;
+    background-attachment: fixed;
+    transition: 2s;
+    background-position: 30%;
+    animation: background-action 50s infinite ease-in-out;
     width: 100vw;
     height: 100vh;
     text-align: center;

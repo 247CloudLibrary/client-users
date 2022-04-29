@@ -54,11 +54,13 @@ const CompositeListPage = () => {
           <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
           <LibraryFilter onChange={handleChange} libraryData={libraryData} />
         </div>
-        <CompositeListForm
-          libraryValue={libraryValue}
-          categoryValue={categoryValue}
-          text={text}
-        />
+        <div className="compositeListForm">
+          <CompositeListForm
+            libraryValue={libraryValue}
+            categoryValue={categoryValue}
+            text={text}
+          />
+        </div>
       </div>
       <Footer />
     </div>
