@@ -18,16 +18,18 @@ export const signUp = ({
   email,
   tel,
 }) => {
-  client.post("/auth/signUp", {
-    userId,
-    userName,
-    password,
-    gender,
-    birth,
-    address,
-    email,
-    tel,
-  });
+  client
+    .post("v1/auth/signup", {
+      userId,
+      userName,
+      password,
+      gender,
+      birth,
+      address,
+      email,
+      tel,
+    })
+    .then((response) => console.log(response));
 };
 
 //마이페이지 조회

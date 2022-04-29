@@ -43,9 +43,23 @@ const SignUpForm = () => {
       // Error
       return;
     }
-    dispatch(
-      signUp({ userId, userName, password, gender, birth, address, email, tel })
-    );
+    try {
+      dispatch(
+        signUp({
+          userId,
+          userName,
+          password,
+          gender,
+          birth,
+          address,
+          email,
+          tel,
+        })
+      );
+      navigate("/login");
+    } catch (e) {
+      console.log("ERROR");
+    }
   };
 
   // Form 초기화
@@ -62,7 +76,6 @@ const SignUpForm = () => {
     if (auth) {
       console.log("회원가입 성공");
       console.log(auth);
-      dispatch(check());
     }
   }, [auth, authError, dispatch]);
 
