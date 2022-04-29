@@ -1,4 +1,7 @@
+
 .compositeList {
+  width: 100vw;
+  min-width: 180rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,12 +53,14 @@
         align-items: center;
         width: 15vw;
         height: 10vh;
+        min-width: 20rem;
         select {
           display: flex;
           text-align: center;
           align-items: center;
-          width: 30vw;
+          width: 15vw;
           height: 8vh;
+          min-width: 20rem;
           font-size: 2rem;
           background-color: #3636365d;
           color: white;
@@ -70,12 +75,14 @@
         align-items: center;
         width: 15vw;
         height: 10vh;
+        min-width: 20rem;
         select {
           display: flex;
           text-align: center;
           align-items: center;
-          width: 30vw;
+          width: 15vw;
           height: 8vh;
+          min-width: 20rem;
           font-size: 2rem;
           background-color: #3636365d;
           color: white;

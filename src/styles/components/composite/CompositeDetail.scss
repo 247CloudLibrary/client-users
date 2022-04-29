@@ -11,6 +11,8 @@
     animation: background-action 50s infinite ease-in-out;
     width: 100vw;
     height: 100vh;
+    min-width: 80rem;
+    min-height: 80rem;
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -22,6 +24,8 @@
       margin-top: 5vh;
       width: 45vw;
       height: 90vh;
+      min-width: 60rem;
+      min-height: 75rem;
       text-align: center;
       align-items: center;
       flex-direction: column;
@@ -57,6 +61,7 @@
       .info-area {
         display: flex;
         width: 45rem;
+        min-width: 50rem;
         .info-box {
           display: flex;
           padding-top: 2rem;
@@ -96,6 +101,7 @@
       .minititle-box {
         display: flex;
         justify-content: center;
+        min-width: 50rem;
         .minititle {
           display: flex;
           width: 50rem;
@@ -107,7 +113,9 @@
       .contents-area {
         display: flex;
         margin-top: 2rem;
+        min-width: 50rem;
         .contents-box {
+          min-width: 50rem;
           text-align: left;
           width: 35vw;
           font-size: 1.5rem;
