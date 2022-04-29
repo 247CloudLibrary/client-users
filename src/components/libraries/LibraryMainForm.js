@@ -26,7 +26,12 @@ const LibraryMainForm = () => {
         </Link>
       </div>
       <div className="library-name">{libraryName}</div>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault;
+          navigate("/composite-list");
+        }}
+      >
         <input placeholder="도서 검색" />
         <BiSearch className="icon" />
       </form>
