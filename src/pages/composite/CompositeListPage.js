@@ -4,6 +4,7 @@ import CompositeListForm from "../../components/composite/CompositeListForm";
 import LibraryFilter from "../../components/composite/LibraryFilter";
 import SearchFilter from "../../components/composite/SearchFilter";
 import CategoryFilter from "../../components/composite/CategoryFilter";
+import Footer from "../home/Footer";
 
 const CATEGORY_DATA = [
   { id: "0", value: "총류" },
@@ -59,6 +60,7 @@ const CompositeListPage = () => {
           text={text}
         />
       </div>
+      <Footer />
     </div>
   );
 };

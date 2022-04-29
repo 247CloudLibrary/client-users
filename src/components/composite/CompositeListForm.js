@@ -44,7 +44,7 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
             lendingDateTime={data.lendingDateTime}
             ReservationDateTime={data.reservationDateTime}
             genre={data.genre}
-            type={data.type}
+            bookType={data.bookType}
             category={data.category}
             returnDateTime={data.returnDateTime}
           />

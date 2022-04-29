@@ -41,10 +41,16 @@ const CompositeListItem = ({
 
     setLendingStatusValue(lendingFilted);
   }, []);
+  // const return1 = returnDateTime[0];
+  // const return2 = returnDateTime[1];
+  // const return3 = returnDateTime[2];
+  // console.log(return1);
+  // console.log(return2);
+  // console.log(return3);
 
   useEffect(() => {
     const returnDateFilted =
-      returnDateTime !== "" ? `반납예정일+ ${returnDateTime}` : "";
+      returnDateTime !== "" ? `반납예정일 ${returnDateTime} ` : "";
 
     setReturnDateValue(returnDateFilted);
   }, []);
@@ -71,7 +77,9 @@ const CompositeListItem = ({
           <span className="author">저자: {author}</span>
           <span className="translator">옮긴이: {translator}</span>
           <span className="publisher">발행자: {publisher}</span>
-          <span className="publishDate">발행일: {publishDate}</span>
+          <span className="publishDate">
+            발행일: {publishDate[0]}년 {publishDate[1]}월 {publishDate[2]}일
+          </span>
         </div>
         <div className="compositeData">
           <span className="barcode">청구기호: {barcode}</span>
