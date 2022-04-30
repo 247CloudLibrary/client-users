@@ -51,10 +51,12 @@
 
 /*Composite*/
 @import "./components/composite/CompositeListItem.scss";
-@import "./components/composite/CompositeDetail.scss";
 @import "./components/composite/CompositeListForm.scss";
+@import "./components/composite/CompositeDetail.scss";
 
-
+/*Lending*/
+@import "./components/lending/LendingListItem.scss";
+@import "./components/lending/LendingListForm.scss";
 a {
   color: inherit;
   text-decoration: none;

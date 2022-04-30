@@ -49,7 +49,6 @@ function App() {
       <Route path="/boards/list/:id" element={<BoardListPage />} />
       <Route path="/boards/detail/:id" element={<BoardDetailPage />} />
 
-
       <Route path="/profile" element={<UserProfilePage />} />
 
       <Route path="/libraries/list" element={<LibrariesListPage />} />

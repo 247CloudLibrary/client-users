@@ -1,8 +1,18 @@
+import LendingListForm from "../../components/lending/LendingListForm";
+import Footer from "../home/Footer";
+
 const LendingRecordPage = () => {
   return (
-    <div>
-      <span>대출 기록 페이지</span>
-    </div>
+    <>
+      <div className="lendingList">
+        <div className="lendingData">
+          <div className="lendingListForm">
+            <LendingListForm />
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

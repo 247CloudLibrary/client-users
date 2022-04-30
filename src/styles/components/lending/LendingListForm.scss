@@ -1,0 +1,35 @@
+
+.lendingList {
+  width: 100%;
+  min-width: 70rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+  background-clip: border-box;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: 2s;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5rem;
+  background-position: 30% 50%;
+  animation: background-action 50s infinite ease-in-out;
+  flex-direction: column;
+  .lendingData {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    min-width: 30rem;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    .lendingListForm {
+      background-color: white;
+      opacity: 0.9;
+      border-radius: 40PX;
+      margin-left: 5vw;
+      padding: 2rem;
+    }
+
+  }
+}
