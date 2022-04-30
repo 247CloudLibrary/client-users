@@ -1,8 +1,10 @@
 import client from "./client";
 
 //로그인
-export const login = ({ userId, password }) => {
-  client.post("/auth/signin", { userId, password });
+export const login = async (userId, password) => {
+  await client
+    .post("/auth/signin", { userId, password })
+    .then((response) => console.log(response));
 };
 
 //회원가입
@@ -16,16 +18,18 @@ export const signUp = ({
   email,
   tel,
 }) => {
-  client.post("/auth/signUp", {
-    userId,
-    userName,
-    password,
-    gender,
-    birth,
-    address,
-    email,
-    tel,
-  });
+  client
+    .post("v1/auth/signup", {
+      userId,
+      userName,
+      password,
+      gender,
+      birth,
+      address,
+      email,
+      tel,
+    })
+    .then((response) => console.log(response));
 };
 
 //마이페이지 조회

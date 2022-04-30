@@ -1,11 +1,11 @@
 #board-list {
   display: flex;
   flex-direction: column;
-  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  height: 100%;
   background-color: aliceblue;
   .content {
     position: relative;
@@ -50,24 +50,32 @@
 
   .form-box {
     display: flex;
-    width: 100%;
     flex-direction: row;
     position: relative;
     justify-content: center;
 
     .sidebar-box {
-      position: absolute;
-      margin-right: 30rem;
+      position: relative;
       float: left;
     }
-    .map-box {
-      position: relative;
+    .map-box,
+    .info-box {
+      width: 60rem;
+      min-width: 60rem;
+      margin-right: 20rem;
+      display: flex;
     }
-    .listitem-box {
-      position: relative;
-      justify-content: center;
-      height: 3rem;
-      border-bottom: 1px solid #57707cc5;
+    .item-box {
+      width: 60rem;
+      min-width: 60rem;
+      margin-right: 20rem;
+      display: flex;
+      .listitem-box {
+        position: relative;
+        justify-content: center;
+        height: 3rem;
+        border-bottom: 1px solid #57707cc5;
+      }
     }
   }
 }

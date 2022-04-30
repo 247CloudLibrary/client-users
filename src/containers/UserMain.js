@@ -20,12 +20,23 @@ const UserMain = () => {
     navigate("/record");
   };
 
+  const onLogout = () => {
+    if (localStorage.getItem("user")) {
+      localStorage.removeItem("user");
+
+      window.location.href = "https://www.cloudlibrary.shop";
+    } else {
+      console.log("Local Storage is null");
+    }
+  };
+
   const props = {
     onSubmit,
     handleProfile,
     handleFindLibrary,
     handleReservation,
     handleLending,
+    onLogout,
   };
 
   return <UserMainForm props={props} />;
