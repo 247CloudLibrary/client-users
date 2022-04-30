@@ -4,7 +4,7 @@ import { GrBook } from "react-icons/gr";
 
 const LENDINGSTATUS_DATA = [
   { value: "OVERDUE", tag: "연체중" },
-  { value: "OUT", tag: "대출중" },
+  { value: "OUT", tag: "대출 중" },
   { value: "LOSS", tag: "분실" },
   { value: "RETURN", tag: "대출 가능" },
 ];
@@ -89,7 +89,7 @@ const CompositeListItem = ({
         </div>
         <div className="compositeStatusBar">
           <span className="lendingStatus">대출 상태: {lendingStatusValue}</span>
-          <span className="lendingReservation">
+          <span className="lendingReturn">
             <GrBook /> {returnDateValue}
           </span>
         </div>

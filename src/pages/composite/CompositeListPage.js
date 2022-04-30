@@ -50,7 +50,7 @@ const CompositeListPage = () => {
     <>
       <div className="compositeList">
         <SearchFilter text={text} onChange={onChange} />
-        <div className="compositeData">
+        <div className="compositeDatas">
           <div className="compositeFilterWrap">
             <CategoryFilter onChange={onSelect} CATEGORY_DATA={CATEGORY_DATA} />
             <LibraryFilter onChange={handleChange} libraryData={libraryData} />
