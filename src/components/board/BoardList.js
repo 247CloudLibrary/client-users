@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import BoardSidebar from "./BoardSideBar";
 import BoardNoticeListItem from "./BoardNoticeListItem";
 import BoardInfo from "./BoardInfo";
@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const BoardList = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [content, setContent] = useState("");
   const [btn, setBtn] = useState(false);
@@ -118,6 +119,16 @@ const BoardList = () => {
             <BoardMap libraryAddress={address} libraryName={libraryName} />
           </div>
         )}
+      </div>
+      <div className="return">
+        <button
+          className="return-btn"
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          돌아가기
+        </button>
       </div>
     </main>
   );
