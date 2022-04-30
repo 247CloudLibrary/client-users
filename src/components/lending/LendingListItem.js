@@ -33,7 +33,7 @@ const LendingListItem = ({
 
   useEffect(() => {
     const returnDateFilted =
-      returnDateTime !== "" ? `반납예정일+ ${returnDateTime}` : "";
+      returnDateTime !== "" ? `반납일+ ${returnDateTime}` : "";
 
     setReturnDateValue(returnDateFilted);
   }, []);
