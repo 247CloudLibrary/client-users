@@ -5,6 +5,7 @@ import LibraryFilter from "../../components/composite/LibraryFilter";
 import SearchFilter from "../../components/composite/SearchFilter";
 import CategoryFilter from "../../components/composite/CategoryFilter";
 import Footer from "../home/Footer";
+import Header from "../../components/common/Header";
 
 const CATEGORY_DATA = [
   { id: "0", value: "총류" },
@@ -49,6 +50,8 @@ const CompositeListPage = () => {
   return (
     <>
       <div className="compositeList">
+        <Header />
+        <div className="composite-list-title">Book List</div>
         <SearchFilter text={text} onChange={onChange} />
         <div className="compositeDatas">
           <div className="compositeFilterWrap">
