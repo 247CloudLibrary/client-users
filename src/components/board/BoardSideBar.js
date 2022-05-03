@@ -8,8 +8,6 @@ const map = "오시는 길";
 const BoardSidebar = ({ getMode }) => {
   const [mode, setMode] = useState("공지사항");
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     if (mode === "오시는 길") {
       getMode("오시는 길");

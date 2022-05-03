@@ -15,12 +15,20 @@ const NoticesDetail = () => {
   const [noticeDetail, setNoticeDetail] = useState([]);
   const location = useLocation();
 
+  const json = JSON.parse(localStorage.getItem("user"));
+  const token = json.headers.token;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+
   const id = location.state.id;
-  console.log(id);
 
   useEffect(() => {
     axios
-      .get(`https://www.cloudlibrary.shop/v1/boards/${id}`)
+      .get(`https://www.cloudlibrary.shop/v1/boards/${id}`, {
+        headers: headers,
+      })
       .then(function (detail) {
         setNoticeDetail(detail.data.data);
       });

@@ -10,11 +10,17 @@ const BoardList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [content, setContent] = useState("");
-  const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
   const [noticeData, setNoticeData] = useState([]);
   const [infoData, setInfoData] = useState([]);
   const [mode, setMode] = useState("공지사항");
+
+  const json = JSON.parse(localStorage.getItem("user"));
+  const token = json.headers.token;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
 
   const libraryName = location.state.libraryName;
   const address = location.state.address;
@@ -24,41 +30,42 @@ const BoardList = () => {
     if (mode === "공지사항") {
       setContent("공지사항");
       setHead(false);
-      setBtn(false);
     } else if (mode === "이용안내") {
       setContent("이용안내");
       setHead(true);
-      setBtn(false);
     } else {
       setContent("오시는 길");
-      setBtn(true);
       setHead(true);
     }
   };
 
   useEffect(() => {
-    axios.get("https://www.cloudlibrary.shop/v1/boards").then((response) => {
-      const boardArr = response.data.data;
+    axios
+      .get("https://www.cloudlibrary.shop/v1/boards", {
+        headers: headers,
+      })
+      .then((response) => {
+        const boardArr = response.data.data;
 
-      console.log(boardArr);
-      const filtedByLibraryName =
-        boardArr.libraryName !== libraryName
-          ? boardArr.filter((i) => i.libraryName === libraryName)
-          : boardArr;
+        console.log(boardArr);
+        const filtedByLibraryName =
+          boardArr.libraryName !== libraryName
+            ? boardArr.filter((i) => i.libraryName === libraryName)
+            : boardArr;
 
-      const filtedByNoticeData =
-        filtedByLibraryName.type !== "공지사항"
-          ? filtedByLibraryName.filter((i) => i.type === "공지사항")
-          : filtedByLibraryName;
-      setNoticeData(filtedByNoticeData);
+        const filtedByNoticeData =
+          filtedByLibraryName.type !== "공지사항"
+            ? filtedByLibraryName.filter((i) => i.type === "공지사항")
+            : filtedByLibraryName;
+        setNoticeData(filtedByNoticeData);
 
-      const filtedByInfoData =
-        filtedByLibraryName.type !== "안내사항"
-          ? filtedByLibraryName.filter((i) => i.type === "안내사항")
-          : filtedByLibraryName;
-      setInfoData(filtedByInfoData);
-      console.log(filtedByLibraryName);
-    });
+        const filtedByInfoData =
+          filtedByLibraryName.type !== "안내사항"
+            ? filtedByLibraryName.filter((i) => i.type === "안내사항")
+            : filtedByLibraryName;
+        setInfoData(filtedByInfoData);
+        console.log(filtedByLibraryName);
+      });
   }, []);
 
   const ListArray = [
