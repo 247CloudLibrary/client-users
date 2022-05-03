@@ -41,12 +41,6 @@ const CompositeListItem = ({
 
     setLendingStatusValue(lendingFilted);
   }, []);
-  // const return1 = returnDateTime[0];
-  // const return2 = returnDateTime[1];
-  // const return3 = returnDateTime[2];
-  // console.log(return1);
-  // console.log(return2);
-  // console.log(return3);
 
   useEffect(() => {
     const returnDateFilted =
