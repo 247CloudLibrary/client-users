@@ -4,7 +4,6 @@ import axios from "axios";
 
 const FindId = () => {
   const [email, setEmail] = useState("");
-  const [data, setData] = useState("");
   const [id, setId] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -29,6 +28,7 @@ const FindId = () => {
   const onChange = (event) => {
     setEmail(event.target.value);
   };
+
   return (
     <FindIdForm
       onChange={onChange}
