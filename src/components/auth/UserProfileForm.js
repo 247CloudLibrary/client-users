@@ -7,7 +7,7 @@ import { FiEdit } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const UserProfileForm = ({ userInfo, form, onChange, onSubmit }) => {
+const UserProfileForm = () => {
   const json = JSON.parse(localStorage.getItem("user"));
   const storage = json.data;
   const [toggle, setToggle] = useState(true);
