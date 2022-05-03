@@ -1,8 +1,10 @@
 import FindIdForm from "../../components/auth/FindIdForm";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const FindId = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [id, setId] = useState("");
   const [loading, setLoading] = useState(true);
@@ -29,6 +31,9 @@ const FindId = () => {
     setEmail(event.target.value);
   };
 
+  const goToLogin = () => {
+    navigate("/");
+  };
   return (
     <FindIdForm
       onChange={onChange}
@@ -36,6 +41,7 @@ const FindId = () => {
       email={email}
       id={id}
       loading={loading}
+      goToLogin={goToLogin}
     />
   );
 };
