@@ -12,7 +12,9 @@
   .findIdForm {
     width: 340px;
     min-width: 340px;
-    background-color: #afcddf;
+    background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+    background-size: cover;
+    background-attachment: fixed;
     border-radius: 2px;
     padding: 2rem;
     box-shadow: 1px 1px 7px #809399;
@@ -79,6 +81,20 @@
       &:hover {
         background-color: #2b3c4e;
       }
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .text {
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px black;
     }
   }
 }
