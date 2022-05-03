@@ -14,21 +14,19 @@ const NoticesList = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://www.cloudlibrary.shop/v1/boards", { headers: headers })
-      .then((response) => {
-        const boardArr = response.data.data;
+    axios.get("/v1/boards", { headers: headers }).then((response) => {
+      const boardArr = response.data.data;
 
-        const filtedByLibraryName =
-          boardArr.libraryName !== ""
-            ? boardArr.filter((i) => i.libraryName === "")
-            : boardArr;
-        const filtedByNoticesData =
-          filtedByLibraryName.type !== "공지사항"
-            ? filtedByLibraryName.filter((i) => i.type === "공지사항")
-            : filtedByLibraryName;
-        setNoticesData(filtedByNoticesData);
-      });
+      const filtedByLibraryName =
+        boardArr.libraryName !== ""
+          ? boardArr.filter((i) => i.libraryName === "")
+          : boardArr;
+      const filtedByNoticesData =
+        filtedByLibraryName.type !== "공지사항"
+          ? filtedByLibraryName.filter((i) => i.type === "공지사항")
+          : filtedByLibraryName;
+      setNoticesData(filtedByNoticesData);
+    });
   }, []);
 
   console.log(noticesData);

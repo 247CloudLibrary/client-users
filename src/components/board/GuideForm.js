@@ -15,22 +15,20 @@ const GuideForm = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("https://www.cloudlibrary.shop/v1/boards", { headers: headers })
-      .then((guide) => {
-        const boardArr = guide.data.data;
+    axios.get("/v1/boards", { headers: headers }).then((guide) => {
+      const boardArr = guide.data.data;
 
-        const filtedByLibraryName =
-          boardArr.libraryName !== ""
-            ? boardArr.filter((i) => i.libraryName === "")
-            : boardArr;
+      const filtedByLibraryName =
+        boardArr.libraryName !== ""
+          ? boardArr.filter((i) => i.libraryName === "")
+          : boardArr;
 
-        const filtedByGuideData =
-          filtedByLibraryName.type !== "안내사항"
-            ? filtedByLibraryName.filter((i) => i.type === "안내사항")
-            : filtedByLibraryName;
-        setGuideData(filtedByGuideData);
-      });
+      const filtedByGuideData =
+        filtedByLibraryName.type !== "안내사항"
+          ? filtedByLibraryName.filter((i) => i.type === "안내사항")
+          : filtedByLibraryName;
+      setGuideData(filtedByGuideData);
+    });
   }, []);
 
   console.log(guideData);
