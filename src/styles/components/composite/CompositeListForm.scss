@@ -1,20 +1,28 @@
 
 .compositeList {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
   width: 100%;
-  min-width: 70rem;
-  display: flex;
-  flex-direction: column;
+  padding: 10rem;
+  min-width: 90rem;
+  overflow: hidden;
+  // width: 100%;
+  // min-width: max-content;
+  // margin: 0;
+  // display: flex;
+  // flex-direction: column;
   background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
-  background-clip: border-box;
   background-size: cover;
   background-attachment: fixed;
-  transition: 4s;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem;
-  background-position: 30% 50%;
-  animation: background-action 50s infinite ease-in-out;
+  // transition: 4s;
+  // padding: 5rem;
+  // background-position: 30% 50%;
+  // animation: background-action 50s infinite ease-in-out;
   .home__search-bar {
+    margin-left: 30rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
