@@ -37,7 +37,11 @@ const FindPwForm = ({
         </form>
       ) : (
         <div className="pw-form">
-          <span className="text">이메일로 임시 비밀번호가 전송되었습니다.</span>
+          <span className="text">
+            이메일로 임시 비밀번호가 전송되었습니다.
+            <br />
+            {pw}
+          </span>
           <button className="btn" onClick={goToLogin}>
             로그인 하기
           </button>
