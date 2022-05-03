@@ -12,6 +12,7 @@ import { GrMapLocation } from "react-icons/gr";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { GiNightSleep } from "react-icons/gi";
+import Header from "../common/Header";
 
 const LibrariesDetail = () => {
   const [libraryData, setLibraryData] = useState([]);
@@ -28,9 +29,7 @@ const LibrariesDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`/v1/libraries/${id}`, {
-        headers: headers,
-      })
+      .get(`/v1/libraries/${id}`, { headers: headers })
       .then(function (response) {
         setLibraryData(response.data.data);
       });
@@ -69,34 +68,29 @@ const LibrariesDetail = () => {
 
   return (
     <div id="libraries-detail">
-      <div className="header"></div>
-      <div className="libraries-box">
-        <div className="library-name">{libraryData.name}</div>
-        <div className="info-area">
-          <div className="detail-info">도서관 정보</div>
-          <table className="detail-area">
-            {LibraryDetailArray.map((lda) => (
-              <thead className="detail-box" key={lda.key}>
-                <tr className="detail-text">
-                  <td className="td-icon"> {lda.icon}</td>
-                  <td className="tag">{lda.tag}</td>
-                  <td className={lda.key}>{lda.value}</td>
-                </tr>
-              </thead>
-            ))}
-          </table>
-        </div>
-        <div className="rule-area">
-          <div className="detail-info">이용규정</div>
-          <div className="up-rule">
-            <div className="library-rule">
-              <div className="icon-num">
-                <IoLibraryOutline className="icon" />
-                <span className="text">
-                  {libraryData.lendingAvailableCount}
-                </span>
-              </div>
-              <span className="label">대출 가능 권수</span>
+      <Header />
+      <div className="library-name">{libraryData.name}</div>
+      <div className="info-area">
+        <div className="detail-info">도서관 정보</div>
+        <table className="detail-area">
+          {LibraryDetailArray.map((lda) => (
+            <thead className="detail-box" key={lda.key}>
+              <tr className="detail-text">
+                <td className="td-icon"> {lda.icon}</td>
+                <td className="tag">{lda.tag}</td>
+                <td className={lda.key}>{lda.value}</td>
+              </tr>
+            </thead>
+          ))}
+        </table>
+      </div>
+      <div className="rule-area">
+        <div className="detail-info">이용규정</div>
+        <div className="up-rule">
+          <div className="library-rule">
+            <div className="icon-num">
+              <IoLibraryOutline className="icon" />
+              <span className="text">{libraryData.lendingAvailableCount}</span>
             </div>
             <div className="library-rule">
               <div className="icon-num">

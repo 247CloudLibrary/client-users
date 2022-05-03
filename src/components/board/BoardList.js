@@ -5,6 +5,7 @@ import BoardInfo from "./BoardInfo";
 import BoardMap from "./BoardMap";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header from "../common/Header";
 
 const BoardList = () => {
   const navigate = useNavigate();
@@ -40,30 +41,26 @@ const BoardList = () => {
   };
 
   useEffect(() => {
-    axios
-      .get("/v1/boards", {
-        headers: headers,
-      })
-      .then((response) => {
-        const boardArr = response.data.data;
+    axios.get("/v1/boards", { headers: headers }).then((response) => {
+      const boardArr = response.data.data;
 
-        const filtedByLibraryName =
-          boardArr.libraryName !== libraryName
-            ? boardArr.filter((i) => i.libraryName === libraryName)
-            : boardArr;
+      const filtedByLibraryName =
+        boardArr.libraryName !== libraryName
+          ? boardArr.filter((i) => i.libraryName === libraryName)
+          : boardArr;
 
-        const filtedByNoticeData =
-          filtedByLibraryName.type !== "공지사항"
-            ? filtedByLibraryName.filter((i) => i.type === "공지사항")
-            : filtedByLibraryName;
-        setNoticeData(filtedByNoticeData);
+      const filtedByNoticeData =
+        filtedByLibraryName.type !== "공지사항"
+          ? filtedByLibraryName.filter((i) => i.type === "공지사항")
+          : filtedByLibraryName;
+      setNoticeData(filtedByNoticeData);
 
-        const filtedByInfoData =
-          filtedByLibraryName.type !== "안내사항"
-            ? filtedByLibraryName.filter((i) => i.type === "안내사항")
-            : filtedByLibraryName;
-        setInfoData(filtedByInfoData);
-      });
+      const filtedByInfoData =
+        filtedByLibraryName.type !== "안내사항"
+          ? filtedByLibraryName.filter((i) => i.type === "안내사항")
+          : filtedByLibraryName;
+      setInfoData(filtedByInfoData);
+    });
   }, []);
 
   const ListArray = [
@@ -76,6 +73,7 @@ const BoardList = () => {
   ];
   return (
     <main id="board-list">
+      <Header />
       <h1 className="content">{content}</h1>
       <table className="list">
         <thead>
