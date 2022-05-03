@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import Header from "../../components/common/Header";
+import Footer from "../../pages/home/Footer";
 
 const CompositeDetail = () => {
   const [compositeData, setCompositeData] = useState([]);
@@ -49,6 +51,8 @@ const CompositeDetail = () => {
 
   return (
     <div id="composite-detail">
+      <Header />
+      <div className="book-detail-title">Book Detail</div>
       <div className="detail-box">
         <div className="title-area">
           <div className="title-box">
@@ -86,6 +90,7 @@ const CompositeDetail = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

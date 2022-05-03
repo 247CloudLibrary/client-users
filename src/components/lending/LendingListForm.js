@@ -37,25 +37,27 @@ const LendingListForm = () => {
 
   console.log(listItem);
   return (
-    <div className="lending-list">
-      {listItem &&
-        listItem.map((data, index) => (
-          <LendingListItem
-            key={index}
-            uid={data.uid}
-            thumbNailImage={data.thumbNailImage}
-            bookId={data.bookId}
-            title={data.title}
-            libraryId={data.libraryId}
-            libraryName={data.libraryName}
-            lendingId={data.lendingId}
-            barcode={data.barcode}
-            lendingStatus={data.lendingStatus}
-            lendingDateTime={data.lendingDateTime}
-            returnDateTime={data.returnDateTime}
-          />
-        ))}
-    </div>
+    <>
+      <div className="lending-list">
+        {listItem &&
+          listItem.map((data, index) => (
+            <LendingListItem
+              key={index}
+              uid={data.uid}
+              thumbNailImage={data.thumbNailImage}
+              bookId={data.bookId}
+              title={data.title}
+              libraryId={data.libraryId}
+              libraryName={data.libraryName}
+              lendingId={data.lendingId}
+              barcode={data.barcode}
+              lendingStatus={data.lendingStatus}
+              lendingDateTime={data.lendingDateTime}
+              returnDateTime={data.returnDateTime}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 
