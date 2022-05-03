@@ -1,4 +1,4 @@
-#findId {
+#admin-register {
   background-color: #dfdfdf;
   position: absolute;
   left: 0;
@@ -9,12 +9,10 @@
   justify-content: center;
   align-items: center;
   min-height: 530px;
-  .findIdForm {
+  div {
     width: 340px;
     min-width: 340px;
-    background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #afcddf;
     border-radius: 2px;
     padding: 2rem;
     box-shadow: 1px 1px 7px #809399;
@@ -24,20 +22,16 @@
       &:first-child {
         font-size: 3.5rem;
         padding-bottom: 3rem;
-        color: white;
-        svg {
-          filter: drop-shadow(1px 1px 1px #2e2e2e);
-        }
+        color: #18222c;
       }
-      span {
-        padding-top: 0.5rem;
-        letter-spacing: 1px;
-        font-family: "Lexend Deca", sans-serif;
-        font-size: 2.25rem;
-        font-weight: bold;
-        color: white;
-        text-shadow: 1px 1px 3px #000000;
-      }
+    }
+    span {
+      padding-top: 0.5rem;
+      letter-spacing: 1px;
+      font-family: "Lexend Deca", sans-serif;
+      font-size: 2.25rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px #5f5f5f;
     }
     form {
       display: flex;
@@ -64,13 +58,12 @@
         border-bottom: 0.125rem solid #3b3b3b;
       }
     }
-
     button {
       border: none;
       font-size: 1.125rem;
       font-weight: bold;
       padding: 0.75rem 1rem;
-      margin-top: 0.7rem;
+      margin-top: 3rem;
       width: 90%;
       border-radius: 4px;
       background-color: #435769;
@@ -81,20 +74,6 @@
       &:hover {
         background-color: #2b3c4e;
       }
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .text {
-      color: white;
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-      text-shadow: 1px 1px 2px black;
     }
   }
 }

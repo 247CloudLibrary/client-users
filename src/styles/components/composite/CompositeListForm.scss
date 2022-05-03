@@ -1,22 +1,33 @@
 
 .compositeList {
-  width: 100%;
-  min-width: 70rem;
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
-  background-clip: border-box;
-  background-size: cover;
-  background-attachment: fixed;
-  transition: 4s;
   justify-content: center;
   align-items: center;
-  padding: 5rem;
-  background-position: 30% 50%;
-  animation: background-action 50s infinite ease-in-out;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 100vw;
+  min-width: 100rem;
+  overflow: hidden;
+    background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  .composite-list-title {
+    font-size: 5.5rem;
+    padding-bottom: 8rem;
+    font-weight: bold;
+    font-family: "Antonio";
+    letter-spacing: 0.2rem;
+    color: #fff9e5;
+    text-shadow: 1px 1px 3px #2e2e2e;
+  }
   .home__search-bar {
+    margin-left: 30rem;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     width: 30rem;
     height: 4.5rem;
@@ -35,7 +46,7 @@
       text-shadow: 1px 1px 3px black;
       border: none;
       background: none;
-      margin-bottom: 0.6rem;
+      margin-top: 1rem;
       &:focus {
         outline: none;
       }
