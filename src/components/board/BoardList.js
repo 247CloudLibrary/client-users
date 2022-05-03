@@ -47,7 +47,6 @@ const BoardList = () => {
       .then((response) => {
         const boardArr = response.data.data;
 
-        console.log(boardArr);
         const filtedByLibraryName =
           boardArr.libraryName !== libraryName
             ? boardArr.filter((i) => i.libraryName === libraryName)
@@ -64,7 +63,6 @@ const BoardList = () => {
             ? filtedByLibraryName.filter((i) => i.type === "안내사항")
             : filtedByLibraryName;
         setInfoData(filtedByInfoData);
-        console.log(filtedByLibraryName);
       });
   }, []);
 

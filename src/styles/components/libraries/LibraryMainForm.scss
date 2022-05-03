@@ -22,6 +22,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    .logo {
+      display: flex;
+      &:first-child {
+        font-size: 6rem;
+        padding-bottom: 3rem;
+        color: #fff9e5;
+        svg {
+          filter: drop-shadow(1px 1px 1px #2e2e2e);
+        }
+      }
+      span {
+        letter-spacing: 1px;
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 5rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px #2e2e2e;
+      }
+    }
   }
   span {
     padding-top: 0.5rem;

@@ -26,7 +26,6 @@ const BoardDetailForm = () => {
         setNoData(notice.data.data);
       });
   }, []);
-  console.log(noData);
 
   const toList = () => {
     navigate(-1);

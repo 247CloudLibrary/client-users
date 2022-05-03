@@ -51,11 +51,10 @@
     }
     .contents-area {
       width: 60rem;
-
       margin-top: 1rem;
-      border-left: 1px solid gray;
-      border-right: 1px solid gray;
+      border-bottom: 1px solid gray;
       .board-contents {
+        min-height: 50vh;
         padding: 0 1rem 0 1rem;
       }
     }
@@ -76,7 +75,13 @@
         cursor: pointer;
         transition: 0.8s;
         &:hover {
-          background-color: #2b3c4e;
+          color: #435769;
+          background: rgb(227, 253, 255);
+          background: linear-gradient(
+            90deg,
+            rgb(55, 182, 255) 0%,
+            rgb(164, 244, 253) 100%
+          );
         }
       }
     }
