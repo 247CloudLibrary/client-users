@@ -143,6 +143,7 @@ const UserProfileForm = () => {
                 disabled={toggle}
                 onChange={handleEdit}
                 required
+                className="input-birth"
               />
             </div>
             <div className="editBtn">

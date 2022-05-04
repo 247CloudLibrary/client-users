@@ -1,4 +1,4 @@
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaUserLock } from "react-icons/fa";
 import { ImLibrary } from "react-icons/im";
 import { BsJournalText } from "react-icons/bs";
 import { GiArchiveResearch } from "react-icons/gi";
@@ -20,25 +20,35 @@ const UserMainForm = ({ props }) => {
             <RiLogoutBoxRLine />
           </button>
         </div>
+        {props.loading ? (
+          <div className="username">안녕하세요, {props.profile.userName}님</div>
+        ) : (
+          ""
+        )}
         <div className="feature-box">
-          <div className="feature">
-            <div onClick={props.handleProfile}>
-              <FaUser className="icon" />
-              <span className="text">마이페이지</span>
-            </div>
-            <div onClick={props.handleFindLibrary}>
-              <ImLibrary className="icon" />
-              <span className="text">도서관찾기</span>
-            </div>
-          </div>
           <div className="feature">
             <div onClick={props.onSubmit}>
               <GiArchiveResearch className="icon" />
               <span className="text">도서 찾기</span>
             </div>
+            <div onClick={props.handleProfile}>
+              <FaUser className="icon" />
+              <span className="text">마이페이지</span>
+            </div>
+
             <div onClick={props.handleLending}>
               <BsJournalText className="icon" />
               <span className="text">대출 기록</span>
+            </div>
+          </div>
+          <div className="feature">
+            <div onClick={props.handleFindLibrary}>
+              <ImLibrary className="icon" />
+              <span className="text">도서관찾기</span>
+            </div>
+            <div onClick={props.handlePasswordChange}>
+              <FaUserLock className="icon" />
+              <span className="text">비밀번호변경</span>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import AdminRegisterPage from "./pages/auth/AdminRegisterPage";
 import UserSignUpPage from "./pages/auth/UserSignUpPage";
 import FindIdPage from "./pages/auth/FindIdPage";
 import FindPwPage from "./pages/auth/FindPwPage";
+import ChangePasswordPage from "./pages/auth/ChangePasswordPage";
 
 import UserLoginPage from "./pages/auth/UserLoginPage";
 import UserProfilePage from "./pages/auth/UserProfilePage";
@@ -36,6 +37,8 @@ function App() {
       <Route path="/find-id" element={<FindIdPage />} />
       <Route path="/find-pw" element={<FindPwPage />} />
       <Route path="/admin-register" element={<AdminRegisterPage />} />
+      <Route path="/change-pw" element={<ChangePasswordPage />} />
+
       <Route path="/composite-list" element={<CompositeListPage />} />
       <Route
         path="/composite-detail/:bookId"

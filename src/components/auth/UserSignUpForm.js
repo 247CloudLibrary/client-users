@@ -24,6 +24,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.password}
           placeholder="비밀번호"
           type="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           required
         />
         <span id="validation">대소특수문자 포함 10자 이상</span>
@@ -31,8 +32,9 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           name="passwordConfirm"
           onChange={onChange}
           value={form.passwordConfirm}
-          type="password"
           placeholder="비밀번호 확인"
+          type="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           required
         />
         <input
@@ -68,6 +70,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.email}
           type="email"
           autoComplete="off"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           required
         />
         <input
