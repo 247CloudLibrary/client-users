@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Header from "../../components/common/Header";
 import Footer from "../../pages/home/Footer";
 
@@ -8,6 +8,7 @@ const CompositeDetail = () => {
   const [compositeData, setCompositeData] = useState([]);
   const location = useLocation();
   const bookId = location.state.bookId;
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -49,44 +50,86 @@ const CompositeDetail = () => {
     },
   ];
 
+  const updateReservationClick = (e) => {
+    e.preventDefault();
+    if (compositeData.reservationDateTime !== "") {
+      window.alert("이미 예약된 도서입니다.");
+    } else if (window.confirm("예약 하시겠습니까?")) {
+      axios
+        .patch(`https://www.cloudlibrary.shop/v1/lending/reservation`, {
+          uid: compositeData.uid,
+          libraryId: compositeData.libraryId,
+          bookId: compositeData.bookId,
+        })
+        .then(() => {
+          alert("예약이 완료되었습니다.");
+        });
+      navigate(`/composite/search`);
+    } else {
+      return;
+    }
+  };
+
+  const onClickReadReservation = () => {
+    navigate(`/reservation`);
+  };
+
   return (
     <div id="composite-detail">
       <Header />
       <div className="book-detail-title">Book Detail</div>
-      <div className="detail-box">
-        <div className="title-area">
-          <div className="title-box">
-            <span className="type">{compositeData.bookType}</span>
-            <span className="title">{compositeData.title}</span>
-          </div>
+      <div className="composite-detail-position">
+        <div className="btns">
+          <button
+            className="btn"
+            onClick={updateReservationClick}
+            type="submit"
+          >
+            도서 예약
+          </button>
+          <button
+            className="btn"
+            onClick={onClickReadReservation}
+            type="submit"
+          >
+            예약 조회
+          </button>
         </div>
-        <div className="info-area">
-          <div className="info-box">
-            <div className="image-box">
-              <img
-                className="coverImage"
-                src={compositeData.coverImage}
-                alt=""
-              />
+        <div className="detail-box">
+          <div className="title-area">
+            <div className="title-box">
+              <span className="type">{compositeData.bookType}</span>
+              <span className="title">{compositeData.title}</span>
             </div>
-            <table className="text-box">
-              {CompositeDetailArray.map((data) => (
-                <thead className="label" key={data.key}>
-                  <tr>
-                    <td className="label-tag">{data.tag}</td>
-                    <td className="label-value">{data.value}</td>
-                  </tr>
-                </thead>
-              ))}
-            </table>
           </div>
-        </div>
-        <div className="minititle-box">
-          <div className="minititle">상세정보</div>
-        </div>
-        <div className="contents-area">
-          <div className="contents-box">
-            <p>{compositeData.contents}</p>
+          <div className="info-area">
+            <div className="info-box">
+              <div className="image-box">
+                <img
+                  className="coverImage"
+                  src={compositeData.coverImage}
+                  alt=""
+                />
+              </div>
+              <table className="text-box">
+                {CompositeDetailArray.map((data) => (
+                  <thead className="label" key={data.key}>
+                    <tr>
+                      <td className="label-tag">{data.tag}</td>
+                      <td className="label-value">{data.value}</td>
+                    </tr>
+                  </thead>
+                ))}
+              </table>
+            </div>
+          </div>
+          <div className="minititle-box">
+            <div className="minititle">상세정보</div>
+          </div>
+          <div className="contents-area">
+            <div className="contents-box">
+              <p>{compositeData.contents}</p>
+            </div>
           </div>
         </div>
       </div>
