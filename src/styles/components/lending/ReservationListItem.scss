@@ -14,7 +14,7 @@
     }
   .reservation-items {
       display: flex;
-      width: 40rem;
+      width: 50rem;
       margin: 1rem;
       padding: 1rem;  
       justify-content: center;
@@ -22,22 +22,32 @@
       text-align: center;
       border-top: solid 1px rgb(235, 235, 235);
       margin-bottom: 3rem;
+      .image-area {
+        display: flex;
+        width: 14rem;
+      .thumbNailImage {
+        width: 14rem;
+      }
+    }
       .reservationData {
               display: flex;
-              width: 32rem;
+              width: 30rem;
               flex-direction: column;
               justify-content: center;
-              align-items: flex-start;
+              align-items: center;
+              
             .title {    
               width: 30rem;
               font-size: 1.5rem;
               font-weight: bold;
               padding: 0.3rem;
+              margin-bottom: 2rem;
             }
             .libraryName {
               width: 30rem;
               font-size: 1.5rem;
               padding: 0.3rem;
+              margin-bottom: 2rem;
             }
             .reservationDateTime {
                 width: 30rem;
@@ -51,7 +61,7 @@
                   display: flex;
                   border: 0.2rem solid aliceblue;
                   border-radius: 20px;
-                  font-size: 1rem;
+                  font-size: 0.8rem;
                   font-weight: bold;
                   padding: 1rem 1rem;
                   margin-bottom: 1rem;

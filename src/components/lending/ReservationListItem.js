@@ -7,6 +7,7 @@ const ReservationListItem = ({
   title,
   reservationDateTime,
   orderNum,
+  thumbNailImage,
 }) => {
   const navigate = useNavigate();
 
@@ -29,6 +30,9 @@ const ReservationListItem = ({
 
   return (
     <div className="reservation-items">
+      <div className="image-area">
+        <img src={thumbNailImage} alt={title} className="thumbNailImage" />
+      </div>
       <div className="reservationData">
         <span className="title"> {title}</span>
         <span className="libraryName"> {libraryName}</span>

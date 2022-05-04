@@ -56,6 +56,7 @@ const ReservationlistForm = ({}) => {
                 title={data.title}
                 reservationDateTime={data.reservationDateTime}
                 orderNum={data.orderNum}
+                thumbNailImage={data.thumbNailImage}
               />
             ))}
         </div>

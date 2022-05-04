@@ -43,6 +43,7 @@ const CompositeListForm = ({ categoryValue, libraryValue, text }) => {
             lendingStatus={data.lendingStatus}
             lendingDateTime={data.lendingDateTime}
             ReservationDateTime={data.reservationDateTime}
+            orderNum={data.orderNum}
             genre={data.genre}
             bookType={data.bookType}
             category={data.category}
