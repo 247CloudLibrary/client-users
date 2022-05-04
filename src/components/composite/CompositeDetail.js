@@ -9,6 +9,8 @@ const CompositeDetail = () => {
   const location = useLocation();
   const bookId = location.state.bookId;
   const navigate = useNavigate();
+  const json = JSON.parse(localStorage.getItem("user"));
+  const myUid = json.data.uid;
 
   useEffect(() => {
     axios
@@ -52,19 +54,19 @@ const CompositeDetail = () => {
 
   const updateReservationClick = (e) => {
     e.preventDefault();
-    if (compositeData.reservationDateTime !== "") {
-      window.alert("이미 예약된 도서입니다.");
-    } else if (window.confirm("예약 하시겠습니까?")) {
+    if (window.confirm("예약 하시겠습니까?")) {
       axios
-        .patch(`https://www.cloudlibrary.shop/v1/lending/reservation`, {
-          uid: compositeData.uid,
-          libraryId: compositeData.libraryId,
+        .post(`https://www.cloudlibrary.shop/v1/lending/reservation`, {
+          uid: myUid,
           bookId: compositeData.bookId,
+          libraryId: compositeData.libraryId,
+          libraryName: compositeData.libraryName,
+          lendingId: compositeData.lendingId,
         })
         .then(() => {
           alert("예약이 완료되었습니다.");
         });
-      navigate(`/composite/search`);
+      navigate(`/composite-list`);
     } else {
       return;
     }

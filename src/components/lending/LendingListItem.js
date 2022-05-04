@@ -23,6 +23,7 @@ const LendingListItem = ({
 }) => {
   const [lendingStatusValue, setLendingStatusValue] = useState();
   const [returnDateValue, setReturnDateValue] = useState();
+  const [reservationDateValue, setReservationDateValue] = useState();
 
   useEffect(() => {
     const lendingFilted = lendingStatus
@@ -60,6 +61,7 @@ const LendingListItem = ({
           <span className="lendingReturn">
             <GrBook /> {returnDateValue}
           </span>
+          <span className="lendingReservation">{reservationDateValue}</span>
         </div>
       </div>
     </div>
