@@ -69,28 +69,33 @@ const LibrariesDetail = () => {
   return (
     <div id="libraries-detail">
       <Header />
-      <div className="library-name">{libraryData.name}</div>
-      <div className="info-area">
-        <div className="detail-info">도서관 정보</div>
-        <table className="detail-area">
-          {LibraryDetailArray.map((lda) => (
-            <thead className="detail-box" key={lda.key}>
-              <tr className="detail-text">
-                <td className="td-icon"> {lda.icon}</td>
-                <td className="tag">{lda.tag}</td>
-                <td className={lda.key}>{lda.value}</td>
-              </tr>
-            </thead>
-          ))}
-        </table>
-      </div>
-      <div className="rule-area">
-        <div className="detail-info">이용규정</div>
-        <div className="up-rule">
-          <div className="library-rule">
-            <div className="icon-num">
-              <IoLibraryOutline className="icon" />
-              <span className="text">{libraryData.lendingAvailableCount}</span>
+      <div className="libraries-box">
+        <div className="library-name">{`${libraryData.name}(ID: ${id})`}</div>
+        <div className="info-area">
+          <div className="detail-info">도서관 정보</div>
+          <table className="detail-area">
+            {LibraryDetailArray.map((lda) => (
+              <thead className="detail-box" key={lda.key}>
+                <tr className="detail-text">
+                  <td className="td-icon"> {lda.icon}</td>
+                  <td className="tag">{lda.tag}</td>
+                  <td className={lda.key}>{lda.value}</td>
+                </tr>
+              </thead>
+            ))}
+          </table>
+        </div>
+        <div className="rule-area">
+          <div className="detail-info">이용규정</div>
+          <div className="up-rule">
+            <div className="library-rule">
+              <div className="icon-num">
+                <IoLibraryOutline className="icon" />
+                <span className="text">
+                  {libraryData.lendingAvailableCount}
+                </span>
+              </div>
+              <span className="label">대출 가능 권수</span>
             </div>
             <div className="library-rule">
               <div className="icon-num">
