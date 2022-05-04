@@ -1,6 +1,6 @@
 #composite-detail {
-    display: flex;
-    background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+  background-image: url("../../../../public/img/janko-ferlic-sfL_QOnmy00-unsplash.jpg");
+  display: flex;
     background-clip: border-box;
     background-attachment: fixed;
     transition: 2s;
@@ -23,6 +23,9 @@
       color: #fff9e5;
       text-shadow: 1px 1px 3px #2e2e2e;
     }
+    .composite-detail-position{
+      display: flex;
+      flex-direction: row;
     .detail-box {
       display: flex;
       background-color: white;
@@ -129,6 +132,29 @@
           line-height: 2.5rem;
         }
       }
+    }
+    .btns {
+      display: flex;
+      flex-direction: column;
+      margin-right: 3rem;
+      margin-top: 10rem;
+      .btn {
+      border: none;
+      font-size: 2rem;
+      font-weight: bold;
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      width: auto;
+      border-radius: 4px;
+      background-color: #435769;
+      color: azure;
+      outline: none;
+      cursor: pointer;
+      transition: 0.8s;
+      &:hover {
+      background-color: #2b3c4e;
+      }
+  }}
       .btn-box {
         .btn {
           border: none;
@@ -147,7 +173,6 @@
             background-color: #2b3c4e;
           }
         }
-
     }
   }
 }

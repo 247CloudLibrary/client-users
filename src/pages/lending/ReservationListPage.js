@@ -1,9 +1,12 @@
+import ReservationListForm from "../../components/lending/ReservationListForm";
+
 const ReservationListPage = () => {
   return (
-    <div>
-      <span>예약 관리 페이지</span>
-    </div>
+    <>
+      <div>
+        <ReservationListForm />;
+      </div>
+    </>
   );
 };
-
 export default ReservationListPage;

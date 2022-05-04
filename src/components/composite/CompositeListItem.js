@@ -34,6 +34,8 @@ const CompositeListItem = ({
 
   const [returnDateValue, setReturnDateValue] = useState();
 
+  const [reservationStatusValue, setReservationStatusValue] = useState();
+
   useEffect(() => {
     const lendingFilted = lendingStatus
       ? LENDINGSTATUS_DATA.filter((i) => i.value === lendingStatus)[0].tag
@@ -48,6 +50,13 @@ const CompositeListItem = ({
 
     setReturnDateValue(returnDateFilted);
   }, []);
+
+  useEffect(() => {
+    const reservationFilted =
+      reservationDateTime !== "" ? "예약 중" : "예약 가능";
+
+    setReservationStatusValue(reservationFilted);
+  });
 
   const onClick = () => {
     navigate(`/composite-detail/${bookId}`, {
@@ -86,6 +95,7 @@ const CompositeListItem = ({
           <span className="lendingReturn">
             <GrBook /> {returnDateValue}
           </span>
+          <span className="lendingReservation">{reservationStatusValue}</span>
         </div>
       </div>
     </div>
