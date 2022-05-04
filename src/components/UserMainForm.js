@@ -1,4 +1,4 @@
-import { FaUser, FaUserLock } from "react-icons/fa";
+import { FaUser, FaUserLock, FaRegAddressBook } from "react-icons/fa";
 import { ImLibrary } from "react-icons/im";
 import { BsJournalText } from "react-icons/bs";
 import { GiArchiveResearch } from "react-icons/gi";
@@ -49,6 +49,10 @@ const UserMainForm = ({ props }) => {
             <div onClick={props.handlePasswordChange}>
               <FaUserLock className="icon" />
               <span className="text">비밀번호변경</span>
+            </div>
+            <div onClick={props.handleReservation}>
+              <FaRegAddressBook className="icon" />
+              <span className="text">예약관리</span>
             </div>
           </div>
         </div>
