@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from "react-router-dom";
 import { BsMegaphone } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { ImLibrary } from "react-icons/im";
 import { GiBookmarklet } from "react-icons/gi";
-import { WiCloud } from "react-icons/wi";
+import Header from "../common/Header";
 
 const LibraryMainForm = () => {
   const location = useLocation();
@@ -17,12 +15,7 @@ const LibraryMainForm = () => {
 
   return (
     <div id="LibraryMainForm">
-      <div className="header">
-        <Link to="/main" className="logo">
-          <WiCloud />
-          <span>Cloud Library</span>
-        </Link>
-      </div>
+      <Header />
       <div className="library-name">{libraryName}</div>
       <form
         onSubmit={(e) => {

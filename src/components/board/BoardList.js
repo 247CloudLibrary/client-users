@@ -5,16 +5,23 @@ import BoardInfo from "./BoardInfo";
 import BoardMap from "./BoardMap";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Header from "../common/Header";
 
 const BoardList = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [content, setContent] = useState("");
-  const [btn, setBtn] = useState(false);
   const [head, setHead] = useState(false);
   const [noticeData, setNoticeData] = useState([]);
   const [infoData, setInfoData] = useState([]);
   const [mode, setMode] = useState("공지사항");
+
+  const json = JSON.parse(localStorage.getItem("user"));
+  const token = json.headers.token;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
 
   const libraryName = location.state.libraryName;
   const address = location.state.address;
@@ -24,23 +31,19 @@ const BoardList = () => {
     if (mode === "공지사항") {
       setContent("공지사항");
       setHead(false);
-      setBtn(false);
     } else if (mode === "이용안내") {
       setContent("이용안내");
       setHead(true);
-      setBtn(false);
     } else {
       setContent("오시는 길");
-      setBtn(true);
       setHead(true);
     }
   };
 
   useEffect(() => {
-    axios.get("https://www.cloudlibrary.shop/v1/boards").then((response) => {
+    axios.get("/v1/boards", { headers: headers }).then((response) => {
       const boardArr = response.data.data;
 
-      console.log(boardArr);
       const filtedByLibraryName =
         boardArr.libraryName !== libraryName
           ? boardArr.filter((i) => i.libraryName === libraryName)
@@ -57,7 +60,6 @@ const BoardList = () => {
           ? filtedByLibraryName.filter((i) => i.type === "안내사항")
           : filtedByLibraryName;
       setInfoData(filtedByInfoData);
-      console.log(filtedByLibraryName);
     });
   }, []);
 
@@ -71,6 +73,7 @@ const BoardList = () => {
   ];
   return (
     <main id="board-list">
+      <Header />
       <h1 className="content">{content}</h1>
       <table className="list">
         <thead>

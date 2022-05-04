@@ -2,13 +2,21 @@ import LibrariesListItem from "./LibrariesListItem";
 import axios from "axios";
 import LibrariesSearchFilter from "./LibrariesSearchFilter";
 import { useEffect, useState } from "react";
+import Header from "../common/Header";
 
 const LibrariesList = () => {
   const [listData, setListData] = useState([]);
   const [text, setText] = useState("");
 
+  const json = JSON.parse(localStorage.getItem("user"));
+  const token = json.headers.token;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+
   useEffect(() => {
-    axios.get("https://www.cloudlibrary.shop/v1/libraries").then((response) => {
+    axios.get("/v1/libraries", { headers: headers }).then((response) => {
       const responseArr = response.data.data;
 
       const filtedBySearch = text
@@ -25,6 +33,7 @@ const LibrariesList = () => {
 
   return (
     <div id="libraries-list">
+      <Header />
       <div className="page-title">도서관 찾기</div>
       <LibrariesSearchFilter onSubmit={onSubmit} text={text} />
       {listData &&

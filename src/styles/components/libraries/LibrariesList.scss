@@ -1,6 +1,6 @@
 #libraries-list {
   width: 100vw;
-  min-width: 70rem;
+  min-width: max-content;
   background-image: url("../../../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
   background-size: cover;
   background-attachment: fixed;
@@ -59,7 +59,7 @@
   .page-title {
     position: relative;
     font-size: 3rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     font-family: "Nanum Gothic Coding";
   }
   .list-box {

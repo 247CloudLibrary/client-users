@@ -12,6 +12,7 @@ import { GrMapLocation } from "react-icons/gr";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { GiNightSleep } from "react-icons/gi";
+import Header from "../common/Header";
 
 const LibrariesDetail = () => {
   const [libraryData, setLibraryData] = useState([]);
@@ -19,12 +20,18 @@ const LibrariesDetail = () => {
   const navigate = useNavigate();
   const id = location.state.id;
 
+  const json = JSON.parse(localStorage.getItem("user"));
+  const token = json.headers.token;
+
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+
   useEffect(() => {
     axios
-      .get(`https://www.cloudlibrary.shop/v1/libraries/${id}`)
+      .get(`/v1/libraries/${id}`, { headers: headers })
       .then(function (response) {
         setLibraryData(response.data.data);
-        console.log(response.data.data);
       });
   }, []);
 
@@ -61,7 +68,7 @@ const LibrariesDetail = () => {
 
   return (
     <div id="libraries-detail">
-      <div className="header"></div>
+      <Header />
       <div className="library-name">{libraryData.name}</div>
       <div className="info-area">
         <div className="detail-info">도서관 정보</div>
@@ -85,41 +92,39 @@ const LibrariesDetail = () => {
               <IoLibraryOutline className="icon" />
               <span className="text">{libraryData.lendingAvailableCount}</span>
             </div>
-            <span className="label">대출 가능 권수</span>
-          </div>
-          <div className="library-rule">
-            <div className="icon-num">
-              <IoCalendarNumberOutline className="icon" />
-              <span className="text">{libraryData.lendingAvailableDays}</span>
+            <div className="library-rule">
+              <div className="icon-num">
+                <IoCalendarNumberOutline className="icon" />
+                <span className="text">{libraryData.lendingAvailableDays}</span>
+              </div>
+              <span className="label">대출 가능 일수</span>
             </div>
-            <span className="label">대출 가능 일수</span>
           </div>
-        </div>
-        <div className="down-rule">
-          <div className="library-rule">
-            <div className="icon-num">
-              <FaSortNumericUpAlt className="icon" />
-              <span className="text">{libraryData.overdueCount}</span>
+          <div className="down-rule">
+            <div className="library-rule">
+              <div className="icon-num">
+                <FaSortNumericUpAlt className="icon" />
+                <span className="text">{libraryData.overdueCount}</span>
+              </div>
+              <span className="label">대출 제한 연체 횟수</span>
             </div>
-            <span className="label">대출 제한 연체 횟수</span>
-          </div>
-          <div className="library-rule">
-            <div className="icon-num">
-              <FaRegCalendarTimes className="icon" />
-              <span className="text">{libraryData.longtermOverdueDays}</span>
+            <div className="library-rule">
+              <div className="icon-num">
+                <FaRegCalendarTimes className="icon" />
+                <span className="text">{libraryData.longtermOverdueDays}</span>
+              </div>
+              <span className="label">장기 연체 구분 일수</span>
             </div>
-            <span className="label">장기 연체 구분 일수</span>
-          </div>
-          <div className="library-rule">
-            <div className="icon-num">
-              <AiOutlineWarning className="icon" />
-              <span className="text">{libraryData.lendingLimitDays}</span>
+            <div className="library-rule">
+              <div className="icon-num">
+                <AiOutlineWarning className="icon" />
+                <span className="text">{libraryData.lendingLimitDays}</span>
+              </div>
+              <span className="label">대출 제한 일수</span>
             </div>
-            <span className="label">대출 제한 일수</span>
           </div>
         </div>
       </div>
-
       <div className="btn-area">
         <button className="list-btn" onClick={toLibMain}>
           돌아가기
