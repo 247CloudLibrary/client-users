@@ -1,22 +1,134 @@
-// Config
+/*Configuration*/
 @import "./config/_reset.scss";
+@import "./common/header.scss";
+/*Users*/
+@import "./UserMainForm.scss";
+@import "./components/auth/UserLoginForm.scss";
+@import "./components/auth/UserSignUpForm.scss";
+@import "./components/auth/UserPropfileForm.scss";
+@import "./components/auth/FindPwForm.scss";
+@import "./components/auth/FindIdForm.scss";
+@import "./components/auth/LoginSelector.scss";
+@import "./components/auth/inputForm.scss";
+@import "./components/auth/ChangePassword.scss";
 
-// Componenets
-@import "./components/UserLoginForm.scss";
-@import "./components/UserSignUpForm.scss";
-@import "./components/UserPropfileForm.scss";
-
-// libraries
+/*Libraries*/
 @import "./components/libraries/LibrariesList.scss";
 @import "./components/libraries/LibrariesListItem.scss";
+@import "./components/libraries/LibrariesDetail.scss";
+@import "./components/libraries/LibraryMainForm.scss";
 
-// Font
+/*Boards*/
+@import "./components/board/NoticesList.scss";
+@import "./components/board/NoticesListItem.scss";
+@import "./components//board/NoticeDetail.scss";
+@import "./components/board/GuideForm.scss";
+@import "./components/board/BoardList.scss";
+@import "./components/board/BoardListItem.scss";
+@import "./components/board/BoardInfo.scss";
+@import "./components/board/BoardMap.scss";
+@import "./components/board/BoardSideBar.scss";
+@import "./components/board/BoardDetailForm.scss";
+
+/*Home Page*/
+@import "./home/homepage.scss";
+@import "./home/header.scss";
+@import "./home/quote.scss";
+@import "./home/searchBar.scss";
+@import "./home/navigations.scss";
+@import "./home/feature/feature.scss";
+@import "./home/feature/reading.scss";
+@import "./home/feature/reservation.scss";
+@import "./home/feature/register.scss";
+@import "./home/feature/counts.scss";
+@import "./components/auth/AdminRegisterForm.scss";
+@import "./home/footer.scss";
+
+/*Fonts*/
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@700&family=Nanum+Gothic+Coding:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Square+Peg&display=swap");
 
-// Default
+/*Composite*/
+@import "./components/composite/CompositeListItem.scss";
+@import "./components/composite/CompositeListForm.scss";
+@import "./components/composite/CompositeDetail.scss";
+
+/*Lending*/
+@import "./components/lending/LendingListItem.scss";
+@import "./components/lending/LendingListForm.scss";
+@import "./components/lending/ReservationListForm.scss";
+@import "./components/lending/ReservationListItem.scss";
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+body {
+  content: url("../../public/img/link-hoang-UoqAR2pOxMo-unsplash.jpg")
+    url("../../public/img/dollar-gill-0V7_N62zZcU-unsplash.jpg")
+    url("../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+}
+
+@keyframes img-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right-to-left {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left-to-right {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-bottom-up {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes background-action {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
 }

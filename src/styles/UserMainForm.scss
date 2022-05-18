@@ -1,0 +1,168 @@
+#main {
+  width: 100vw;
+  min-width: 55rem;
+  background-image: url("../../public/img/pero-kalimero-9BJRGlqoIUk-unsplash.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: 30% 50%;
+  .main {
+    background-color: #7da5c9b2;
+    opacity: 0.9;
+    width: 100%;
+    min-width: 55rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: 1s;
+
+    .header {
+      height: 20rem;
+      width: 100%;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .logout {
+        border: none;
+        background: none;
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+        color: #fff9e5;
+        cursor: pointer;
+        transition: 1.5s;
+        svg {
+          filter: drop-shadow(1px 1px 1px #2e2e2e);
+        }
+        &:hover {
+          color: black;
+        }
+      }
+    }
+    .header-cover {
+      background-color: rgba(255, 255, 255, 0.575);
+      top: 20rem;
+      width: 100%;
+      position: absolute;
+    }
+    .logo {
+      display: flex;
+      &:first-child {
+        font-size: 8rem;
+        padding-bottom: 3rem;
+        color: #fff9e5;
+        svg {
+          filter: drop-shadow(1px 1px 1px #2e2e2e);
+        }
+      }
+      span {
+        padding-top: 0.5rem;
+        padding-right: 1rem;
+        letter-spacing: 1px;
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 6rem;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px #2e2e2e;
+      }
+    }
+    .username {
+      color: #fff9e5;
+      font-size: 2rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px black;
+    }
+    .main-search {
+      display: flex;
+      padding: 0.5rem 1.5rem;
+      align-items: center;
+      width: 20rem;
+      background-color: rgba(255, 239, 213, 0.815);
+      #main-search-input {
+        border: none;
+        background-color: inherit;
+        font-size: 1.3rem;
+        padding-left: 0.8rem;
+        margin-left: 1rem;
+        font-family: Jua;
+        border-bottom: 0.125rem solid #eef7fc;
+        color: #eef7fc;
+        &::placeholder {
+          color: #eef7fc;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .main-search-label {
+        width: 20rem;
+        height: 100%;
+        background-color: aquamarine;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: inherit;
+        .icon {
+          color: white;
+          font-size: 1.6rem;
+          border-radius: 50%;
+          padding: 2px;
+          transition: 0.5s;
+          cursor: pointer;
+          &:hover {
+            box-shadow: 1px 1px 3px white;
+          }
+        }
+      }
+    }
+  }
+  .feature-box {
+    width: 100%;
+    height: 52rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10rem;
+    padding-top: 1rem;
+    .feature {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      div {
+        height: 12rem;
+        width: 12rem;
+        margin: 3rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1rem;
+        background-color: #30303077;
+        box-shadow: 1px 1px 3px;
+        transition: 0.7s;
+        &:hover {
+          background-color: #000000de;
+        }
+      }
+      .icon {
+        padding: 1rem;
+        font-size: 3.5rem;
+        color: #e8f8ff;
+        border: 0.2rem solid #e8f8ffc5;
+        border-radius: 4px;
+      }
+      .text {
+        font-size: 1.1rem;
+        font-family: "Nanum Gothic Coding";
+        margin-top: 1rem;
+        letter-spacing: 0.1rem;
+        color: #e8f8ff;
+      }
+    }
+  }
+}

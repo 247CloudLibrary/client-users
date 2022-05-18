@@ -7,6 +7,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "html-react-parser": "^1.4.11",
     "immer": "^9.0.12",
     "node-sass": "^7.0.1",
     "react": "^17.0.2",
@@ -41,5 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://ecs-alb-167470959.us-east-1.elb.amazonaws.com/v1"
+  "proxy": "https://www.cloudlibrary.shop"
 }

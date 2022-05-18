@@ -1,20 +1,27 @@
-import { Link } from "react-router-dom";
+import { useScroll } from "./useScroll";
+
+import Header from "./home/Header";
+import Quote from "./home/Quote";
+import SearchBar from "./home/SearchBar";
+import Navigations from "./home/Navigations";
+import Feature from "./home/Feature";
+import FeatureDescriptions from "./home/FeatureDescriptions";
+import Footer from "./home/Footer";
+
 const HomePage = () => {
+  const scroll = useScroll();
+
   return (
-    <div>
-      <h1>Home</h1>
-      <Link to={"/login"}>
-        <button>로그인</button>
-      </Link>
-      <Link to={"/signUp"}>
-        <button>회원가입</button>
-      </Link>
-      <Link to={"/libraries/list"}>
-        <button>도서관 찾기</button>
-      </Link>
-      <Link to={"/profile"}>
-        <button>마이 페이지</button>
-      </Link>
+    <div id="home">
+      <Header />
+      <main>
+        <Quote />
+        <SearchBar />
+        <Feature />
+        <Navigations />
+        <FeatureDescriptions scroll={scroll} />
+      </main>
+      <Footer />
     </div>
   );
 };

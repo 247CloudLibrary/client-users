@@ -15,6 +15,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.userId}
           type="text"
           placeholder="아이디"
+          autoComplete="off"
           required
         />
         <input
@@ -22,8 +23,8 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           onChange={onChange}
           value={form.password}
           placeholder="비밀번호"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           type="password"
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           required
         />
         <span id="validation">대소특수문자 포함 10자 이상</span>
@@ -31,8 +32,8 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           name="passwordConfirm"
           onChange={onChange}
           value={form.passwordConfirm}
-          type="password"
           placeholder="비밀번호 확인"
+          type="password"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}"
           required
         />
@@ -42,6 +43,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.userName}
           type="text"
           placeholder="이름"
+          autoComplete="off"
           required
         />
         <input
@@ -50,6 +52,7 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           value={form.gender}
           type="text"
           placeholder="성별"
+          autoComplete="off"
           required
         />
         <input
@@ -66,12 +69,14 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           onChange={onChange}
           value={form.email}
           type="email"
+          autoComplete="off"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           required
         />
         <input
           name="address"
           placeholder="주소"
+          autoComplete="off"
           onChange={onChange}
           value={form.address}
           type="text"
@@ -81,19 +86,14 @@ const UserSignUpForm = ({ form, onSubmit, onChange }) => {
           name="tel"
           onChange={onChange}
           value={form.tel}
-          pattern="[0-9]{2,}-[0-9]{3,}-[0-9]{3,}"
           placeholder="연락처"
+          autoComplete="off"
           type="tel"
           required
         />
         <span id="validation">ex) 010-0000-0000</span>
         <button className="signUp-btn">회원가입</button>
       </form>
-      <footer>
-        <Link to="/login">
-          <span>로그인</span>
-        </Link>
-      </footer>
     </div>
   );
 };

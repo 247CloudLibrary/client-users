@@ -1,0 +1,28 @@
+#board-info {
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  background-color: aliceblue;
+  justify-content: center;
+
+  .text-form {
+    position: relative;
+    width: 60rem;
+    .title-form {
+      font-size: 2rem;
+      text-align: center;
+    }
+    .contents-form {
+      margin-top: 3rem;
+    }
+  }
+  .edit-btn {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: auto;
+  }
+}

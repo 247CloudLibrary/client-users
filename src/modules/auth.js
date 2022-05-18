@@ -1,10 +1,8 @@
 import { createAction, handleActions } from "redux-actions";
 import produce from "immer";
 import { takeLatest } from "redux-saga/effects";
-import {
-  createRequestSaga,
-  createRequestActionTypes,
-} from "../lib/createRequestSaga";
+import { createRequestActionTypes } from "../lib/createRequestSaga";
+import createRequestSaga from "../lib/createRequestSaga";
 import * as authAPI from "../lib/api/auth";
 
 const CHANGE_FIELD = "auth/CHANGE_FIELD";
@@ -15,6 +13,8 @@ const [SIGNUP, SIGNUP_SUCCESS, SIGNUP_FAILURE] =
 
 const [LOGIN, LOGIN_SUCCESS, LOGIN_FAILURE] =
   createRequestActionTypes("auth/LOGIN");
+
+const PROFILE = "auth/PROFILE";
 
 export const changeField = createAction(
   CHANGE_FIELD,
@@ -57,12 +57,26 @@ export const login = createAction(LOGIN, ({ userId, password }) => ({
   password,
 }));
 
+export const profile = createAction(
+  PROFILE,
+  ({ userName, gender, birth, address, email, tel }) => ({
+    userName,
+    gender,
+    birth,
+    address,
+    email,
+    tel,
+  })
+);
+
 // Saga 생성
 const signUpSaga = createRequestSaga(SIGNUP, authAPI.signUp);
-const loginSage = createRequestSaga(LOGIN, authAPI.login);
+const loginSaga = createRequestSaga(LOGIN, authAPI.login);
+const profileSaga = createRequestSaga(PROFILE, authAPI.authGet);
 export function* authSaga() {
   yield takeLatest(SIGNUP, signUpSaga);
-  yield takeLatest(LOGIN, loginSage);
+  yield takeLatest(LOGIN, loginSaga);
+  yield takeLatest(PROFILE, profileSaga);
 }
 
 const initialState = {
@@ -81,6 +95,14 @@ const initialState = {
     userId: "",
     password: "",
   },
+  profile: {
+    userName: "",
+    gender: "",
+    birth: "",
+    address: "",
+    email: "",
+    tel: "",
+  },
   auth: null,
   authError: null,
 };
@@ -95,6 +117,7 @@ const auth = handleActions(
       ...state,
       [form]: initialState[form],
     }),
+
     // 회원가입 성공
     [SIGNUP_SUCCESS]: (state, { payload: auth }) => ({
       ...state,

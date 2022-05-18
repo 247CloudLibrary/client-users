@@ -1,0 +1,141 @@
+.composite-items {
+  display: flex;
+  width: 60rem;
+  min-width: 40rem;
+  height: 18rem;
+  padding: 1rem;
+  justify-content: center;
+  pointer-events: none;
+  border-top: solid 1px rgb(235, 235, 235);
+  overflow: hidden;
+  .image-area {
+    animation: slide-left-to-right 2s both;
+    pointer-events: all;
+    display: flex;
+    cursor: pointer;
+    margin-right: 2rem;
+    .thumbnailImage {
+      height: 16rem;
+      width: 12rem;
+      min-width: 5rem;
+    }
+  }
+  .compositeWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 30rem;
+    padding: 1rem;
+    .compositeCategory {
+      display: flex;
+      width: 60rem;
+      font-family: "Nanum Gothic Coding";
+      .type {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin-right: 1rem;
+        background-color: rgb(235, 235, 235);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+      }
+      .genre {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin-right: 1rem;
+        background-color: rgb(235, 235, 235);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+      }
+      .category {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin-right: 1rem;
+        background-color: rgb(235, 235, 235);
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+      }
+    }
+    .compositeTitle {
+      animation: slide-right-to-left 1s 0.8s both;
+      display: flex;
+      width: 60rem;
+      min-width: 30rem;
+      font-size: 2rem;
+      margin-top: 1rem;
+      pointer-events: all;
+      cursor: pointer;
+    }
+    .compositeWrite {
+      animation: slide-right-to-left 1s 1.1s both;
+      display: flex;
+      width: 60rem;
+      margin-top: 1rem;
+      .author {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+      .translator {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+      .publisher {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+      .publishDate {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+    }
+    .compositeData {
+      animation: slide-right-to-left 1s 1.2s both;
+      display: flex;
+      width: 60rem;
+      margin-top: 1rem;
+      .barcode {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+      .libraryName {
+        font-size: 1.1rem;
+        padding: 0.3rem;
+        margin-right: 0.3rem;
+      }
+    }
+    .compositeStatusBar {
+      animation: slide-right-to-left 1s 1.3s both;
+      display: flex;
+      width: 50rem;
+      margin-top: 0.3rem;
+      min-width: 30rem;
+      background-color: rgb(235, 235, 235);
+      .lendingStatus {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin-right: 2rem;
+        color: slateblue;
+        font-weight: bold;
+      }
+      .lendingReturn {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin-right: 2rem;
+        font-weight: bold;
+        color: red;
+      }
+      .lendingReservation {
+        font-size: 1.3rem;
+        padding: 0.3rem;
+        margin: 0;
+        font-weight: bold;
+        color: rgb(255, 4, 130)
+      }
+    }
+  }
+}
