@@ -47,7 +47,7 @@
     </th>
     <th>
       <div>
-       <img src="그림4" width="470" height="290">
+       <img src="https://user-images.githubusercontent.com/93421415/168958160-675866c5-a512-460f-9a9b-96596042faf2.gif" width="470" height="290">
       </div>
        회원 가입
     </th>
