@@ -40,7 +40,7 @@
   <tr>
     <th>
       <div>
-        <img src="" width="470" height="290">
+        <img src="https://user-images.githubusercontent.com/93421415/168958160-675866c5-a512-460f-9a9b-96596042faf2.gif" width="470" height="290">
       </div>
       도서관 조회
     </th>
@@ -48,7 +48,7 @@
       <div>
        <img src="그림4" width="470" height="290">
       </div>
-       회원 정보 수정
+       회원 가입
     </th>
   </tr>
 </tbody>
@@ -100,7 +100,7 @@
 </details>
 
 ## Client Homepage
-![user-main](https://user-images.githubusercontent.com/93421415/168957185-b9246cdf-a020-46f1-94a3-97883737427c.gif)
+홈페이지 gif 추가
 
 ## client-user main page
 ![user-main](https://user-images.githubusercontent.com/93421415/168957185-b9246cdf-a020-46f1-94a3-97883737427c.gif)
