@@ -107,7 +107,7 @@
 </details>
 
 ## Client Homepage
-홈페이지 gif 추가
+![client-main](https://user-images.githubusercontent.com/84313936/169186019-022b7bfd-0413-4e83-9831-fcb47c696e6d.gif)
 
 ## client-user main page
 ![user-main](https://user-images.githubusercontent.com/93421415/168957185-b9246cdf-a020-46f1-94a3-97883737427c.gif)
